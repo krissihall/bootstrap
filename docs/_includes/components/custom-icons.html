@@ -1,0 +1,66 @@
+<div class="bs-docs-section">
+  <h1 id="customicons" class="page-header">Custom Icons</h1>
+
+  <h2 id="customicons-glyphs">Available icons</h2>
+  <p>Includes 200 icons in font format from the customicons Halflings set. <a href="http://customicons.com/">customicons</a> Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to <a href="http://customicons.com/">customicons</a> whenever possible.</p>
+  <div class="bs-customicons">
+    <ul class="bs-customicons-list">
+      {% for iconClassName in site.data.custom-icons %}
+        <li>
+          <span class="customicons {{ iconClassName }}"></span>
+          <span class="customicons-class">customicons {{ iconClassName }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+  <h2 id="customicons-how-to-use">How to use</h2>
+  <p>For performance reasons, all icons require a base class and individual icon class. To use, place the following code just about anywhere. Be sure to leave a space between the icon and text for proper padding.</p>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Don't mix with other components</h4>
+    <p>Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested <code>&lt;span&gt;</code> and apply the icon classes to the <code>&lt;span&gt;</code>.</p>
+  </div>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Only for use on empty elements</h4>
+    <p>Icon classes should only be used on elements that contain no text content and have no child elements.</p>
+  </div>
+  <div class="bs-callout bs-callout-info">
+    <h4>Changing the icon font location</h4>
+    <p>Bootstrap assumes icon font files will be located in the <code>../fonts/</code> directory, relative to the compiled CSS files. Moving or renaming those font files means updating the CSS in one of three ways:</p>
+    <ul>
+      <li>Change the <code>@icon-font-path</code> and/or <code>@icon-font-name</code> variables in the source Less files.</li>
+      <li>Utilize the <a href="http://lesscss.org/usage/#command-line-usage-relative-urls">relative URLs option</a> provided by the Less compiler.</li>
+      <li>Change the <code>url()</code> paths in the compiled CSS.</li>
+    </ul>
+    <p>Use whatever option best suits your specific development setup.</p>
+  </div>
+{% highlight html %}
+<span class="customicons customicons-search"></span>
+{% endhighlight %}
+
+
+  <h2 id="customicons-examples">Examples</h2>
+  <p>Use them in buttons, button groups for a toolbar, navigation, or prepended form inputs.</p>
+  <div class="bs-example">
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="customicons customicons-align-left"></span> <span class="sr-only">Left Align</span></button>
+        <button type="button" class="btn btn-default"><span class="customicons customicons-align-center"></span> <span class="sr-only">Center Align</span></button>
+        <button type="button" class="btn btn-default"><span class="customicons customicons-align-right"></span> <span class="sr-only">Right Align</span></button>
+        <button type="button" class="btn btn-default"><span class="customicons customicons-align-justify"></span> <span class="sr-only">Justify</span></button>
+      </div>
+    </div>
+    <div class="btn-toolbar" role="toolbar">
+      <button type="button" class="btn btn-default btn-lg"><span class="customicons customicons-star"></span> Star</button>
+      <button type="button" class="btn btn-default"><span class="customicons customicons-star"></span> Star</button>
+      <button type="button" class="btn btn-default btn-sm"><span class="customicons customicons-star"></span> Star</button>
+      <button type="button" class="btn btn-default btn-xs"><span class="customicons customicons-star"></span> Star</button>
+    </div>
+  </div>
+{% highlight html %}
+<button type="button" class="btn btn-default btn-lg">
+  <span class="customicons customicons-star"></span> Star
+</button>
+{% endhighlight %}
+</div>
