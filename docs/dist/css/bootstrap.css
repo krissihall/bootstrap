@@ -1544,7 +1544,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   color: inherit;
 }
@@ -1893,28 +1893,44 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Source Sans Pro Black", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-h4,
-h5,
-h6,
-.h4,
-.h5,
-.h6 {
-  font-family: "Source Sans Pro Medium", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-}
-.text-bold {
+h1,
+.h1 {
   font-family: "Source Sans Pro Black", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
-.text-medium {
+h2,
+.h2 {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+h4,
+h5 .h4,
+.h5 {
   font-family: "Source Sans Pro Medium", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
 }
+h6,
+.h6 {
+  font-family: "Source Sans Pro Bold", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+.text-black {
+  font-family: "Source Sans Pro Black", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+.text-bold {
+  font-family: "Source Sans Pro Bold", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: "Source Sans Pro Bold", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.text-medium {
+  font-family: "Source Sans Pro Medium", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: "Source Sans Pro Medium", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .text-light {
   font-family: "Source Sans Pro Light", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: "Source Sans Pro Light", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 code,
 kbd,
