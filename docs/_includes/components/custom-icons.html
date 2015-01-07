@@ -2,13 +2,13 @@
   <h1 id="customicons" class="page-header">Custom Icons</h1>
 
   <h2 id="customicons-glyphs">Available icons</h2>
-  <p>Includes 200 icons in font format from the customicons Halflings set. <a href="http://customicons.com/">customicons</a> Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to <a href="http://customicons.com/">customicons</a> whenever possible.</p>
+  
   <div class="bs-customicons">
     <ul class="bs-customicons-list">
       {% for iconClassName in site.data.custom-icons %}
         <li>
-          <span class="customicons {{ iconClassName }}"></span>
-          <span class="customicons-class">customicons {{ iconClassName }}</span>
+          <span class="customicon {{ iconClassName }}"></span>
+          <span class="customicon-class">customicons {{ iconClassName }}</span>
         </li>
       {% endfor %}
     </ul>
@@ -36,7 +36,7 @@
     <p>Use whatever option best suits your specific development setup.</p>
   </div>
 {% highlight html %}
-<span class="customicons customicons-search"></span>
+<span class="customicon customicon-search"></span>
 {% endhighlight %}
 
 
@@ -45,22 +45,22 @@
   <div class="bs-example">
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button type="button" class="btn btn-default"><span class="customicons customicons-align-left"></span> <span class="sr-only">Left Align</span></button>
-        <button type="button" class="btn btn-default"><span class="customicons customicons-align-center"></span> <span class="sr-only">Center Align</span></button>
-        <button type="button" class="btn btn-default"><span class="customicons customicons-align-right"></span> <span class="sr-only">Right Align</span></button>
-        <button type="button" class="btn btn-default"><span class="customicons customicons-align-justify"></span> <span class="sr-only">Justify</span></button>
+        <button type="button" class="btn btn-default"><span class="customicon customicon-play3"></span> <span class="sr-only">Play</span></button>
+        <button type="button" class="btn btn-default"><span class="customicon customicon-pause2"></span> <span class="sr-only">Pause</span></button>
+        <button type="button" class="btn btn-default"><span class="customicon customicon-stop2"></span> <span class="sr-only">Stop</span></button>
+        <button type="button" class="btn btn-default"><span class="customicon customicon-volume-medium"></span> <span class="sr-only">Sound</span></button>
       </div>
     </div>
     <div class="btn-toolbar" role="toolbar">
-      <button type="button" class="btn btn-default btn-lg"><span class="customicons customicons-star"></span> Star</button>
-      <button type="button" class="btn btn-default"><span class="customicons customicons-star"></span> Star</button>
-      <button type="button" class="btn btn-default btn-sm"><span class="customicons customicons-star"></span> Star</button>
-      <button type="button" class="btn btn-default btn-xs"><span class="customicons customicons-star"></span> Star</button>
+      <button type="button" class="btn btn-default btn-lg"><span class="customicon customicon-pacman"></span> Star</button>
+      <button type="button" class="btn btn-default"><span class="customicon customicon-pacman"></span> Star</button>
+      <button type="button" class="btn btn-default btn-sm"><span class="customicon customicon-pacman"></span> Star</button>
+      <button type="button" class="btn btn-default btn-xs"><span class="customicon customicon-pacman"></span> Star</button>
     </div>
   </div>
 {% highlight html %}
 <button type="button" class="btn btn-default btn-lg">
-  <span class="customicons customicons-star"></span> Star
+  <span class="customicon customicon-pacman"></span> Star
 </button>
 {% endhighlight %}
 </div>
