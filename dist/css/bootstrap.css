@@ -269,12 +269,28 @@ th {
   src: url('../fonts/sourcesanspro-black-webfont.eot?#iefix2') format('embedded-opentype'), url('../fonts/sourcesanspro-black-webfont.woff') format('woff'), url('../fonts/sourcesanspro-black-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-black-webfont.svg#source_sans_problack') format('svg');
 }
 @font-face {
+  font-family: 'Source Sans Pro Bold';
+  font-style: normal;
+  font-weight: 600;
+
+  src: url('../fonts/sourcesanspro-bold-webfont.eot');
+  src: url('../fonts/sourcesanspro-bold-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/sourcesanspro-bold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-bold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+}
+@font-face {
   font-family: 'Source Sans Pro Light';
   font-style: normal;
   font-weight: 300;
 
   src: url('../fonts/sourcesanspro-light-webfont.eot');
   src: url('../fonts/sourcesanspro-light-webfont.eot?#iefix8') format('embedded-opentype'), url('../fonts/sourcesanspro-light-webfont.woff') format('woff'), url('../fonts/sourcesanspro-light-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+}
+@font-face {
+  font-family: 'Source Sans Pro Medium';
+  font-style: normal;
+  font-weight: 500;
+
+  src: url('../fonts/sourcesanspro-semibold-webfont.eot');
+  src: url('../fonts/sourcesanspro-semibold-webfont.eot?#iefix11') format('embedded-opentype'), url('../fonts/sourcesanspro-semibold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
 }
 @font-face {
   font-family: 'Source Sans Pro';
