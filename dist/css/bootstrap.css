@@ -2678,6 +2678,12 @@ pre code {
 .div-table.div-table-inner .div-table-row:last-of-type .div-table-cell {
   border-bottom: none;
 }
+.div-table.div-table-bordered-rows .div-table-row .div-table-cell {
+  border-bottom: 1px solid #eee;
+}
+.div-table.div-table-bordered-rows .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
 .div-table.div-table-striped .div-table-row:nth-child(odd) .div-table-cell {
   background: #eee;
 }

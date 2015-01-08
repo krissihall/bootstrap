@@ -47,6 +47,19 @@
     }
   }//&.inner-border
 
+  &.div-table-bordered-rows {
+    .div-table-row {
+      .div-table-cell {
+        border-bottom: 1px solid @gray-lighter;
+      }
+      &:last-of-type {
+        .div-table-cell {
+          border-bottom: none;
+        }
+      }
+    }
+  }//&.div-table-bordered-rows
+
   &.div-table-striped {
     .div-table-row {
       &:nth-child(odd) {
@@ -55,7 +68,7 @@
         }
       }
     }
-  }
+  }//&.div-table-striped
 }
 
 .div-table-row {
