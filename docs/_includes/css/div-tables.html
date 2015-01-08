@@ -1,0 +1,300 @@
+<div class="bs-docs-section">
+
+  <h1 id="div-tables" class="page-header">Div Tables</h1>
+  <p>This is extending the 'Grid' styling to work with div tags that are using 'display:table' rather than using floats</p>
+
+  <h2 id="div-tables-example">Basic example</h2>
+  <p>Here's a basic example of using the <code></code> tag display:table styling and modified grid.</p>
+  <div class="bs-example">
+    <div class="div-table">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 cell-sm-4 cell-md-4">
+          This is a table cell
+        </div>
+        <div class="div-table-cell cell-xs-2 cell-sm-2 cell-md-2">
+          This is a table cell
+        </div>
+        <div class="div-table-cell cell-xs-3 cell-sm-3 cell-md-3">
+          This is a table cell
+        </div>
+        <div class="div-table-cell cell-xs-3 cell-sm-3 cell-md-3">
+          This is a table cell
+        </div>
+      </div>
+    </div>
+  </div><!-- /example -->
+{% highlight html %}
+<div class="div-table">
+  <div class="div-table-row">
+    <div class="div-table-cell cell-xs-4">
+      This is a table cell
+    </div>
+    <div class="div-table-cell cell-xs-2">
+      This is a table cell
+    </div>
+    <div class="div-table-cell cell-xs-3">
+      This is a table cell
+    </div>
+    <div class="div-table-cell cell-xm-3">
+      This is a table cell
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h2 id="div-tables-inline-styles">Table Cell Customization</h2>
+  <p>There are a few examples of some customization available for table-cells.</p>
+  <h3>Vertical Alignment</h3>
+  <div class="bs-example">
+    <div class="div-table cell-xs-12" style="min-height:50px;">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 valign-top">
+          This is top-aligned
+        </div>
+        <div class="div-table-cell cell-xs-4 valign-middle">
+          This is middle-aligned
+        </div>
+        <div class="div-table-cell cell-xs-4 valign-bottom">
+          This is bottom-aligned
+        </div>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="div-table cell-xs-12">
+  <div class="div-table-row">
+    <div class="div-table-cell cell-xs-4 valign-top">
+      This is top-aligned
+    </div>
+    <div class="div-table-cell cell-xs-4 valign-middle">
+      This is middle-aligned
+    </div>
+    <div class="div-table-cell cell-xs-4 valign-bottom">
+      This is bottom-aligned
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3>Padding</h3>
+  <div class="bs-example">
+    Large Padding: 
+    <div class="div-table cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-12 padded-lg bg-success">
+          Large Padding
+        </div>
+      </div>
+    </div>
+
+    Standard Padding:
+    <div class="div-table cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-12 padded bg-success">
+          Standard Padding
+        </div>
+      </div>
+    </div>
+
+    Small Padding: 
+    <div class="div-table cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-12 padded-sm bg-success">
+          Small Padding
+        </div>
+      </div>
+    </div>
+
+    Extra Small Padding:
+    <div class="div-table cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-12 padded-xs bg-success">
+          XS Padding
+        </div>
+      </div>
+    </div>
+
+    No Padding: 
+    <div class="div-table cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-12 bg-success">
+          No Padding
+        </div>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="div-table cell-xs-12">
+  <div class="div-table-row">
+    <div class="div-table-cell cell-xs-12 padded-lg bg-success">
+      ...
+    </div>
+  </div>
+</div>
+
+<div class="div-table cell-xs-12">
+  <div class="div-table-row">
+    <div class="div-table-cell cell-xs-12 padded bg-success">
+      ...
+    </div>
+  </div>
+</div>
+
+<div class="div-table cell-xs-12">
+  <div class="div-table-row">
+    <div class="div-table-cell cell-xs-12 padded-sm bg-success">
+      ...
+    </div>
+  </div>
+</div>
+
+<div class="div-table cell-xs-12">
+  <div class="div-table-row">
+    <div class="div-table-cell cell-xs-12 padded-xs bg-success">
+      ...
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3>Div Table Bordered</h3>
+  <p>This is for if you want every cell to be outlined to look like an HTML table</p>
+  <div class="bs-example">
+    <div class="div-table div-table-bordered cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Table Inner Bordered</h3>
+  <div class="bs-example">
+    <div class="div-table div-table-inner cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Table Striped</h3>
+  <div class="bs-example">
+    <div class="div-table div-table-striped cell-xs-12">
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+      <div class="div-table-row">
+        <div class="div-table-cell cell-xs-4 padded text-left">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-center">
+          This is a cell
+        </div>
+        <div class="div-table-cell cell-xs-4 padded text-right">
+          This is a cell
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
