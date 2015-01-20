@@ -2668,6 +2668,71 @@ pre code {
 .div-table.div-table-bordered .div-table-row:last-of-type .div-table-cell {
   border-bottom: none;
 }
+.div-table.div-table-bordered.success {
+  border: 1px solid #00ce22;
+}
+.div-table.div-table-bordered.success .div-table-row .div-table-cell {
+  border-right: 1px solid #00ce22;
+  border-bottom: 1px solid #00ce22;
+}
+.div-table.div-table-bordered.success .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-bordered.success .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered.primary {
+  border: 1px solid #ff3a8d;
+}
+.div-table.div-table-bordered.primary .div-table-row .div-table-cell {
+  border-right: 1px solid #ff3a8d;
+  border-bottom: 1px solid #ff3a8d;
+}
+.div-table.div-table-bordered.primary .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-bordered.primary .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered.info {
+  border: 1px solid #509aff;
+}
+.div-table.div-table-bordered.info .div-table-row .div-table-cell {
+  border-right: 1px solid #509aff;
+  border-bottom: 1px solid #509aff;
+}
+.div-table.div-table-bordered.info .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-bordered.info .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered.warning {
+  border: 1px solid #ffea00;
+}
+.div-table.div-table-bordered.warning .div-table-row .div-table-cell {
+  border-right: 1px solid #ffea00;
+  border-bottom: 1px solid #ffea00;
+}
+.div-table.div-table-bordered.warning .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-bordered.warning .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered.danger {
+  border: 1px solid #ff3131;
+}
+.div-table.div-table-bordered.danger .div-table-row .div-table-cell {
+  border-right: 1px solid #ff3131;
+  border-bottom: 1px solid #ff3131;
+}
+.div-table.div-table-bordered.danger .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-bordered.danger .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
 .div-table.div-table-inner .div-table-row .div-table-cell {
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -2678,14 +2743,109 @@ pre code {
 .div-table.div-table-inner .div-table-row:last-of-type .div-table-cell {
   border-bottom: none;
 }
+.div-table.div-table-inner.success .div-table-row .div-table-cell {
+  border-right: 1px solid #00ce22;
+  border-bottom: 1px solid #00ce22;
+}
+.div-table.div-table-inner.success .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-inner.success .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-inner.primary .div-table-row .div-table-cell {
+  border-right: 1px solid #ff3a8d;
+  border-bottom: 1px solid #ff3a8d;
+}
+.div-table.div-table-inner.primary .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-inner.primary .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-inner.info .div-table-row .div-table-cell {
+  border-right: 1px solid #509aff;
+  border-bottom: 1px solid #509aff;
+}
+.div-table.div-table-inner.info .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-inner.info .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-inner.warning .div-table-row .div-table-cell {
+  border-right: 1px solid #ffea00;
+  border-bottom: 1px solid #ffea00;
+}
+.div-table.div-table-inner.warning .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-inner.warning .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-inner.danger .div-table-row .div-table-cell {
+  border-right: 1px solid #ff3131;
+  border-bottom: 1px solid #ff3131;
+}
+.div-table.div-table-inner.danger .div-table-row .div-table-cell:last-of-type {
+  border-right: none;
+}
+.div-table.div-table-inner.danger .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
 .div-table.div-table-bordered-rows .div-table-row .div-table-cell {
   border-bottom: 1px solid #eee;
 }
 .div-table.div-table-bordered-rows .div-table-row:last-of-type .div-table-cell {
   border-bottom: none;
 }
+.div-table.div-table-bordered-rows.success .div-table-row .div-table-cell {
+  border-bottom: 1px solid #00ce22;
+}
+.div-table.div-table-bordered-rows.success .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered-rows.primary .div-table-row .div-table-cell {
+  border-bottom: 1px solid #ff3a8d;
+}
+.div-table.div-table-bordered-rows.primary .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered-rows.info .div-table-row .div-table-cell {
+  border-bottom: 1px solid #509aff;
+}
+.div-table.div-table-bordered-rows.info .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered-rows.warning .div-table-row .div-table-cell {
+  border-bottom: 1px solid #ffea00;
+}
+.div-table.div-table-bordered-rows.warning .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
+.div-table.div-table-bordered-rows.danger .div-table-row .div-table-cell {
+  border-bottom: 1px solid #ff3131;
+}
+.div-table.div-table-bordered-rows.danger .div-table-row:last-of-type .div-table-cell {
+  border-bottom: none;
+}
 .div-table.div-table-striped .div-table-row:nth-child(odd) .div-table-cell {
   background: #eee;
+}
+.div-table.div-table-striped.success .div-table-row:nth-child(odd) .div-table-cell {
+  background: #dff0d8;
+}
+.div-table.div-table-striped.primary .div-table-row:nth-child(odd) .div-table-cell {
+  background: #ffd3e6;
+}
+.div-table.div-table-striped.info .div-table-row:nth-child(odd) .div-table-cell {
+  background: #d9edf7;
+}
+.div-table.div-table-striped.warning .div-table-row:nth-child(odd) .div-table-cell {
+  background: #fcf8e3;
+}
+.div-table.div-table-striped.danger .div-table-row:nth-child(odd) .div-table-cell {
+  background: #f2dede;
 }
 .div-table-row {
   display: table-row;

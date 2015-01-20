@@ -1,0 +1,60 @@
+.div-table-bordered (@color: @gray-lighter, @width: 1px, @style: solid){
+  border: @width @style @color;
+
+  .div-table-row {
+    .div-table-cell {
+      border-right: @width @style @color;
+      border-bottom: @width @style @color;
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+
+    &:last-of-type {
+      .div-table-cell {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.div-table-inner (@color: @gray-lighter, @width: 1px, @style: solid) {
+  .div-table-row {
+    .div-table-cell {
+      border-right: @width @style @color;
+      border-bottom: @width @style @color;
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+
+    &:last-of-type {
+      .div-table-cell {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.div-table-rows (@color: @gray-lighter, @width: 1px, @style: solid){
+  .div-table-row {
+    .div-table-cell {
+      border-bottom: @width @style @color;
+    }
+    &:last-of-type {
+      .div-table-cell {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.div-table-striped (@background: @gray-lighter){
+  .div-table-row {
+    &:nth-child(odd) {
+      .div-table-cell {
+        background: @background;
+      }
+    }
+  }
+}

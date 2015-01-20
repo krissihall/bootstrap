@@ -10,63 +10,78 @@
   display: table;
 
   &.div-table-bordered {
-    border: 1px solid @gray-lighter;
-
-    .div-table-row {
-      .div-table-cell {
-        border-right: 1px solid @gray-lighter;
-        border-bottom: 1px solid @gray-lighter;
-        &:last-of-type {
-          border-right: none;
-        }
-      }
-
-      &:last-of-type {
-        .div-table-cell {
-          border-bottom: none;
-        }
-      }
+    .div-table-bordered;
+    &.success {
+      .div-table-bordered(@brand-success);
+    }
+    &.primary {
+      .div-table-bordered(@brand-primary);
+    }
+    &.info {
+      .div-table-bordered(@brand-info);
+    }
+    &.warning {
+      .div-table-bordered(@brand-warning);
+    }
+    &.danger {
+      .div-table-bordered(@brand-danger);
     }
   }//&.bordered
 
   &.div-table-inner {
-    .div-table-row {
-      .div-table-cell {
-        border-right: 1px solid @gray-lighter;
-        border-bottom: 1px solid @gray-lighter;
-        &:last-of-type {
-          border-right: none;
-        }
-      }
-
-      &:last-of-type {
-        .div-table-cell {
-          border-bottom: none;
-        }
-      }
+    .div-table-inner;
+    &.success {
+      .div-table-inner(@brand-success);
+    }
+    &.primary {
+      .div-table-inner(@brand-primary);
+    }
+    &.info {
+      .div-table-inner(@brand-info);
+    }
+    &.warning {
+      .div-table-inner(@brand-warning);
+    }
+    &.danger {
+      .div-table-inner(@brand-danger);
     }
   }//&.inner-border
 
   &.div-table-bordered-rows {
-    .div-table-row {
-      .div-table-cell {
-        border-bottom: 1px solid @gray-lighter;
-      }
-      &:last-of-type {
-        .div-table-cell {
-          border-bottom: none;
-        }
-      }
+    .div-table-rows;
+    &.success {
+      .div-table-rows(@brand-success);
+    }
+    &.primary {
+      .div-table-rows(@brand-primary);
+    }
+    &.info {
+      .div-table-rows(@brand-info);
+    }
+    &.warning {
+      .div-table-rows(@brand-warning);
+    }
+    &.danger {
+      .div-table-rows(@brand-danger);
     }
   }//&.div-table-bordered-rows
 
   &.div-table-striped {
-    .div-table-row {
-      &:nth-child(odd) {
-        .div-table-cell {
-          background: @gray-lighter;
-        }
-      }
+    .div-table-striped;
+    &.success {
+      .div-table-striped(@state-success-bg);
+    }
+    &.primary {
+      .div-table-striped(lighten(@brand-primary, 30%));
+    }
+    &.info {
+      .div-table-striped(@state-info-bg);
+    }
+    &.warning {
+      .div-table-striped(@state-warning-bg);
+    }
+    &.danger {
+      .div-table-striped(@state-danger-bg);
     }
   }//&.div-table-striped
 }
