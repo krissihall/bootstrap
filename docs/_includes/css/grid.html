@@ -559,3 +559,52 @@
 </div>
 {% endhighlight %}
 </div>
+
+<h3 id="grid-equal-height-columns">Equal Height Columns</h3>
+  <p>Sometimes you may want all of your columns to be an equal height such as to vertically center content. Since the grid uses <code>float</code> this ability is lost. In order to re-establish this functionality, the <code>float</code> must be removed and replaced with <code>display: table</code>, <code>display: table-row</code>, and <code>display: table-cell</code>. This extension taken from: <a href="http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height" target="_blank">http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height</a></p>
+  <p><em>The documentation below is from the above article.</em></p>
+  <p>You have to add the classes <mark>.container-xs-height</mark> and <mark>.row-xs-height</mark> to the container and the row, and also add <mark>.col-xs-height</mark> to the columns.</p>
+  <p>You choose the aligment of each column by using the classes <mark>.col-top</mark> or <mark>.col-middle</mark> or <mark>.col-bottom</mark>.</p>
+  <div class="bs-example">
+    <div class="container-xs-height" style="height: 125px;">
+      <div class="row row-xs-height">
+        <div class="col-xs-3 col-xs-height">Equal Height</div>
+        <div class="col-xs-3 col-xs-height col-top">Vertical-align: Top</div>
+        <div class="col-xs-3 col-xs-height col-middle">Vertical-align: middle</div>
+        <div class="col-xs-3 col-xs-height col-bottom">Vertical-align: bottom</div>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="container-xs-height">
+  <div class="row row-xs-height">
+    <div class="col-xs-3 col-xs-height">...</div>
+    <div class="col-xs-3 col-xs-height col-top">...</div>
+    <div class="col-xs-3 col-xs-height col-middle">...</div>
+    <div class="col-xs-3 col-xs-height col-bottom">...</div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <p>If you want to restrict the effect to a certain media query, just use <mark>.col-sm-height</mark> or <mark>.col-md-height</mark> or <mark>.col-lg-height</mark>, also replacing xs in the container and in the row classes. You can also use different column sizes on each media query.</p>
+  <div class="bs-example">
+    <div class="container-sm-height" style="height: 125px;">
+      <div class="row row-sm-height">
+        <div class="col-xs-12 col-sm-3 col-sm-height">Equal Height</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height col-top">Vertical-align: top</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height col-middle">Vertical-align: middle</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height col-bottom">Vertical-align: bottom</div>
+      </div>
+    </div>
+  </div>
+
+{% highlight html %}
+<div class="container-sm-height">
+  <div class="row row-sm-height">
+    <div class="col-xs-12 col-sm-3 col-sm-height">...</div>
+    <div class="col-xs-6 col-sm-3 col-sm-height col-top">...</div>
+    <div class="col-xs-6 col-sm-3 col-sm-height col-middle">...</div>
+    <div class="col-xs-6 col-sm-3 col-sm-height col-bottom">...</div>
+  </div>
+</div>
+{% endhighlight %}
