@@ -1,7 +1,8 @@
 {
-  "name": "bootstrap",
+  "name": "klh-bootstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "3.2.0",
+  "version": "0.0.1",
+  "bootstrap_version": "3.3.1",
   "keywords": [
     "css",
     "js",
@@ -20,7 +21,31 @@
     "dist/fonts/glyphicons-halflings-regular.eot",
     "dist/fonts/glyphicons-halflings-regular.svg",
     "dist/fonts/glyphicons-halflings-regular.ttf",
-    "dist/fonts/glyphicons-halflings-regular.woff"
+    "dist/fonts/glyphicons-halflings-regular.woff",
+    "dist/fonts/custom-icons.eot",
+    "dist/fonts/custom-icons.svg",
+    "dist/fonts/custom-icons.ttf",
+    "dist/fonts/custom-icons.woff",
+    "dist/fonts/sourcesanspro-black-webfont.eot",
+    "dist/fonts/sourcesanspro-black-webfont.svg",
+    "dist/fonts/sourcesanspro-black-webfont.ttf",
+    "dist/fonts/sourcesanspro-black-webfont.woff",
+    "dist/fonts/sourcesanspro-bold-webfont.eot",
+    "dist/fonts/sourcesanspro-bold-webfont.svg",
+    "dist/fonts/sourcesanspro-bold-webfont.ttf",
+    "dist/fonts/sourcesanspro-bold-webfont.woff",
+    "dist/fonts/sourcesanspro-light-webfont.eot",
+    "dist/fonts/sourcesanspro-light-webfont.svg",
+    "dist/fonts/sourcesanspro-light-webfont.ttf",
+    "dist/fonts/sourcesanspro-light-webfont.woff",
+    "dist/fonts/sourcesanspro-regular-webfont.eot",
+    "dist/fonts/sourcesanspro-regular-webfont.svg",
+    "dist/fonts/sourcesanspro-regular-webfont.ttf",
+    "dist/fonts/sourcesanspro-regular-webfont.woff",
+    "dist/fonts/sourcesanspro-semibold-webfont.eot",
+    "dist/fonts/sourcesanspro-semibold-webfont.svg",
+    "dist/fonts/sourcesanspro-semibold-webfont.ttf",
+    "dist/fonts/sourcesanspro-semibold-webfont.woff"
   ],
   "ignore": [
     "/.*",
@@ -33,9 +58,6 @@
     "test-infra"
   ],
   "dependencies": {
-    "jquery": ">= 1.9.0"
-  },
-  "resolutions": {
-    "bootstrap": "~3.3.1"
+    "jquery": ">= 1.9.1"
   }
 }

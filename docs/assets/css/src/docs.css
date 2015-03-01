@@ -785,6 +785,18 @@ h1[id] {
 .color-swatches .brand-info {
   background-color: #509aff;
 }
+.color-swatches .social-facebook {
+  background: #3b5998;
+}
+.color-swatches .social-twitter {
+  background: #4099ff;
+}
+.color-swatches .social-pinterest {
+  background: #c92228;
+}
+.color-swatches .social-shopkick {
+  background: #0098d6;
+}
 
 /* Docs colors */
 .color-swatches .bs-purple {
@@ -1269,7 +1281,7 @@ h1[id] {
   text-align: center;
   word-wrap: break-word; /* Help out IE10+ with class names */
 }
-.bs-glyphicons li:hover ,
+.bs-glyphicons li:hover,
 .bs-customicons li:hover {
   color: #fff;
   background-color: #cc075a;
