@@ -10604,37 +10604,37 @@ button.close {
 .affix {
   position: fixed;
 }
-.gray-base {
+.bg-gray-base {
   background: #000;
 }
-.gray-darker {
+.bg-gray-darker {
   background: #222;
 }
-.gray-dark {
+.bg-gray-dark {
   background: #333;
 }
-.gray {
+.bg-gray {
   background: #555;
 }
-.gray-light {
+.bg-gray-light {
   background: #777;
 }
-.gray-lighter {
+.bg-gray-lighter {
   background: #eee;
 }
-.brand-primary {
+.bg-primary {
   background: #ff3a8d;
 }
-.brand-success {
+.bg-success {
   background: #00ce22;
 }
-.brand-info {
+.bg-info {
   background: #509aff;
 }
-.brand-warning {
+.bg-warning {
   background: #ffea00;
 }
-.brand-danger {
+.bg-danger {
   background: #ff3131;
 }
 @-ms-viewport {
