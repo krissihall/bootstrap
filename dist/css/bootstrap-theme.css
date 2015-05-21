@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v3.3.1 (http://getbootstrap.com)
+ * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
@@ -63,6 +63,7 @@
   background-color: #e0e0e0;
   border-color: #dbdbdb;
 }
+.btn-default.disabled,
 .btn-default:disabled,
 .btn-default[disabled] {
   background-color: #e0e0e0;
@@ -88,6 +89,7 @@
   background-color: #fc006a;
   border-color: #f20066;
 }
+.btn-primary.disabled,
 .btn-primary:disabled,
 .btn-primary[disabled] {
   background-color: #fc006a;
@@ -113,6 +115,7 @@
   background-color: #009118;
   border-color: #008716;
 }
+.btn-success.disabled,
 .btn-success:disabled,
 .btn-success[disabled] {
   background-color: #009118;
@@ -138,6 +141,7 @@
   background-color: #1377ff;
   border-color: #0971ff;
 }
+.btn-info.disabled,
 .btn-info:disabled,
 .btn-info[disabled] {
   background-color: #1377ff;
@@ -163,6 +167,7 @@
   background-color: #c2b200;
   border-color: #b8a800;
 }
+.btn-warning.disabled,
 .btn-warning:disabled,
 .btn-warning[disabled] {
   background-color: #c2b200;
@@ -188,6 +193,7 @@
   background-color: #f30000;
   border-color: #e90000;
 }
+.btn-danger.disabled,
 .btn-danger:disabled,
 .btn-danger[disabled] {
   background-color: #f30000;

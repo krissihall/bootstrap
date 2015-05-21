@@ -33,7 +33,7 @@ restrictions:
 
 Our bug tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
-- `browser bug` - Issues that are reported to us, but actually are the result of a browser-specific bug. These are diagnosed with reduced test cases and result in a issue opened on that browser's own bug tracker.
+- `browser bug` - Issues that are reported to us, but actually are the result of a browser-specific bug. These are diagnosed with reduced test cases and result in an issue opened on that browser's own bug tracker.
 - `confirmed` - Issues that have been confirmed with a reduced test case and identify a bug in Bootstrap.
 - `css` - Issues stemming from our compiled CSS or source Less files.
 - `customizer` - Issues with our web-based Customizer.
@@ -197,7 +197,10 @@ included in the project:
     with a clear title and description against the `master` branch.
 
 **IMPORTANT**: By submitting a patch, you agree to allow the project owners to
-license your work under the terms of the [MIT License](LICENSE).
+license your work under the terms of the [MIT License](LICENSE) (if it
+includes code changes) and under the terms of the
+[Creative Commons Attribution 3.0 Unported License](docs/LICENSE)
+(if it includes documentation changes).
 
 ### Pull request bots
 
@@ -240,6 +243,7 @@ Run `grunt test` before committing to ensure your changes follow our coding stan
 
 ## License
 
-By contributing your code, you agree to license your contribution under the [MIT license](LICENSE).
+By contributing your code, you agree to license your contribution under the [MIT License](LICENSE).
+By contributing to the documentation, you agree to license your contribution under the [Creative Commons Attribution 3.0 Unported License](docs/LICENSE).
 
-Prior to v3.1.0, Bootstrap was released under the Apache License v2.0.
+Prior to v3.1.0, Bootstrap's code was released under the Apache License v2.0.
