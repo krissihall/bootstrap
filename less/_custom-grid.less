@@ -1,0 +1,32 @@
+//
+// Grid system
+// --------------------------------------------------
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+.container-fluid {
+  @media (min-width: @screen-lg-min) {
+    max-width: @screen-lg-max;
+  }
+}
+
+//** Unpadded Grid row Override
+//
+//## remove negative margin from 'row' that uses the unpadded grid
+//   with the unpadded grid, 'row' is used more for code organization
+//   or changes to the grid in different break points.
+.unpadded-grid {
+
+  &.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+.col-unpadded {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

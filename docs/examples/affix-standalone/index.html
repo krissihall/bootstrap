@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Affix Standalone Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="affix-standalone.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="container-xs-height">
+          <span class="glyphicon glyphicon-cog logo col-xs-height col-xs-4"></span>
+          <div class="col-xs-height col-xs-8"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content container-fluid">
+      <div id="alert" class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Test Me!</strong> Dismiss me after the Side-nav affix plugin instantiates. This is to test that the offset height(s) invalidate and re-calculate to accommodate the new offset(s).
+      </div>
+      <div class="side-nav col-xs-12 col-md-3">
+        <ul id="affix" class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+        </ul>
+      </div>
+      <div class="body col-xs-12 col-md-9">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tortor diam. Sed sagittis, velit interdum luctus pharetra, quam metus hendrerit diam, eget rutrum lacus ipsum in enim. Cras ac mauris sit amet eros pulvinar blandit. Suspendisse bibendum massa sed nunc varius, nec tristique metus dapibus. Morbi nec aliquet nisl, quis tempus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc maximus, augue eget hendrerit pharetra, odio lectus porta neque, sed ullamcorper tortor nunc id ex. Mauris fringilla purus at magna pulvinar laoreet sit amet ac libero.</p>
+
+        <p>Ut lobortis nisl in molestie aliquam. Aliquam et dolor ullamcorper, fringilla lacus a, ultricies risus. Sed porttitor convallis laoreet. Proin quis vestibulum nibh. Fusce maximus lacus ut quam laoreet, quis vulputate nisl hendrerit. Integer feugiat lobortis massa a congue. Nunc et metus est.</p>
+
+        <p>Praesent vel urna in lectus egestas aliquam a aliquam sem. Sed erat massa, volutpat vitae finibus a, tristique ut dui. Duis ullamcorper turpis sit amet dui semper hendrerit. In id laoreet diam. Curabitur sed metus quis risus convallis scelerisque. Aenean pretium urna ex, nec eleifend velit venenatis vel. Donec varius fermentum enim sed porttitor. Maecenas sit amet ipsum in nunc sollicitudin tempus.</p>
+
+        <p>Nunc a turpis a odio vulputate convallis quis nec nisi. Duis leo justo, molestie non finibus feugiat, volutpat ac augue. Vestibulum dapibus pretium est, at aliquet ipsum porta in. Mauris consectetur iaculis urna, sit amet interdum libero lacinia et. Aliquam dolor ipsum, pulvinar commodo commodo non, pulvinar in erat. Integer ut rutrum est, ac tristique lectus. Ut sem felis, pulvinar at mauris in, pellentesque elementum orci.</p>
+
+        <p>Nullam vehicula elit ac urna luctus commodo. Pellentesque elit lorem, lobortis vitae odio at, convallis feugiat metus. Fusce nec ipsum iaculis, commodo quam pulvinar, sagittis arcu. Ut vulputate dapibus enim quis bibendum. Pellentesque tincidunt condimentum leo quis auctor. Nullam convallis auctor nisl. Quisque aliquet varius interdum. Donec sodales vitae elit vitae fermentum. Aliquam quam sem, condimentum et felis vitae, vehicula sodales felis. In tellus odio, blandit ut egestas finibus, tristique ac erat. Vestibulum justo arcu, accumsan ut nisi id, blandit ullamcorper felis.</p>
+
+        <p>Donec at mi sed nunc hendrerit porttitor. Sed ultrices orci sapien, a ullamcorper mauris dictum sed. Fusce egestas pellentesque dui, sit amet tristique odio vestibulum vitae. Cras odio urna, fringilla non laoreet eu, commodo ac dolor. Curabitur ac ligula non velit bibendum bibendum non vitae lectus. Sed nulla nisi, lacinia vel fringilla id, commodo sit amet sem. Nullam mattis aliquet finibus.</p>
+
+        <p>Aenean a orci ex. Mauris in tellus vel tellus imperdiet lobortis ut id nisi. Maecenas varius faucibus ullamcorper. Cras sodales tincidunt risus. Curabitur dolor turpis, consequat vel arcu sed, viverra porta nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat nisi id velit fermentum bibendum. Sed maximus ligula tortor, sit amet porta risus posuere ac.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tortor diam. Sed sagittis, velit interdum luctus pharetra, quam metus hendrerit diam, eget rutrum lacus ipsum in enim. Cras ac mauris sit amet eros pulvinar blandit. Suspendisse bibendum massa sed nunc varius, nec tristique metus dapibus. Morbi nec aliquet nisl, quis tempus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc maximus, augue eget hendrerit pharetra, odio lectus porta neque, sed ullamcorper tortor nunc id ex. Mauris fringilla purus at magna pulvinar laoreet sit amet ac libero.</p>
+
+        <p>Ut lobortis nisl in molestie aliquam. Aliquam et dolor ullamcorper, fringilla lacus a, ultricies risus. Sed porttitor convallis laoreet. Proin quis vestibulum nibh. Fusce maximus lacus ut quam laoreet, quis vulputate nisl hendrerit. Integer feugiat lobortis massa a congue. Nunc et metus est.</p>
+
+        <p>Praesent vel urna in lectus egestas aliquam a aliquam sem. Sed erat massa, volutpat vitae finibus a, tristique ut dui. Duis ullamcorper turpis sit amet dui semper hendrerit. In id laoreet diam. Curabitur sed metus quis risus convallis scelerisque. Aenean pretium urna ex, nec eleifend velit venenatis vel. Donec varius fermentum enim sed porttitor. Maecenas sit amet ipsum in nunc sollicitudin tempus.</p>
+
+        <p>Nunc a turpis a odio vulputate convallis quis nec nisi. Duis leo justo, molestie non finibus feugiat, volutpat ac augue. Vestibulum dapibus pretium est, at aliquet ipsum porta in. Mauris consectetur iaculis urna, sit amet interdum libero lacinia et. Aliquam dolor ipsum, pulvinar commodo commodo non, pulvinar in erat. Integer ut rutrum est, ac tristique lectus. Ut sem felis, pulvinar at mauris in, pellentesque elementum orci.</p>
+
+        <p>Nullam vehicula elit ac urna luctus commodo. Pellentesque elit lorem, lobortis vitae odio at, convallis feugiat metus. Fusce nec ipsum iaculis, commodo quam pulvinar, sagittis arcu. Ut vulputate dapibus enim quis bibendum. Pellentesque tincidunt condimentum leo quis auctor. Nullam convallis auctor nisl. Quisque aliquet varius interdum. Donec sodales vitae elit vitae fermentum. Aliquam quam sem, condimentum et felis vitae, vehicula sodales felis. In tellus odio, blandit ut egestas finibus, tristique ac erat. Vestibulum justo arcu, accumsan ut nisi id, blandit ullamcorper felis.</p>
+
+        <p>Donec at mi sed nunc hendrerit porttitor. Sed ultrices orci sapien, a ullamcorper mauris dictum sed. Fusce egestas pellentesque dui, sit amet tristique odio vestibulum vitae. Cras odio urna, fringilla non laoreet eu, commodo ac dolor. Curabitur ac ligula non velit bibendum bibendum non vitae lectus. Sed nulla nisi, lacinia vel fringilla id, commodo sit amet sem. Nullam mattis aliquet finibus.</p>
+
+        <p>Aenean a orci ex. Mauris in tellus vel tellus imperdiet lobortis ut id nisi. Maecenas varius faucibus ullamcorper. Cras sodales tincidunt risus. Curabitur dolor turpis, consequat vel arcu sed, viverra porta nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat nisi id velit fermentum bibendum. Sed maximus ligula tortor, sit amet porta risus posuere ac.</p>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid text-center">
+        <p class="copyright">&copy; 2015 AEO Management Co. All Rights Reserved.</p>
+        <button class="footer-enlarge btn btn-primary btn-sm">Toggle footer height</button>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- START: Instantiate Affix plugin on Side-nav -->
+    <script>
+      $(document).ready(function(){
+        var footerOpen = false;
+
+        var affix = $("#affix").affix({
+          offset: {
+            top: function() {
+              return $(".side-nav").offset().top - 20;
+            },
+            bottom: function () {
+              return $('footer').outerHeight(true) + 20;
+            }
+          },
+          enabled: ['md', 'lg']
+        });
+
+        $('#alert').on('closed.bs.alert', function () {
+          // Actions to occur when alert is closed
+        });
+
+        $('.footer-enlarge').click(function(evt){
+          if(!footerOpen){
+            $('footer').height(600);
+            footerOpen = true;
+          } else {
+            $('footer').height('');
+            footerOpen = false;
+          }
+        });
+      });
+    </script>
+    <!-- END: Instantiate Affix plugin on Side-nav -->
+  </body>
+</html>

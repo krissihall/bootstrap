@@ -1,0 +1,52 @@
+header {
+  border-bottom: 1px solid #ccc;
+}
+
+header .logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 60px;
+  color: #001c41;
+}
+
+.content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.side-nav {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 0;
+}
+
+.list-group.affix {
+  top: 20px;
+  width: 100%;
+  max-width: 326.5px;
+}
+
+.list-group.affix-bottom {
+  position: absolute;
+  width: 100%;
+  max-width: 326.5px;
+}
+
+.body {
+  padding-right: 0;
+}
+
+footer {
+  height: 400px;
+  background: #eee;
+}
+
+footer .copyright {
+  padding-top: 30px;
+}
+
+footer .footer-enlarge {
+  margin-right: auto;
+  margin-left: auto;
+}

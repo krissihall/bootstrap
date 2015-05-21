@@ -6,6 +6,16 @@
 }
 .row-xs-height {
   display:table-row;
+
+  &.row-edge-unpadded {
+    .col-xs-height:first-of-type {
+      padding-left: 0;
+    }
+
+    .col-xs-height:last-of-type {
+      padding-right: 0;
+    }
+  }
 }
 .col-xs-height {
   display: table-cell;
@@ -28,7 +38,7 @@
   vertical-align: bottom;
 }
 
-@media (min-width: @screen-sm) {
+@media (min-width: @screen-sm-min) {
   .container-sm-height {
     display: table;
     padding-left: 0;
@@ -36,13 +46,23 @@
   }
   .row-sm-height {
     display: table-row;
+
+    &.row-edge-unpadded {
+      .col-sm-height:first-of-type {
+        padding-left: 0;
+      }
+
+      .col-sm-height:last-of-type {
+        padding-right: 0;
+      }
+    }
   }
   .col-sm-height {
     display: table-cell;
     float: none;
   }
 }
-@media (min-width: @screen-md) {
+@media (min-width: @screen-md-min) {
   .container-md-height {
     display: table;
     padding-left: 0;
@@ -50,13 +70,23 @@
   }
   .row-md-height {
     display: table-row;
+
+    &.row-edge-unpadded {
+      .col-md-height:first-of-type {
+        padding-left: 0;
+      }
+
+      .col-md-height:last-of-type {
+        padding-right: 0;
+      }
+    }
   }
   .col-md-height {
     display: table-cell;
     float: none;
   }
 }
-@media (min-width: @screen-lg) {
+@media (min-width: @screen-lg-min) {
   .container-lg-height {
     display: table;
     padding-left: 0;
@@ -64,6 +94,16 @@
   }
   .row-lg-height {
     display: table-row;
+
+    &.row-edge-unpadded {
+      .col-lg-height:first-of-type {
+        padding-left: 0;
+      }
+
+      .col-lg-height:last-of-type {
+        padding-right: 0;
+      }
+    }
   }
   .col-lg-height {
     display: table-cell;

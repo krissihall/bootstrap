@@ -21,16 +21,16 @@
   <h2 id="grid-media-queries">Media queries</h2>
   <p>We use the following media queries in our Less files to create the key breakpoints in our grid system.</p>
 {% highlight scss %}
-/* Extra small devices (phones, less than 768px) */
+/* Extra small devices (phones, 0 - 320px) */
 /* No media query since this is the default in Bootstrap */
 
-/* Small devices (tablets, 768px and up) */
+/* Small devices (phones/tablets, 321px - 767px) */
 @media (min-width: @screen-sm-min) { ... }
 
-/* Medium devices (desktops, 992px and up) */
+/* Medium devices (tablets, 768px - 1023px) */
 @media (min-width: @screen-md-min) { ... }
 
-/* Large devices (large desktops, 1200px and up) */
+/* Large devices (desktops, 1024px - Max) */
 @media (min-width: @screen-lg-min) { ... }
 {% endhighlight %}
   <p>We occasionally expand on these media queries to include a <code>max-width</code> to limit CSS to a narrower set of devices.</p>
@@ -50,19 +50,19 @@
           <th></th>
           <th>
             Extra small devices
-            <small>Phones (&lt;768px)</small>
+            <small>Phones (&lt;320px)</small>
           </th>
           <th>
             Small devices
-            <small>Tablets (&ge;768px)</small>
+            <small>Tablets (&gt;321px, &lt;767px)</small>
           </th>
           <th>
             Medium devices
-            <small>Desktops (&ge;992px)</small>
+            <small>Desktops (&gt;768px, &lt;1023px)</small>
           </th>
           <th>
             Large devices
-            <small>Desktops (&ge;1200px)</small>
+            <small>Desktops (&gt;1024px)</small>
           </th>
         </tr>
       </thead>
@@ -73,14 +73,27 @@
           <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
         </tr>
         <tr>
-          <th class="text-nowrap" scope="row">Container width</th>
-          <td>None (auto)</td>
-          <td>750px</td>
-          <td>970px</td>
-          <td>1170px</td>
+          <th class="bg-success">
+            Container Fluid<br/>
+            <small style="display:block;line-height:12px;"><em>Note: this is the class used to constrain content</em></small>
+          </th>
+          <td class="bg-success">100%</td>
+          <td class="bg-success">100%</td>
+          <td class="bg-success">100%</td>
+          <td class="bg-success">max-width: 1200px</td>
         </tr>
         <tr>
-          <th class="text-nowrap" scope="row">Class prefix</th>
+          <th class="bg-danger">
+            Container width<br/>
+            <small style="display:block;line-height:12px;"><em>Note: we are not using this class</em></small>
+          </th>
+          <td class="bg-danger">None (auto)</td>
+          <td class="bg-danger">767px</td>
+          <td class="bg-danger">1023px</td>
+          <td class="bg-danger">1200px</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Class prefix</th>
           <td><code>.col-xs-</code></td>
           <td><code>.col-sm-</code></td>
           <td><code>.col-md-</code></td>
@@ -102,7 +115,11 @@
           <td colspan="4">30px (15px on each side of a column)</td>
         </tr>
         <tr>
-          <th class="text-nowrap" scope="row">Nestable</th>
+          <th class="text-nowrap">Rows</th>
+          <td colspan="4">-30px margin (-15px on each side of a row)</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Nestable</th>
           <td colspan="4">Yes</td>
         </tr>
         <tr>
@@ -560,7 +577,7 @@
 {% endhighlight %}
 </div>
 
-<h3 id="grid-equal-height-columns">Equal Height Columns</h3>
+  <h3 id="grid-equal-height-columns">Equal Height Columns</h3>
   <p>Sometimes you may want all of your columns to be an equal height such as to vertically center content. Since the grid uses <code>float</code> this ability is lost. In order to re-establish this functionality, the <code>float</code> must be removed and replaced with <code>display: table</code>, <code>display: table-row</code>, and <code>display: table-cell</code>. This extension taken from: <a href="http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height" target="_blank">http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height</a></p>
   <p><em>The documentation below is from the above article.</em></p>
   <p>You have to add the classes <mark>.container-xs-height</mark> and <mark>.row-xs-height</mark> to the container and the row, and also add <mark>.col-xs-height</mark> to the columns.</p>
@@ -590,7 +607,7 @@
   <div class="bs-example">
     <div class="container-sm-height" style="height: 125px;">
       <div class="row row-sm-height">
-        <div class="col-xs-12 col-sm-3 col-sm-height">Equal Height</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height">Equal Height</div>
         <div class="col-xs-6 col-sm-3 col-sm-height col-top">Vertical-align: top</div>
         <div class="col-xs-6 col-sm-3 col-sm-height col-middle">Vertical-align: middle</div>
         <div class="col-xs-6 col-sm-3 col-sm-height col-bottom">Vertical-align: bottom</div>
@@ -601,10 +618,265 @@
 {% highlight html %}
 <div class="container-sm-height">
   <div class="row row-sm-height">
-    <div class="col-xs-12 col-sm-3 col-sm-height">...</div>
+    <div class="col-xs-6 col-sm-3 col-sm-height">...</div>
     <div class="col-xs-6 col-sm-3 col-sm-height col-top">...</div>
     <div class="col-xs-6 col-sm-3 col-sm-height col-middle">...</div>
     <div class="col-xs-6 col-sm-3 col-sm-height col-bottom">...</div>
   </div>
 </div>
+{% endhighlight %}
+
+  <h4>Unpadded Edges</h4>
+  <p>So you want your rows to have no padding on the left and right, add the class <mark>row-edge-unpadded</mark> and it will remove the padding on the cells within the row without then need for the <mark>row</mark> class that add negative margins to the element.</p>
+
+  <div class="bs-example">
+    <div class="container-sm-height" style="width:100%">
+      Unpadded Row:
+      <div class="row-edge-unpadded row-sm-height">
+        <div class="col-xs-6 col-sm-3 col-sm-height text-left" style="border:1px solid #eee;">left-padding: 0</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height text-center" style="border:1px solid #eee;">Normal Padding</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height text-center" style="border:1px solid #eee;">Normal Padding</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height text-right" style="border:1px solid #eee;">right-padding: 0</div>
+      </div>
+
+      Normal Row:
+      <div class="row-sm-height">
+        <div class="col-xs-6 col-sm-3 col-sm-height text-left" style="border:1px solid #eee;">Normal Padding</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height text-center" style="border:1px solid #eee;">Normal Padding</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height text-center" style="border:1px solid #eee;">Normal Padding</div>
+        <div class="col-xs-6 col-sm-3 col-sm-height text-right" style="border:1px solid #eee;">Normal Padding</div>
+      </div>
+    </div>
+  </div>
+
+{% highlight html %}
+<div class="container-sm-height">
+  <div class="row-edge-unpadded row-sm-height">
+    <div class="col-xs-6 col-sm-3 col-sm-height text-left">...</div>
+    <div class="col-xs-6 col-sm-3 col-sm-height text-center">...</div>
+    <div class="col-xs-6 col-sm-3 col-sm-height text-center">...</div>
+    <div class="col-xs-6 col-sm-3 col-sm-height text-right">...</div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-unpadded">Unpadded Grid</h3>
+  <p>Start from a blank slate, grid uses the same ratios as normal but all padding and margins have been removed. This is ideal for tables that have less than the default gutter, you will have to set your padding and margins at a project level. To use the unpadded grid, add a container with the class <mark>unpadded-grid</mark>.</p>
+
+  <div class="bs-example">
+    <div class="unpadded-grid clearfix">
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+        Column 1
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+        Column 2
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+        Column 3
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+        Column 4
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+        Column 5
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+        Column 6
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="unpadded-grid">
+  <div class="col-lg-2">...</div>
+  <div class="col-lg-2">...</div>
+  <div class="col-lg-2">...</div>
+  <div class="col-lg-2">...</div>
+  <div class="col-lg-2">...</div>
+  <div class="col-lg-2">...</div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-unpadded-nesting">Unpadded Grid Nesting</h3>
+  <p>If you have an unpadded grid and you would like to have a nested grid using the default gutters, add a container on your grid with the class <mark>nested-grid</mark>.</p>
+
+  <div class="bs-example">
+    <h4>Unpadded Grid with Nested Regular Grid with Gutter</h4>
+    <div class="unpadded-grid clearfix">
+      <div class="col-xs-12 col-sm-6" style="border:1px solid #ace;">
+        Unpadded Grid
+      </div>
+      <div class="col-xs-12 col-sm-6 clearfix" style="border:1px solid #ace;">
+        <div class="nested-grid clearfix">
+          <div class="col-xs-12 col-md-6" style="border:1px solid #cea;">
+            Regular Nested Grid
+          </div>
+          <div class="col-xs-12 col-md-6" style="border:1px solid #cea;">
+            Regular Nested Grid
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4> <br />Grid with Nested Unpadded Grid</h4>
+    <div class="clearfix">
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        Regular Grid Column
+      </div>
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        <div class="unpadded-grid">
+          <div class="col-xs-12 col-md-6" style="border:1px solid #cea;">
+            Unpadded Nested Grid
+          </div>
+          <div class="col-xs-12 col-md-6" style="border:1px solid #cea;">
+            Unpadded Nested Grid
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        Regular Grid Column
+      </div>
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        Regular Grid Column
+      </div>
+    </div>
+
+    <h4> <br />Unpadded Grid with Multiple Nestings</h4>
+    <div class="unpadded-grid clearfix">
+      <div class="col-xs-12 col-sm-6" style="border:1px solid #ace;">
+        <div class="col-xs-12 col-md-6" style="border:1px solid #cea">
+          Unpadded Nested
+        </div>
+        <div class="col-xs-12 col-md-6" style="border:1px solid #cea">
+          <div class="nested-grid clearfix">
+            <div class="col-xs-12" style="border:1px solid #eac">
+              Regular Nested Grid
+            </div>
+            <div class="col-xs-12" style="border:1px solid #eac">
+              Regular Nested Grid
+              <div class="unpadded-grid clearfix">
+                <div class="col-xs-12" style="border:1px solid #cae;">
+                  Unpadded Nested Grid
+                </div>
+                <div class="col-xs-12" style="border:1px solid #cae;">
+                  Unpadded Nested Grid
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6" style="border:1px solid #ace;">
+        Unpadded Grid
+      </div>
+    </div>
+
+    <h4> <br />Unpadded Grid within <mark>row</mark></h4>
+    <div class="row unpadded-grid clearfix">
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        Column 1
+      </div>
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        Column 2
+      </div>
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        Column 3
+      </div>
+      <div class="col-xs-6 col-md-3" style="border:1px solid #ace;">
+        Column 4
+      </div>
+    </div>
+  </div>
+
+{% highlight html %}
+Unpadded Grid
+<div class="unpadded-grid">
+  <div class="col-xs-12">...</div>
+  <div class="col-xs-12">...</div>
+</div>
+
+Unpadded Grid with Nested Grid with Gutter
+<div class="unpadded-grid">
+  <div class="col-xs-12">
+    <div class="nested-grid">
+      <div class="col-xs-12">...</div>
+      <div class="col-xs-12">...</div>
+    <div>
+  </div>
+  <div class="col-xs-12">...</div>
+</div>
+
+Regular Grid with Nested Unpadded Grid
+<div class="container">
+  <div class="col-xs-12">
+    <div class="unpadded-grid">
+      <div class="col-xs-6">...</div>
+      <div class="col-xs-6">...</div>
+    </div>
+  </div>
+  <div class="col-xs-12">...</div>
+</div>
+
+Unpadded Grid with Multiple Nestings
+<div class="unpadded-grid">
+  <div class="col-xs-12 col-sm-6">
+    ...
+    <div class="col-xs-12 col-md-6">...</div>
+    <div class="col-xs-12 col-md-6">
+      ...
+      <div class="nested-grid">
+        <div class="col-xs-12">...</div>
+        <div class="col-xs-12">
+          ...
+          <div class="unpadded-grid">
+            <div class="col-xs-12">...</div>
+            <div class="col-xs-12">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">...</div>
+</div>
+
+Unpadded Grid within Row
+<div class="unpadded-grid row">
+  <div class="col-xs-6 col-md-3">...</div>
+  <div class="col-xs-6 col-md-3">...</div>
+  <div class="col-xs-6 col-md-3">...</div>
+  <div class="col-xs-6 col-md-3">...</div>
+</div>
+{% endhighlight %}
+
+  <h3 id="col-unpadded">Unpadded Columns</h3>
+  <p>If you don't want a fully <mark>unpadded-grid</mark>, you can add the class <mark>col-unpadded</mark> to remove the padding from individual columns on the fly.</p>
+
+  <div class="bs-example">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 col-unpadded" style="border:1px solid #eee;">
+      Unpadded Column
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+      Regular Column
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+      Regular Column
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 col-unpadded" style="border:1px solid #eee;">
+      Unpadded Column
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" style="border:1px solid #eee;">
+      Regular Column
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 col-unpadded" style="border:1px solid #eee;">
+      Unpadded Column
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+{% highlight html %}
+<div class="col-lg-2 col-unpadded">...</div>
+<div class="col-lg-2">...</div>
+<div class="col-lg-2">...</div>
+<div class="col-lg-2 col-unpadded">...</div>
+<div class="col-lg-2">...</div>
+<div class="col-lg-2 col-unpadded">...</div>
 {% endhighlight %}
