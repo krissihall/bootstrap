@@ -1,0 +1,101 @@
+//== Dropdowns Selectable
+//
+//## Custom extension of dropdowns for us in 'selectable' dropdowns
+
+.dropdown-selection {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .clearfix;
+
+  .dropdown-toggle {
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    padding: @padding-base-vertical @padding-base-horizontal;
+    border: 1px solid @gray-light;
+
+    /* TODO: Investigate this fix as it breaks in Chrome */
+    // color: inherit;
+
+    .dropdown-text {
+      font-size: @input-font-size;
+      white-space: nowrap;
+      .opacity(0);
+      display: none;
+    }
+
+    .caret {
+      position: absolute;
+      z-index: 2;
+      right: 14px;
+      top: 21px;
+      font-size: 1em;
+      line-height: 8px;
+      color: @gray-base;
+    }
+
+    .dropdown-label {
+      font-family: @font-family-bold;
+    }
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    max-height: 208px;
+    .custom-scrollbars;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    .box-shadow-reset;
+
+    li {
+      white-space: nowrap;
+    }
+
+    li > a {
+      white-space: normal;
+    }
+
+  }
+
+  &.open {
+
+    .dropdown-toggle {
+      border-color: @gray-dark;
+    }// .dropdown-toggle
+  }// &.open
+
+  &.has-selection {
+    position: relative;
+
+    .dropdown-toggle {
+      color: @gray-base;
+      padding-top: 3px;
+      padding-bottom: 7px;
+
+      .dropdown-label {
+        display: block;
+        .opacity(1);
+        z-index: 1;
+        line-height: @line-height-base;
+        padding-top: 6px;
+        margin-bottom: -2px;
+        .font-size-to-em(10);
+      }
+
+      .dropdown-text {
+        font-family: @font-family-light;
+        font-size: @font-size-small;
+        .opacity(1);
+        display: block;
+      }// .dropdown-text
+    }// .dropdown-toggle
+  }// &.has-selection
+}

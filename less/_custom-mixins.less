@@ -1,0 +1,89 @@
+//== Custom Mixins and Over-riding Existing Mixins
+//
+//## Define custom mixins and modify existing mixins.
+
+//** Mixin for Translates Usage
+.translates(@xAxis, @yAxis) {
+  -ms-transform: translate(@xAxis, @yAxis);
+  -webkit-transform: translate(@xAxis, @yAxis);
+  transform: translate(@xAxis, @yAxis);
+}
+
+.font-size-to-em(@size: 16){
+  font-size: unit((@size / @font-base), em);
+}
+
+.box-shadow-reset() {
+  .box-shadow(none);
+}
+
+.box-sizing(@type: border-box){
+  -moz-box-sizing: @type;
+  -webkit-box-sizing: @type;
+  box-sizing: @type;
+}
+
+.font-em-reset(@parent, @target-size) {
+  @new-font-base: unit((@parent * @font-base));
+  @target-size-in-px: unit((@target-size * @font-base));
+
+  font-size: unit((@target-size-in-px / @new-font-base), em);
+}
+
+/** Custom Scrollbars mixin can be applied to any element
+ *  with an overflow: auto or overflow: scroll attribute
+ */
+.custom-scrollbars() {
+
+  &::-webkit-scrollbar {
+    width: 15px;
+    padding: 5px 10px;
+  } /* this targets the default scrollbar (compulsory) */
+
+  &::-webkit-scrollbar-track {
+    background: url('../images/scrollbar-bg.gif') repeat-y center;
+  } /* the new scrollbar will have a flat appearance with the set background color */
+
+  &::-webkit-scrollbar-track:horizontal {
+    background-repeat: repeat-x;
+  } /* Horizontal track scrollbar, repeat-y changed to repeat-x */
+
+  &::-webkit-scrollbar-thumb {
+    background-color: @brand-primary;
+    border: 5px solid transparent;
+    border-radius: 15px;
+    background-clip: content-box;
+  } /* this will style the thumb, ignoring the track */
+
+  &::-webkit-scrollbar-button {
+    background-color: #F00;
+  } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+  &::-webkit-scrollbar-corner {
+    background-color: white;
+  } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs */
+
+  &::-webkit-scrollbar-button:start:decrement {
+    height: 5px;
+    width: 5px;
+    display: block;
+    background-repeat: no-repeat;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-button:end:increment {
+    height: 5px;
+    width: 5px;
+    display: block;
+    background-repeat: no-repeat;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-corner {
+    height: 15px;
+    width: 15px;
+    display: block;
+    background-repeat: no-repeat;
+    background: transparent;
+  }
+}

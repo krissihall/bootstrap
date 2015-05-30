@@ -1,3 +1,6 @@
+# This file is generated via Grunt task. **Do not edit directly.**
+# See the 'build-customicons-data' task in Gruntfile.js.
+
 - customicon-home
 - customicon-pencil
 - customicon-eyedropper

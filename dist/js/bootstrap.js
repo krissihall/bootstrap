@@ -16,6 +16,86 @@ if (typeof jQuery === 'undefined') {
   }
 }(jQuery);
 
+/*!
+ * Responsive Bootstrap Toolkit
+ * Author:    Maciej Gurban
+ * License:   MIT
+ * Version:   2.3.0 (2015-02-15)
+ * Origin:    https://github.com/maciej-gurban/responsive-bootstrap-toolkit
+ */
+/* exported ResponsiveBootstrapToolkit */
+/* global ResponsiveBootstrapToolkit: true */
+var ResponsiveBootstrapToolkit = (function ($) {
+  'use strict';
+  // Methods and properties
+  var self = {
+
+    /**
+     * Determines default interval between firing 'changed' method
+     */
+    interval: 300,
+
+    /**
+     * Breakpoint aliases
+     */
+    breakpoints: {
+      xs: $('<div class="device-xs visible-xs"></div>').appendTo('body'),
+      sm: $('<div class="device-sm visible-sm"></div>').appendTo('body'),
+      md: $('<div class="device-md visible-md"></div>').appendTo('body'),
+      lg: $('<div class="device-lg visible-lg"></div>').appendTo('body')
+    },
+
+    /**
+     * Used to calculate intervals between consecutive function executions
+     */
+    timer: new Date(),
+
+    /**
+     * Returns true if current breakpoint matches passed alias
+     */
+    is: function (alias) {
+      return self.breakpoints[alias].is(':visible');
+    },
+
+    /**
+     * Returns current breakpoint alias
+     */
+    current: function () {
+      var name = 'unrecognized';
+      $.each(self.breakpoints, function (alias) {
+        if (self.is(alias)) {
+          name = alias;
+        }
+      });
+      return name;
+    },
+
+    /*
+     * Waits specified number of miliseconds before executing a function
+     * Source: http://stackoverflow.com/a/4541963/2066118
+     */
+    changed: (function () {
+      var timers = {};
+      return function (callback, ms) {
+        // Get unique timer ID
+        var uID = (!uID) ? self.timer.getTime() : null;
+        if (timers[uID]) {
+          clearTimeout(timers[uID]);
+        }
+        // Use default interval if none specified
+        if (typeof ms === 'undefined') {
+          ms = self.interval;
+        }
+        timers[uID] = setTimeout(callback, ms);
+      };
+    }())
+
+  };
+
+  return self;
+
+})(jQuery);
+
 /* ========================================================================
  * Bootstrap: transition.js v3.3.4
  * http://getbootstrap.com/javascript/#transitions
@@ -897,6 +977,107 @@ if (typeof jQuery === 'undefined') {
     .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
     .on('keydown.bs.dropdown.data-api', '[role="menu"]', Dropdown.prototype.keydown)
     .on('keydown.bs.dropdown.data-api', '[role="listbox"]', Dropdown.prototype.keydown)
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: _custom-dropdown.js v0.2.0
+ * ========================================================================
+ * Copyright 2014-2015 American Eagle Outfitters
+ *
+ *
+ * ======================================================================== */
++function ($) {
+  'use strict';
+
+  // DROPDOWN CLASS DEFINITION
+  // ======================
+  var dropdownSelection = '.dropdown-selection .dropdown-toggle'
+
+  // DROPDOWN PLUGIN ADAPTER
+  // ======================
+  var originalDropdown = $.fn.dropdown;
+  var Dropdown = originalDropdown.Constructor;
+
+  //
+  // Additional Methods
+  //
+  /**
+   * Opens the options panel.
+   */
+  Dropdown.prototype.select = function () {
+    var $this = $(this)
+    var $parent = getParent($this)
+
+    $parent.find('.dropdown-menu li').click(function () {
+      Dropdown.prototype.chooseOption.call($(this))
+    })
+  }
+
+  /**
+   * Selects an option from the panel and close the panel.
+   */
+  Dropdown.prototype.chooseOption = function () {
+    var $active = $(this)
+    var $parent = $active.parent().parent()
+    var $dropdownText = $parent.find('.dropdown-text')
+
+    $active.siblings().removeClass('active')
+    $active.addClass('active')
+    $dropdownText.empty().text($active.text())
+    $parent.addClass('has-selection')
+  }
+
+  function createDropdownLabel () {
+    /*jshint validthis: true */
+    var $this = $(this)
+    var $parent  = getParent($this)
+    var $dropdownToggle = $this.find('.dropdown-toggle')
+    var labelText = $dropdownToggle.data('dropdown-label')
+
+    $dropdownToggle.prepend('<div class="dropdown-label" />')
+    $parent.find('.dropdown-label').text(labelText)
+  }
+
+  // Cloned from dropdown.js
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = selector && $(selector)
+
+    return $parent && $parent.length ? $parent : $this.parent()
+  }
+
+  // Adapter for Dropdown Plugin
+  // ======================
+  /**
+   * Adds additional functionality for selectable dropdown
+   */
+  function Plugin(option) {
+    return this.each(function () {
+      var $this      = $(this)
+      var data       = $this.data('bs.dropdown')
+
+      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  $.fn.dropdown               = Plugin;
+  $.fn.dropdown.Constructor   = originalDropdown.Constructor;
+
+  $(document)
+    .ready(function () {
+      $('[class*="dropdown-selection"]').each(function () {
+        createDropdownLabel.call(this)
+      })
+    })
+    .on('click.bs.dropdown.data-api', dropdownSelection, Dropdown.prototype.select)
 
 }(jQuery);
 
@@ -2353,3 +2534,101 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+/* ========================================================================
+ * Bootstrap: _custom-affix.js v0.1.4
+ * ========================================================================
+ * Copyright 2014-2015 American Eagle Outfitters
+ *
+ * Requires ResponsiveBootstrapToolkit
+ * ======================================================================== */
++function ($, viewport) {
+  'use strict';
+  // AFFIX PLUGIN ADAPTER
+  // ======================
+  var originalAffix = $.fn.affix;
+  var Affix = originalAffix.Constructor;
+  //
+  // Additional Defaults
+  //
+  var EXTRA_DEFAULTS = {
+    // Define in between which breakpoints the plugin should run
+    enabled: ['xs','sm','md','lg']
+  };
+  //
+  // Additional Methods
+  //
+  /**
+   * Turn on the listener to affix the element,
+   * only if it should be enabled for the current viewport.
+   */
+  Affix.prototype.enable = function () {
+    var arr;
+    var i;
+    var len;
+    try {
+      arr = $(this)[0].options.enabled;
+    } catch (e) {
+      return;
+    }
+    for (i = 0, len = arr.length; i < len; i++) {
+      if (viewport.is(arr[i])) {
+        this.$element && this.$element.removeClass('affix-disabled');
+        return (this.$target = $(this.options.target)
+          .on('scroll.bs.affix', $.proxy(this.checkPosition, this))
+          .on('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this)))
+      }
+    }
+  }
+  /**
+   * Turn off the listener to affix the element.
+   */
+  Affix.prototype.disable = function () {
+    this.$target
+      .off('scroll.bs.affix', $.proxy(this.checkPosition, this))
+      .off('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this))
+    this.$element.removeClass($.fn.affix.Constructor.RESET).addClass('affix-disabled')
+    this.$element.css('width', '')
+  }
+  /**
+   * @method determineEnabledState
+   * @private
+   * @description Decide whether the plugin should be active or not based on the `enabled` option array.
+   */
+  function determineEnabledState() {
+    /*jshint validthis: true */
+    var plugin = $(this).data('bs.affix');
+    if (!plugin) { /* The affix plugin hasn't been instantiated, ignore it. */ return; }
+    var arr = plugin && plugin.options && plugin.options.enabled || [];
+    for (var i = 0, len = arr.length; i < len; i++) {
+      if (viewport.is(arr[i])) {
+        return $(this).data('bs.affix').enable()
+      }
+    }
+    return $(this).data('bs.affix').disable()
+  }
+  /**
+   * Adapter for Affix Plugin
+   *
+   * Adds defaults and points to the local Affix pointer which is extended
+   */
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.affix')
+      var options = typeof option == 'object' && option
+      // New Defaults
+      options = $.extend({}, EXTRA_DEFAULTS, options);
+      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
+      determineEnabledState.call(this);
+      if (typeof option == 'string') data[option]()
+    })
+  }
+  $.fn.affix             = Plugin;
+  $.fn.affix.Constructor = originalAffix.Constructor;
+  $(window).on('resize, load', function () {
+    $('[class*="affix"]').each(function () {
+      determineEnabledState.call(this);
+    })
+  })
+}(jQuery, ResponsiveBootstrapToolkit);

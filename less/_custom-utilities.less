@@ -20,16 +20,66 @@
 
 .bg-primary {
   background: @brand-primary;
+  color: #fff;
+}
+.bg-secondary {
+  background: @brand-secondary;
 }
 .bg-success {
   background: @brand-success;
+  color: #fff;
 }
 .bg-info {
   background: @brand-info;
+  color: #fff;
 }
 .bg-warning {
   background: @brand-warning;
+  color: #fff;
 }
 .bg-danger {
   background: @brand-danger;
+  color: #fff;
+}
+
+
+//** Custom Extensions that may be useful
+
+.xs-pull-right {
+  float: right !important;
+}
+.xs-pull-left {
+  float: left !important;
+}
+
+@media (min-width: @screen-sm-min) {
+  .sm-pull-right {
+    float: right !important;
+  }
+  .sm-pull-left {
+    float: left !important;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .md-pull-right {
+    float: right !important;
+  }
+  .md-pull-left {
+    float: left !important;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .lg-pull-right {
+    float: right !important;
+  }
+  .lg-pull-left {
+    float: left !important;
+  }
+}
+
+//** Custom Scrollbars on Element
+.custom-scrollbar {
+  .custom-scrollbars();
 }

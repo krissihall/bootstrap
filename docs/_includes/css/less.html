@@ -17,36 +17,48 @@
   <p>Easily make use of two color schemes: grayscale and semantic. Grayscale colors provide quick access to commonly used shades of black while semantic include various colors assigned to meaningful contextual values.</p>
   <div class="bs-example">
     <div class="color-swatches">
-      <div class="color-swatch gray-darker"></div>
-      <div class="color-swatch gray-dark"></div>
-      <div class="color-swatch gray"></div>
-      <div class="color-swatch gray-light"></div>
-      <div class="color-swatch gray-lighter"></div>
+      <div class="color-swatch bg-gray-base"></div>
+      <div class="color-swatch bg-gray-darker"></div>
+      <div class="color-swatch bg-gray-dark"></div>
+      <div class="color-swatch bg-gray"></div>
+      <div class="color-swatch bg-gray-light"></div>
+      <div class="color-swatch bg-gray-lighter"></div>
     </div>
   </div>
 {% highlight scss %}
-@gray-darker:  lighten(#000, 13.5%); // #222
-@gray-dark:    lighten(#000, 20%);   // #333
-@gray:         lighten(#000, 33.5%); // #555
-@gray-light:   lighten(#000, 46.7%); // #777
-@gray-lighter: lighten(#000, 93.5%); // #eee
+@gray-base:              #000;
+@gray-darker:            #333;
+@gray-dark:              #888;
+@gray:                   #ccc;
+@gray-light:             #eee;
+@gray-lighter:           #f6f6f6;
 {% endhighlight %}
 
   <div class="bs-example">
     <div class="color-swatches">
-      <div class="color-swatch brand-primary"></div>
-      <div class="color-swatch brand-success"></div>
-      <div class="color-swatch brand-info"></div>
-      <div class="color-swatch brand-warning"></div>
-      <div class="color-swatch brand-danger"></div>
+      <div class="color-swatch bg-primary"></div>
+      <div class="color-swatch bg-secondary"></div>
     </div>
   </div>
 {% highlight scss %}
-@brand-primary: #ff3a8d;
-@brand-success: #00ce22;
-@brand-info:    #509aff;
-@brand-warning: #ffea00;
-@brand-danger:  #ff3131;
+@brand-primary:         #ff3a8d;
+@brand-secondary:       #EEFF38;
+{% endhighlight %}
+
+  <h3>Alerts, Warnings, etc. Colors</h3>
+  <div class="bs-example">
+    <div class="color-swatches">
+      <div class="color-swatch bg-success"></div>
+      <div class="color-swatch bg-info"></div>
+      <div class="color-swatch bg-warning"></div>
+      <div class="color-swatch bg-danger"></div>
+    </div>
+  </div>
+{% highlight scss %}
+@brand-success:         #00BD6E;
+@brand-info:            #388BFF;
+@brand-warning:         #FFAC38;
+@brand-danger:          #FF4938;
 {% endhighlight %}
 
   <h3>Social Media Colors</h3>

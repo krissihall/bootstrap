@@ -1,0 +1,132 @@
+<div class="bs-docs-section">
+  <h1 id="dropdowns-selectable" class="page-header">Selectable Dropdowns</h1>
+
+  <p class="lead">This is an extension of the <a href="#dropdowns">Dropdowns</a> section. This is styled using <mark>select-control</mark> behavior where the selected option populates the dropdown toggle, rather than a static <code>&lt;button&gt;</code> to toggle the menu.</p>
+
+  <div class="alert alert-info">
+    <p>This is an extension of the <mark>dropdown</mark> as described above. In order to use this variation where the <mark>label</mark> text is pushed up and the <mark>selected value</mark> is displayed, you can use the same syntax and just add the <code>dropdown-selection</code> class do the <mark>dropdown</mark> container as well as provide a <mark>label</mark> in the <code>data-dropdown-label</code> attribute.</p>
+  </div>
+
+
+  <h2 id="downdowns-selectable-example">Example</h2>
+
+
+  <div class="bs-example">
+    <div class="dropdown dropdown-selection">
+      <div class="dropdown-toggle" id="dropdownSelectable1" data-toggle="dropdown" aria-expanded="false" aria-haspopup="false" role="button" data-dropdown-label="Size">
+        <span class="dropdown-text">Size</span>
+        <span class="caret"></span>
+      </div>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownSelectable1">
+        <li role="presentation"><a role="menuitem" tabindex="-1">Extra Small</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1">Small</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1">Medium</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1">Large</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1">Extra Large</a></li>
+      </ul>
+    </div>
+  </div>
+{% highlight html %}
+<div class="dropdown dropdown-selection">
+  <div class="dropdown-toggle" id="dropdownSelectable1" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" role="button" data-dropdown-label="Size">
+    <span class="caret"></span>
+  </div>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownSelectable1">
+    <li role="presentation"><a role="menuitem" tabindex="-1">...</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1">...</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1">...</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1">...</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1">...</a></li>
+  </ul>
+</div>
+{% endhighlight %}
+
+<h2 id="downdowns-selectable-selected">Pre-selected state</h2>
+
+  <div class="bs-example clearfix">
+    <div class="col-xs-12 col-md-4">
+      <div class="dropdown dropdown-selection has-selection" style="margin-bottom: 10px;">
+        <div class="dropdown-toggle" id="dropdownSelectable2" data-toggle="dropdown" aria-expanded="false" aria-haspopup="false" role="button" data-dropdown-label="Colors">
+          <span class="dropdown-text">Summer Burgundy</span>
+          <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownSelectable2">
+          <li role="presentation" class="active"><a role="menuitem" tabindex="-1">Summer Burgundy</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Aqua</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Natural White</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Burgundy</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">True Black</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Grey</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div><!-- bs-example -->
+{% highlight html %}
+<div class="dropdown dropdown-selection has-selection">
+  <div class="dropdown-toggle" id="dropdownSelectable2" data-toggle="dropdown" aria-expanded="false" aria-haspopup="false" role="button" data-dropdown-label="My Label">
+    <span class="dropdown-text">Pre-selected item name</span>
+    <span class="caret"></span>
+  </div>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownSelectable2">
+    <li role="presentation" class="active"><a role="menuitem" tabindex="-1">Pre-selected item name</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1">...</a></li>
+    ...
+  </ul>
+</div>
+{% endhighlight %}
+
+
+
+<h2 id="downdowns-selectable-wrapping">Wrapping and scrolling</h2>
+
+
+  <div class="bs-example clearfix">
+
+    <div class="col-xs-12 col-md-6">
+      <h4>Option name longer than label</h4>
+      <div class="dropdown dropdown-selection" style="margin-bottom: 10px;">
+        <div class="dropdown-toggle" id="dropdownSelectable3" data-toggle="dropdown" aria-expanded="false" aria-haspopup="false" role="button" data-dropdown-label="Colors">
+          <span class="dropdown-text">Colors</span>
+          <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownSelectable3">
+          <li role="presentation"><a role="menuitem" tabindex="-1">Summer Burgundy with a touch of hazel scented rainbow color flower pattern</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Aqua</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Natural White</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Burgundy</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">True Black</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">Grey</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <h4>Dropdown with more than 8 options</h4>
+      <div class="dropdown dropdown-selection" style="margin-bottom: 10px;">
+        <div class="dropdown-toggle" id="dropdownSelectable4" data-toggle="dropdown" aria-expanded="false" aria-haspopup="false" role="button" data-dropdown-label="Example Label">
+          <span class="dropdown-text">Example Label</span>
+          <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownSelectable4">
+          <li role="presentation"><a role="menuitem" tabindex="-1">00 Short</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">00 Regular</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">00 Long - Online only.</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">00 X-Long - Online only.</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">0 Short</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">0 Regular</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">0 Long</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">0 X-Long - Online only.</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">2 Short</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">2 Regular</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">2 Long</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">2 X-Long - Online only.</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1">4 Short</a></li>
+        </ul>
+      </div>
+      <p class="small"><em>Note: this works automatically with normal implementation</em></p>
+    </div>    <div class="clearfix"></div>
+  </div><!-- bs-example -->
+
+
+</div>

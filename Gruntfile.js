@@ -18,7 +18,7 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var path = require('path');
   var npmShrinkwrap = require('npm-shrinkwrap');
-  var generateGlyphiconsData = require('./grunt/bs-glyphicons-data-generator.js');
+  var generateCustomiconsData = require('./grunt/bs-customicons-data-generator.js');
   var BsLessdocParser = require('./grunt/bs-lessdoc-parser.js');
   var getLessVarsData = function () {
     var filePath = path.join(__dirname, 'less/variables.less');
@@ -107,18 +107,21 @@ module.exports = function (grunt) {
       },
       bootstrap: {
         src: [
+          'js/_custom-detect-breakpoint.js',
           'js/transition.js',
           'js/alert.js',
           'js/button.js',
           'js/carousel.js',
           'js/collapse.js',
           'js/dropdown.js',
+          'js/_custom-dropdown.js',
           'js/modal.js',
           'js/tooltip.js',
           'js/popover.js',
           'js/scrollspy.js',
           'js/tab.js',
-          'js/affix.js'
+          'js/affix.js',
+          'js/_custom-affix.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
@@ -293,6 +296,11 @@ module.exports = function (grunt) {
           '**/*'
         ],
         dest: 'docs/dist/'
+      },
+      images: {
+        expand: true,
+        src: ['images/*', 'images/*/*'],
+        dest: 'dist/'
       }
     },
 
@@ -458,17 +466,17 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
+  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'copy:images', 'dist-js']);
 
   // Default task.
-  grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
+  grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'copy:images', 'test']);
 
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
   // This can be overzealous, so its changes should always be manually reviewed!
   grunt.registerTask('change-version-number', 'sed');
 
-  grunt.registerTask('build-glyphicons-data', function () { generateGlyphiconsData.call(this, grunt); });
+  grunt.registerTask('build-customicons-data', function () { generateCustomiconsData.call(this, grunt); });
 
   // task for building customizer
   grunt.registerTask('build-customizer', ['build-customizer-html', 'build-raw-files']);
@@ -489,7 +497,7 @@ module.exports = function (grunt) {
   grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
   grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
   grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
-  grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-glyphicons-data', 'build-customizer']);
+  grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-customicons-data', 'build-customizer']);
 
   grunt.registerTask('prep-release', ['jekyll:github', 'compress']);
 
