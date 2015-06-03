@@ -2461,7 +2461,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
 
     if (this.affixed != affix) {
-      if (this.unpin != null) this.$element.css('top', '')
+      if (this.unpin != null) this.$element.css('top', '').css('position', '')
 
       var affixType = 'affix' + (affix ? '-' + affix : '')
       var e         = $.Event(affixType + '.bs.affix')

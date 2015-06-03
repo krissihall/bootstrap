@@ -2,6 +2,12 @@
 //
 //## Custom extension of dropdowns for us in 'selectable' dropdowns
 
+.dropdown-header {
+  .font-size-to-em(16);
+  font-family: @font-family-medium;
+  border-bottom: 1px solid @gray-light;
+}
+
 .dropdown-selection {
   position: relative;
   display: inline-block;
@@ -54,13 +60,16 @@
     overflow-x: hidden;
     text-overflow: ellipsis;
     .box-shadow-reset;
+    padding: 5px;
 
-    li {
+    > li {
       white-space: nowrap;
     }
 
-    li > a {
+    > li > a {
       white-space: normal;
+      .font-size-to-em(13);
+      margin: 5px 0;
     }
 
   }
@@ -93,6 +102,8 @@
       .dropdown-text {
         font-family: @font-family-light;
         font-size: @font-size-small;
+        overflow: hidden;
+        text-overflow: ellipsis;
         .opacity(1);
         display: block;
       }// .dropdown-text
