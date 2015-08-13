@@ -30,17 +30,6 @@
   font-size: unit((@target-size-in-px / @new-font-base), em);
 }
 
-// WebKit-style focus
-
-.tab-focus() {
-  // Default
-  outline: thin dotted;
-  // WebKit
-  outline: 1px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-  outline-color: @brand-primary;
-}
-
 /** Custom Scrollbars mixin can be applied to any element
  *  with an overflow: auto or overflow: scroll attribute
  */
