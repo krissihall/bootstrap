@@ -268,36 +268,28 @@ th {
   }
 }
 @font-face {
-  font-family: 'Source Sans Pro Bold';
+  font-family: 'Open Sans Bold';
   font-style: normal;
   font-weight: 600;
 
-  src: url('../fonts/sourcesanspro-bold-webfont.eot');
-  src: url('../fonts/sourcesanspro-bold-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/sourcesanspro-bold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-bold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+  src: url('../fonts/OpenSans-Bold-webfont.eot');
+  src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/OpenSans-Bold-webfont.woff') format('woff'), url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Bold-webfont.svg#open_sans_bold') format('svg');
 }
 @font-face {
-  font-family: 'Source Sans Pro Light';
+  font-family: 'Open Sans Light';
   font-style: normal;
   font-weight: 300;
 
-  src: url('../fonts/sourcesanspro-light-webfont.eot');
-  src: url('../fonts/sourcesanspro-light-webfont.eot?#iefix8') format('embedded-opentype'), url('../fonts/sourcesanspro-light-webfont.woff') format('woff'), url('../fonts/sourcesanspro-light-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+  src: url('../fonts/OpenSans-Light-webfont.eot');
+  src: url('../fonts/OpenSans-Light-webfont.eot?#iefix8') format('embedded-opentype'), url('../fonts/OpenSans-Light-webfont.woff') format('woff'), url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Light-webfont.svg#open_sans_light') format('svg');
 }
 @font-face {
-  font-family: 'Source Sans Pro Medium';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 500;
 
-  src: url('../fonts/sourcesanspro-semibold-webfont.eot');
-  src: url('../fonts/sourcesanspro-semibold-webfont.eot?#iefix11') format('embedded-opentype'), url('../fonts/sourcesanspro-semibold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 400;
-
-  src: url('../fonts/sourcesanspro-regular-webfont.eot');
-  src: url('../fonts/sourcesanspro-regular-webfont.eot?#iefix10') format('embedded-opentype'), url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'), url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+  src: url('../fonts/OpenSans-Regular-webfont.eot');
+  src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix11') format('embedded-opentype'), url('../fonts/OpenSans-Regular-webfont.woff') format('woff'), url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Regular-webfont.svg#open_sans_regular') format('svg');
 }
 @font-face {
   font-family: 'Custom Icons';
@@ -825,7 +817,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Source Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.42857143;
   color: #000;
@@ -1275,27 +1267,27 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
 }
 h1,
 .h1 {
-  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 h2,
 .h2 {
-  font-family: "Source Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 h4,
 h5 .h4,
 .h5 {
-  font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
 }
 h6,
 .h6 {
-  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 pre,
@@ -1304,24 +1296,20 @@ pre,
 }
 strong,
 .strong {
-  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 .text-bold {
-  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
-  font-weight: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
-}
-.text-medium {
-  font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
-  font-weight: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-weight: "Open Sans Bold", Helvetica, Arial, sans-serif;
 }
 .text-regular {
-  font-weight: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-weight: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 .text-light {
-  font-family: "Source Sans Light", Helvetica, Arial, sans-serif;
-  font-weight: "Source Sans Light", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
+  font-weight: "Open Sans Light", Helvetica, Arial, sans-serif;
 }
 .text-muted {
   color: #ccc;
@@ -6997,7 +6985,7 @@ tbody.collapse.in {
   }
 }
 .dropdown-header {
-  font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 1em;
   border-bottom: 1px solid #eee;
 }
@@ -7055,7 +7043,7 @@ tbody.collapse.in {
   color: #000;
 }
 .dropdown-selection .dropdown-toggle .dropdown-label {
-  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
 }
 .dropdown-selection .dropdown-menu {
   width: 100%;
@@ -7148,7 +7136,7 @@ tbody.collapse.in {
 .dropdown-selection.has-selection .dropdown-toggle .dropdown-text {
   display: block;
   overflow: hidden;
-  font-family: "Source Sans Light", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
   font-size: .75em;
   text-overflow: ellipsis;
   filter: alpha(opacity=100);
@@ -9446,7 +9434,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Source Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: .75em;
   font-weight: normal;
   line-height: 1.4;
@@ -9553,7 +9541,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Source Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: normal;
   line-height: 1.42857143;
@@ -10013,6 +10001,9 @@ button.close {
 .bg-danger {
   color: #fff;
   background: #ff4938;
+}
+.full-width {
+  width: 100%;
 }
 .xs-pull-right {
   float: right !important;
