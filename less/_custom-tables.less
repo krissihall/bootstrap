@@ -1,0 +1,26 @@
+//
+// Tables
+// --------------------------------------------------
+
+.table {
+
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr > th {
+      font-size: @table-header-font-size;
+      line-height: @table-header-line-height;
+      font-family: @font-family-bold;
+    }
+  }
+
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr > td {
+      font-size: @table-font-size;
+      line-height: @table-line-height;
+      font-family: @font-family-light;
+    }
+  }
+}
