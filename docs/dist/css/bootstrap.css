@@ -1290,6 +1290,9 @@ h6,
   font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
+p {
+  margin-bottom: 20px;
+}
 pre,
 .highlight pre {
   font-size: .75em;
