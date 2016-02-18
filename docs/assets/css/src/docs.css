@@ -30,28 +30,28 @@ body {
 
 /* Outline button for use within the docs */
 .btn-outline {
-  color: #cc075a;
+  color: #016688;
   background-color: transparent;
-  border-color: #cc075a;
+  border-color: #016688;
 }
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active {
   color: #fff;
-  background-color: #cc075a;
-  border-color: #cc075a;
+  background-color: #016688;
+  border-color: #016688;
 }
 
 /* Inverted outline button (white on dark) */
 .btn-outline-inverse {
   color: #fff;
   background-color: transparent;
-  border-color: #ffaace;
+  border-color: #98d8ed;
 }
 .btn-outline-inverse:hover,
 .btn-outline-inverse:focus,
 .btn-outline-inverse:active {
-  color: #cc075a;
+  color: #016688;
   text-shadow: none;
   background-color: #fff;
   border-color: #fff;
@@ -64,7 +64,7 @@ body {
   color: #fff;
   text-align: center;
   cursor: default;
-  background-color: #cc075a;
+  background-color: #016688;
   border-radius: 15%;
 }
 .bs-docs-booticon-sm {
@@ -80,12 +80,12 @@ body {
   line-height: 140px;
 }
 .bs-docs-booticon-inverse {
-  color: #cc075a;
+  color: #016688;
   background-color: #fff;
 }
 .bs-docs-booticon-outline {
   background-color: transparent;
-  border: 1px solid #ffaace;
+  border: 1px solid #98d8ed;
 }
 
 
@@ -106,16 +106,16 @@ body {
 .bs-docs-nav .navbar-brand,
 .bs-docs-nav .navbar-nav > li > a {
   font-weight: 500;
-  color: #cc075a;
+  color: #016688;
 }
 .bs-docs-nav .navbar-nav > li > a:hover,
 .bs-docs-nav .navbar-nav > .active > a,
 .bs-docs-nav .navbar-nav > .active > a:hover {
-  color: #b4014c;
+  color: #015572;
   background-color: #f6f6f6;
 }
 .bs-docs-nav .navbar-toggle .icon-bar {
-  background-color: #cc075a;
+  background-color: #016688;
 }
 .bs-docs-nav .navbar-header .navbar-toggle {
   border-color: #fff;
@@ -206,15 +206,15 @@ body {
 .bs-docs-header {
   position: relative;
   padding: 30px 15px;
-  color: #ffaace;
+  color: #98d8ed;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0,0,0,.1);
-  background-color: #fb3689;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#cc075a), to(#fb3689));
-  background-image: -webkit-linear-gradient(top, #cc075a 0%, #fb3689 100%);
-  background-image:      -o-linear-gradient(top, #cc075a 0%, #fb3689 100%);
-  background-image:         linear-gradient(to bottom, #cc075a 0%, #fb3689 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc075a', endColorstr='#fb3689', GradientType=0);
+  background-color: #0da1d2;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#016688), to(#0da1d2));
+  background-image: -webkit-linear-gradient(top, #016688 0%, #0da1d2 100%);
+  background-image:      -o-linear-gradient(top, #016688 0%, #0da1d2 100%);
+  background-image:         linear-gradient(to bottom, #016688 0%, #0da1d2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#016688', endColorstr='#0da1d2', GradientType=0);
   background-repeat: repeat-x;
 }
 
@@ -235,7 +235,7 @@ body {
 .bs-docs-masthead .version {
   margin-top: -15px;
   margin-bottom: 30px;
-  color: #ff539b;
+  color: #30b1dc;
 }
 .bs-docs-masthead .btn {
   width: 100%;
@@ -331,7 +331,7 @@ body {
   line-height: 16px !important;
   text-align: left;
   background: transparent !important;
-  border: solid #fb3689 !important;
+  border: solid #0da1d2 !important;
   border-width: 1px 0 !important;
 }
 .carbonad-img {
@@ -560,19 +560,19 @@ body {
 .bs-docs-sidebar .nav > li > a:hover,
 .bs-docs-sidebar .nav > li > a:focus {
   padding-left: 19px;
-  color: #cc075a;
+  color: #016688;
   text-decoration: none;
   background-color: transparent;
-  border-left: 1px solid #cc075a;
+  border-left: 1px solid #016688;
 }
 .bs-docs-sidebar .nav > .active > a,
 .bs-docs-sidebar .nav > .active:hover > a,
 .bs-docs-sidebar .nav > .active:focus > a {
   padding-left: 18px;
   font-weight: bold;
-  color: #cc075a;
+  color: #016688;
   background-color: transparent;
-  border-left: 2px solid #cc075a;
+  border-left: 2px solid #016688;
 }
 
 /* Nav: second level (shown on .active) */
@@ -611,7 +611,7 @@ body {
 }
 .back-to-top:hover,
 .bs-docs-theme-toggle:hover {
-  color: #cc075a;
+  color: #016688;
   text-decoration: none;
 }
 .bs-docs-theme-toggle {
@@ -771,19 +771,22 @@ h1[id] {
   background-color: #eee;
 }
 .color-swatches .brand-primary {
-  background-color: #ff3a8d;
+  background-color: #0097c9;
+}
+.color-swatches .brand-secondary {
+  background-color: #ffee00;
 }
 .color-swatches .brand-success {
-  background-color: #00ce22;
+  background-color: #00BD6E;
 }
 .color-swatches .brand-warning {
-  background-color: #ffea00;
+  background-color: #FFAC38;
 }
 .color-swatches .brand-danger {
-  background-color: #ff3131;
+  background-color: #FF4938;
 }
 .color-swatches .brand-info {
-  background-color: #509aff;
+  background-color: #388BFF;
 }
 .color-swatches .social-facebook {
   background: #3b5998;
@@ -800,13 +803,13 @@ h1[id] {
 
 /* Docs colors */
 .color-swatches .bs-purple {
-  background-color: #ff3a8d;
+  background-color: #11a5d6;
 }
 .color-swatches .bs-purple-light {
-  background-color: lighten(#ff3a8d, 20%);
+  background-color: #41b7de;
 }
 .color-swatches .bs-purple-lighter {
-  background-color: lighten(#ff3a8d, 40%);
+  background-color: #70c9e6;
 }
 .color-swatches .bs-gray {
   background-color: #f6f6f6;
@@ -1284,7 +1287,7 @@ h1[id] {
 .bs-glyphicons li:hover,
 .bs-customicons li:hover {
   color: #fff;
-  background-color: #cc075a;
+  background-color: #016688;
 }
 
 @media (min-width: 768px) {
@@ -1408,7 +1411,7 @@ h1[id] {
   width: 100%;
   margin-bottom: 15px;
   overflow: hidden;
-  color: #cc075a;
+  color: #016688;
   background-color: #f6f6f6;
   border-radius: 4px;
 }
@@ -1423,7 +1426,7 @@ h1[id] {
 }
 .bs-brand-logos .inverse {
   color: #fff;
-  background-color: #cc075a;
+  background-color: #016688;
 }
 .bs-brand-item .svg {
   width: 144px;
@@ -1496,8 +1499,8 @@ h1[id] {
 }
 .btn-clipboard-hover {
   color: #fff;
-  background-color: #cc075a;
-  border-color: #cc075a;
+  background-color: #016688;
+  border-color: #016688;
 }
 
 @media (min-width: 768px) {
