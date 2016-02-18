@@ -10,45 +10,58 @@ h1,
 .h1 {
   font-family: @font-family-bold;
   font-weight: @font-weight-bold;
+  color: @brand-primary;
+  font-style: italic;
+  text-align: center;
+  .dft-font-10;
+
+  @media screen and (min-width: @screen-md-min) {
+    .dft-font-11;
+  }
 }
 
 h2,
 .h2 {
   font-family: @font-family-sans-serif;
   font-weight: @font-weight-standard;
+  .dft-font-8;
 }
 
 h3,
 .h3 {
   font-family: @font-family-light;
   font-weight: @font-weight-medium;
+  .dft-font-7;
 }
 
 h4,
 .h4 {
   font-family: @font-family-medium;
   font-weight: @font-weight-medium;
+  .dft-font-6;
 }
 
 h5,
 .h5 {
   font-family: @font-family-regular;
   font-weight: @font-weight-standard;
+  .dft-font-6;
 }
 
 h6,
 .h6 {
   font-family: @font-family-medium;
   font-weight: @font-weight-medium;
+  .dft-font-4;
 }
 
 p {
-  .dft-font-4();
+  .dft-font-4;
   margin-bottom: 30px;
 }
 
 .lead {
-  .dft-font-7();
+  .dft-font-7;
 }
 
 pre,

@@ -1266,32 +1266,54 @@ address {
 h1,
 .h1 {
   font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
+  font-size: 2.25em;
+  font-style: italic;
   font-weight: 800;
+  line-height: 40px;
+  color: #0097c9;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  h1,
+  .h1 {
+    font-size: 2.625em;
+    line-height: 46px;
+  }
 }
 h2,
 .h2 {
   font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
   font-weight: 400;
+  line-height: 32px;
 }
 h3,
 .h3 {
   font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif;
+  font-size: 1.125em;
   font-weight: 600;
+  line-height: 26px;
 }
 h4,
 .h4 {
   font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
+  font-size: .875em;
   font-weight: 600;
+  line-height: 22px;
 }
 h5,
 .h5 {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: .875em;
   font-weight: 400;
+  line-height: 22px;
 }
 h6,
 .h6 {
   font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
+  font-size: .75em;
   font-weight: 600;
+  line-height: 20px;
 }
 p {
   margin-bottom: 30px;
@@ -5563,7 +5585,7 @@ pre code {
 }
 @media (min-width: 1024px) {
   .container-fluid {
-    max-width: 1200px;
+    max-width: 1366px;
   }
 }
 .unpadded-grid.row {
