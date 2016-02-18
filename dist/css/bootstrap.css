@@ -840,12 +840,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #0097c9;
+  color: #005e7d;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #005e7d;
+  color: #002430;
   text-decoration: underline;
 }
 a:focus {
@@ -893,7 +893,7 @@ hr {
   margin-top: 1em;
   margin-bottom: 1em;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ccc;
 }
 .sr-only {
   position: absolute;
@@ -1010,27 +1010,27 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 2.25em;
+  font-size: 2em;
 }
 h2,
 .h2 {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 h3,
 .h3 {
-  font-size: 1.125em;
+  font-size: 2em;
 }
 h4,
 .h4 {
-  font-size: .875em;
+  font-size: 2em;
 }
 h5,
 .h5 {
-  font-size: .875em;
+  font-size: 1em;
 }
 h6,
 .h6 {
-  font-size: .75em;
+  font-size: 1em;
 }
 p {
   margin: 0 0 .5em;
@@ -1146,7 +1146,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: -.5em;
   margin: 2em 0 1em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
 }
 ul,
 ol {
@@ -1214,7 +1214,7 @@ blockquote {
   padding: .5em 1em;
   margin: 0 0 1em;
   font-size: 1.25em;
-  border-left: 5px solid #eee;
+  border-left: 5px solid #ccc;
 }
 blockquote p:last-child,
 blockquote ul:last-child,
@@ -1239,7 +1239,7 @@ blockquote.pull-right {
   padding-right: 15px;
   padding-left: 0;
   text-align: right;
-  border-right: 5px solid #eee;
+  border-right: 5px solid #ccc;
   border-left: 0;
 }
 .blockquote-reverse footer:before,
@@ -1350,13 +1350,28 @@ strong,
   font-weight: "Source Sans Pro Light", Helvetica, Arial, sans-serif;
 }
 .text-muted {
-  color: #ccc;
+  color: #bbb;
 }
 .text-secondary {
   color: #807700;
 }
 a.text-secondary:hover {
   color: #4d4700;
+}
+li {
+  font-size: .75em;
+  line-height: 20px;
+}
+li li {
+  font-size: 1em;
+}
+dl {
+  font-size: .8125em;
+  line-height: 21px;
+}
+dt {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-weight: 400;
 }
 code,
 kbd,
@@ -5937,8 +5952,8 @@ table th[class*="col-"] {
 .table > tbody > tr > th,
 .table > tfoot > tr > th {
   font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
-  font-size: .875em;
-  line-height: 1.33;
+  font-size: 1em;
+  line-height: 1.3333333;
 }
 .table > thead > tr > td,
 .table > tbody > tr > td,
@@ -6002,34 +6017,46 @@ input[type="checkbox"]:focus {
 }
 output {
   display: block;
-  padding-top: 11px;
+  padding-top: 13px;
   font-size: 1em;
   line-height: 1.42857143;
-  color: #ccc;
+  color: #bbb;
 }
 .form-control {
   display: block;
   width: 100%;
   height: 1;
-  padding: 10px 10px;
+  padding: 12px 24px;
   font-size: 1em;
   line-height: 1.42857143;
-  color: #ccc;
+  color: #bbb;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 0;
+  outline: none;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-box-shadow: inset 0 0 0 1px #ccc;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 0 0 1px #ccc;
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+  -webkit-backface-visibility: hidden;
 }
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-control:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #000;
+          box-shadow: inset 0 0 0 2px #000;
+  -webkit-transition: 'box-shadow' 300ms;
+       -o-transition: 'box-shadow' 300ms;
+          transition: 'box-shadow' 300ms;
 }
 .form-control::-moz-placeholder {
   color: #999;
@@ -6044,7 +6071,7 @@ output {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: #f6f6f6;
+  background-color: #eee;
   opacity: 1;
 }
 .form-control[disabled],
@@ -6152,8 +6179,8 @@ fieldset[disabled] .checkbox label {
 }
 .form-control-static {
   min-height: 2em;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   margin-bottom: 0;
 }
 .form-control-static.input-lg,
@@ -6163,7 +6190,7 @@ fieldset[disabled] .checkbox label {
 }
 .input-sm {
   height: 1;
-  padding: 5px 5px;
+  padding: 6px 20px;
   font-size: .75em;
   line-height: 1.5;
   border-radius: 0;
@@ -6178,7 +6205,7 @@ select[multiple].input-sm {
 }
 .form-group-sm .form-control {
   height: 1;
-  padding: 5px 5px;
+  padding: 6px 20px;
   font-size: .75em;
   line-height: 1.5;
   border-radius: 0;
@@ -6194,15 +6221,15 @@ select[multiple].form-group-sm .form-control {
 .form-group-sm .form-control-static {
   height: 1;
   min-height: 1.75em;
-  padding: 5px 5px;
+  padding: 6px 20px;
   font-size: .75em;
   line-height: 1.5;
 }
 .input-lg {
   height: 1;
-  padding: 15px 15px;
+  padding: 12px 40px;
   font-size: 1.125em;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 0;
 }
 select.input-lg {
@@ -6215,9 +6242,9 @@ select[multiple].input-lg {
 }
 .form-group-lg .form-control {
   height: 1;
-  padding: 15px 15px;
+  padding: 12px 40px;
   font-size: 1.125em;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 0;
 }
 select.form-group-lg .form-control {
@@ -6231,9 +6258,9 @@ select[multiple].form-group-lg .form-control {
 .form-group-lg .form-control-static {
   height: 1;
   min-height: 2.125em;
-  padding: 15px 15px;
+  padding: 12px 40px;
   font-size: 1.125em;
-  line-height: 1.33;
+  line-height: 1.3333333;
 }
 .has-feedback {
   position: relative;
@@ -6419,13 +6446,13 @@ select[multiple].form-group-lg .form-control {
 .form-horizontal .checkbox,
 .form-horizontal .radio-inline,
 .form-horizontal .checkbox-inline {
-  padding-top: 11px;
+  padding-top: 13px;
   margin-top: 0;
   margin-bottom: 0;
 }
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 12em;
+  min-height: 14em;
 }
 .form-horizontal .form-group {
   margin-right: -5px;
@@ -6451,7 +6478,7 @@ select[multiple].form-group-lg .form-control {
 }
 @media (min-width: 321px) {
   .form-horizontal .control-label {
-    padding-top: 11px;
+    padding-top: 13px;
     margin-bottom: 0;
     text-align: right;
   }
@@ -6461,17 +6488,17 @@ select[multiple].form-group-lg .form-control {
 }
 @media (min-width: 321px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 20.95px;
+    padding-top: 16.9999996px;
   }
 }
 @media (min-width: 321px) {
   .form-horizontal .form-group-sm .control-label {
-    padding-top: 6px;
+    padding-top: 7px;
   }
 }
 .btn {
   display: inline-block;
-  padding: 10px 10px;
+  padding: 12px 24px;
   margin-bottom: 0;
   font-size: 1em;
   font-weight: normal;
@@ -6796,7 +6823,7 @@ fieldset[disabled] .btn-danger.active {
 }
 .btn-link {
   font-weight: normal;
-  color: #0097c9;
+  color: #005e7d;
   border-radius: 0;
 }
 .btn-link,
@@ -6816,7 +6843,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #005e7d;
+  color: #002430;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -6824,26 +6851,26 @@ fieldset[disabled] .btn-link {
 fieldset[disabled] .btn-link:hover,
 .btn-link[disabled]:focus,
 fieldset[disabled] .btn-link:focus {
-  color: #eee;
+  color: #ccc;
   text-decoration: none;
 }
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 15px 15px;
+  padding: 12px 40px;
   font-size: 1.125em;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 0;
 }
 .btn-sm,
 .btn-group-sm > .btn {
-  padding: 5px 5px;
+  padding: 6px 20px;
   font-size: .75em;
   line-height: 1.5;
   border-radius: 0;
 }
 .btn-xs,
 .btn-group-xs > .btn {
-  padding: 3px 3px;
+  padding: 3px 8px;
   font-size: .75em;
   line-height: 1.5;
   border-radius: 0;
@@ -6859,6 +6886,1275 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
+}
+.btn {
+  padding: 12px 24px;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: .875em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.btn,
+.btn:active,
+.btn.active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none;
+}
+.btn:hover,
+.btn:focus {
+  background: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #bbb;
+  pointer-events: none;
+  cursor: not-allowed;
+  background: #eee;
+  filter: alpha(opacity=100);
+  border-color: #eee;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: 1;
+}
+.btn.disabled:focus,
+.btn[disabled]:focus,
+fieldset[disabled] .btn:focus,
+.btn.disabled:active:focus,
+.btn[disabled]:active:focus,
+fieldset[disabled] .btn:active:focus,
+.btn.disabled.active:focus,
+.btn[disabled].active:focus,
+fieldset[disabled] .btn.active:focus,
+.btn.disabled.focus,
+.btn[disabled].focus,
+fieldset[disabled] .btn.focus,
+.btn.disabled:active.focus,
+.btn[disabled]:active.focus,
+fieldset[disabled] .btn:active.focus,
+.btn.disabled.active.focus,
+.btn[disabled].active.focus,
+fieldset[disabled] .btn.active.focus {
+  /* IE6-9 */
+  color: #bbb;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #eee;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eee 0%, #eee 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#eee));
+  background:      -o-linear-gradient(top, #eee 0%, #eee 100%);
+  background:         linear-gradient(to bottom, #eee 0%, #eee 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eee;
+}
+.btn.disabled:hover,
+.btn[disabled]:hover,
+fieldset[disabled] .btn:hover,
+.btn.disabled:focus,
+.btn[disabled]:focus,
+fieldset[disabled] .btn:focus,
+.btn.disabled.focus,
+.btn[disabled].focus,
+fieldset[disabled] .btn.focus {
+  /* IE6-9 */
+  color: #bbb;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #eee;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eee 0%, #eee 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#eee));
+  background:      -o-linear-gradient(top, #eee 0%, #eee 100%);
+  background:         linear-gradient(to bottom, #eee 0%, #eee 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eee;
+}
+.btn.disabled:active,
+.btn[disabled]:active,
+fieldset[disabled] .btn:active,
+.btn.disabled.active,
+.btn[disabled].active,
+fieldset[disabled] .btn.active {
+  /* IE6-9 */
+  color: #bbb;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #eee;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eee 0%, #eee 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#eee));
+  background:      -o-linear-gradient(top, #eee 0%, #eee 100%);
+  background:         linear-gradient(to bottom, #eee 0%, #eee 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eee;
+}
+.btn.disabled.disabled,
+.btn[disabled].disabled,
+fieldset[disabled] .btn.disabled,
+.btn.disabled[disabled],
+.btn[disabled][disabled],
+fieldset[disabled] .btn[disabled],
+fieldset[disabled] .btn.disabled,
+fieldset[disabled] .btn[disabled],
+fieldset[disabled] fieldset[disabled] .btn {
+  border-color: #eee;
+}
+.btn.disabled.disabled,
+.btn[disabled].disabled,
+fieldset[disabled] .btn.disabled,
+.btn.disabled[disabled],
+.btn[disabled][disabled],
+fieldset[disabled] .btn[disabled],
+fieldset[disabled] .btn.disabled,
+fieldset[disabled] .btn[disabled],
+fieldset[disabled] fieldset[disabled] .btn,
+.btn.disabled.disabled:hover,
+.btn[disabled].disabled:hover,
+fieldset[disabled] .btn.disabled:hover,
+.btn.disabled[disabled]:hover,
+.btn[disabled][disabled]:hover,
+fieldset[disabled] .btn[disabled]:hover,
+fieldset[disabled] .btn.disabled:hover,
+fieldset[disabled] .btn[disabled]:hover,
+fieldset[disabled] fieldset[disabled] .btn:hover,
+.btn.disabled.disabled:focus,
+.btn[disabled].disabled:focus,
+fieldset[disabled] .btn.disabled:focus,
+.btn.disabled[disabled]:focus,
+.btn[disabled][disabled]:focus,
+fieldset[disabled] .btn[disabled]:focus,
+fieldset[disabled] .btn.disabled:focus,
+fieldset[disabled] .btn[disabled]:focus,
+fieldset[disabled] fieldset[disabled] .btn:focus,
+.btn.disabled.disabled.focus,
+.btn[disabled].disabled.focus,
+fieldset[disabled] .btn.disabled.focus,
+.btn.disabled[disabled].focus,
+.btn[disabled][disabled].focus,
+fieldset[disabled] .btn[disabled].focus,
+fieldset[disabled] .btn.disabled.focus,
+fieldset[disabled] .btn[disabled].focus,
+fieldset[disabled] fieldset[disabled] .btn.focus,
+.btn.disabled.disabled:active,
+.btn[disabled].disabled:active,
+fieldset[disabled] .btn.disabled:active,
+.btn.disabled[disabled]:active,
+.btn[disabled][disabled]:active,
+fieldset[disabled] .btn[disabled]:active,
+fieldset[disabled] .btn.disabled:active,
+fieldset[disabled] .btn[disabled]:active,
+fieldset[disabled] fieldset[disabled] .btn:active,
+.btn.disabled.disabled.active,
+.btn[disabled].disabled.active,
+fieldset[disabled] .btn.disabled.active,
+.btn.disabled[disabled].active,
+.btn[disabled][disabled].active,
+fieldset[disabled] .btn[disabled].active,
+fieldset[disabled] .btn.disabled.active,
+fieldset[disabled] .btn[disabled].active,
+fieldset[disabled] fieldset[disabled] .btn.active {
+  border-color: #eee;
+}
+.btn.disabled:active,
+.btn[disabled]:active,
+fieldset[disabled] .btn:active,
+.btn.disabled.active,
+.btn[disabled].active,
+fieldset[disabled] .btn.active,
+.open > .dropdown-toggle.btn.disabled,
+.open > .dropdown-toggle.btn[disabled],
+.open > .dropdown-togglefieldset[disabled] .btn {
+  /* IE6-9 */
+  color: #bbb;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #eee;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eee 0%, #eee 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#eee));
+  background:      -o-linear-gradient(top, #eee 0%, #eee 100%);
+  background:         linear-gradient(to bottom, #eee 0%, #eee 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eee;
+}
+.btn.disabled:active:hover,
+.btn[disabled]:active:hover,
+fieldset[disabled] .btn:active:hover,
+.btn.disabled.active:hover,
+.btn[disabled].active:hover,
+fieldset[disabled] .btn.active:hover,
+.open > .dropdown-toggle.btn.disabled:hover,
+.open > .dropdown-toggle.btn[disabled]:hover,
+.open > .dropdown-togglefieldset[disabled] .btn:hover,
+.btn.disabled:active:focus,
+.btn[disabled]:active:focus,
+fieldset[disabled] .btn:active:focus,
+.btn.disabled.active:focus,
+.btn[disabled].active:focus,
+fieldset[disabled] .btn.active:focus,
+.open > .dropdown-toggle.btn.disabled:focus,
+.open > .dropdown-toggle.btn[disabled]:focus,
+.open > .dropdown-togglefieldset[disabled] .btn:focus,
+.btn.disabled:active.focus,
+.btn[disabled]:active.focus,
+fieldset[disabled] .btn:active.focus,
+.btn.disabled.active.focus,
+.btn[disabled].active.focus,
+fieldset[disabled] .btn.active.focus,
+.open > .dropdown-toggle.btn.disabled.focus,
+.open > .dropdown-toggle.btn[disabled].focus,
+.open > .dropdown-togglefieldset[disabled] .btn.focus {
+  /* IE6-9 */
+  color: #bbb;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #eee;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eee 0%, #eee 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#eee));
+  background:      -o-linear-gradient(top, #eee 0%, #eee 100%);
+  background:         linear-gradient(to bottom, #eee 0%, #eee 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eee;
+}
+.btn.disabled .badge,
+.btn[disabled] .badge,
+fieldset[disabled] .btn .badge {
+  color: #eee;
+  background-color: #bbb;
+}
+.btn-primary,
+.btn-default {
+  color: #fff;
+  background: #0097c9;
+  border-color: #0097c9;
+}
+.btn-primary:focus,
+.btn-default:focus,
+.btn-primary:active:focus,
+.btn-default:active:focus,
+.btn-primary.active:focus,
+.btn-default.active:focus,
+.btn-primary.focus,
+.btn-default.focus,
+.btn-primary:active.focus,
+.btn-default:active.focus,
+.btn-primary.active.focus,
+.btn-default.active.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-primary:hover,
+.btn-default:hover,
+.btn-primary:focus,
+.btn-default:focus,
+.btn-primary.focus,
+.btn-default.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-primary:active,
+.btn-default:active,
+.btn-primary.active,
+.btn-default.active {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0097c9;
+}
+.btn-primary.disabled,
+.btn-default.disabled,
+.btn-primary[disabled],
+.btn-default[disabled],
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-default {
+  border-color: #0097c9;
+}
+.btn-primary.disabled,
+.btn-default.disabled,
+.btn-primary[disabled],
+.btn-default[disabled],
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-default,
+.btn-primary.disabled:hover,
+.btn-default.disabled:hover,
+.btn-primary[disabled]:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-primary.disabled:focus,
+.btn-default.disabled:focus,
+.btn-primary[disabled]:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-primary.disabled.focus,
+.btn-default.disabled.focus,
+.btn-primary[disabled].focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+fieldset[disabled] .btn-default.focus,
+.btn-primary.disabled:active,
+.btn-default.disabled:active,
+.btn-primary[disabled]:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-default:active,
+.btn-primary.disabled.active,
+.btn-default.disabled.active,
+.btn-primary[disabled].active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-primary.active,
+fieldset[disabled] .btn-default.active {
+  border-color: #0097c9;
+}
+.btn-primary:active,
+.btn-default:active,
+.btn-primary.active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-primary,
+.open > .dropdown-toggle.btn-default {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-primary:active:hover,
+.btn-default:active:hover,
+.btn-primary.active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-primary:active:focus,
+.btn-default:active:focus,
+.btn-primary.active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-primary:active.focus,
+.btn-default:active.focus,
+.btn-primary.active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-primary.focus,
+.open > .dropdown-toggle.btn-default.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-primary .badge,
+.btn-default .badge {
+  color: #0097c9;
+  background-color: #fff;
+}
+.btn-secondary {
+  color: #000;
+  background: #fe0;
+  border-color: #fe0;
+}
+.btn-secondary:focus,
+.btn-secondary:active:focus,
+.btn-secondary.active:focus,
+.btn-secondary.focus,
+.btn-secondary:active.focus,
+.btn-secondary.active.focus {
+  /* IE6-9 */
+  color: #000;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #fe0;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
+  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #e6d600;
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary.focus {
+  /* IE6-9 */
+  color: #000;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #fe0;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
+  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #e6d600;
+}
+.btn-secondary:active,
+.btn-secondary.active {
+  /* IE6-9 */
+  color: #000;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #fe0;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
+  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #fe0;
+}
+.btn-secondary.disabled,
+.btn-secondary[disabled],
+fieldset[disabled] .btn-secondary {
+  border-color: #fe0;
+}
+.btn-secondary.disabled,
+.btn-secondary[disabled],
+fieldset[disabled] .btn-secondary,
+.btn-secondary.disabled:hover,
+.btn-secondary[disabled]:hover,
+fieldset[disabled] .btn-secondary:hover,
+.btn-secondary.disabled:focus,
+.btn-secondary[disabled]:focus,
+fieldset[disabled] .btn-secondary:focus,
+.btn-secondary.disabled.focus,
+.btn-secondary[disabled].focus,
+fieldset[disabled] .btn-secondary.focus,
+.btn-secondary.disabled:active,
+.btn-secondary[disabled]:active,
+fieldset[disabled] .btn-secondary:active,
+.btn-secondary.disabled.active,
+.btn-secondary[disabled].active,
+fieldset[disabled] .btn-secondary.active {
+  border-color: #fe0;
+}
+.btn-secondary:active,
+.btn-secondary.active,
+.open > .dropdown-toggle.btn-secondary {
+  /* IE6-9 */
+  color: #000;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #fe0;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
+  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #e6d600;
+}
+.btn-secondary:active:hover,
+.btn-secondary.active:hover,
+.open > .dropdown-toggle.btn-secondary:hover,
+.btn-secondary:active:focus,
+.btn-secondary.active:focus,
+.open > .dropdown-toggle.btn-secondary:focus,
+.btn-secondary:active.focus,
+.btn-secondary.active.focus,
+.open > .dropdown-toggle.btn-secondary.focus {
+  /* IE6-9 */
+  color: #000;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #fe0;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
+  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #e6d600;
+}
+.btn-secondary .badge {
+  color: #fe0;
+  background-color: #000;
+}
+.btn-brand {
+  color: #fff;
+  background: #0097c9;
+  border-color: #0097c9;
+}
+.btn-brand:focus,
+.btn-brand:active:focus,
+.btn-brand.active:focus,
+.btn-brand.focus,
+.btn-brand:active.focus,
+.btn-brand.active.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-brand:hover,
+.btn-brand:focus,
+.btn-brand.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-brand:active,
+.btn-brand.active {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0097c9;
+}
+.btn-brand.disabled,
+.btn-brand[disabled],
+fieldset[disabled] .btn-brand {
+  border-color: #0097c9;
+}
+.btn-brand.disabled,
+.btn-brand[disabled],
+fieldset[disabled] .btn-brand,
+.btn-brand.disabled:hover,
+.btn-brand[disabled]:hover,
+fieldset[disabled] .btn-brand:hover,
+.btn-brand.disabled:focus,
+.btn-brand[disabled]:focus,
+fieldset[disabled] .btn-brand:focus,
+.btn-brand.disabled.focus,
+.btn-brand[disabled].focus,
+fieldset[disabled] .btn-brand.focus,
+.btn-brand.disabled:active,
+.btn-brand[disabled]:active,
+fieldset[disabled] .btn-brand:active,
+.btn-brand.disabled.active,
+.btn-brand[disabled].active,
+fieldset[disabled] .btn-brand.active {
+  border-color: #0097c9;
+}
+.btn-brand:active,
+.btn-brand.active,
+.open > .dropdown-toggle.btn-brand {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-brand:active:hover,
+.btn-brand.active:hover,
+.open > .dropdown-toggle.btn-brand:hover,
+.btn-brand:active:focus,
+.btn-brand.active:focus,
+.open > .dropdown-toggle.btn-brand:focus,
+.btn-brand:active.focus,
+.btn-brand.active.focus,
+.open > .dropdown-toggle.btn-brand.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #0097c9;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #0080aa;
+}
+.btn-brand .badge {
+  color: #0097c9;
+  background-color: #fff;
+}
+.btn-success {
+  color: #fff;
+  background: #00bd6e;
+  border-color: #00bd6e;
+}
+.btn-success:focus,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.btn-success.focus,
+.btn-success:active.focus,
+.btn-success.active.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #00bd6e;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #009e5c;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #00bd6e;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #009e5c;
+}
+.btn-success:active,
+.btn-success.active {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #00bd6e;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #00bd6e;
+}
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success {
+  border-color: #00bd6e;
+}
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus,
+.btn-success[disabled].focus,
+fieldset[disabled] .btn-success.focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+  border-color: #00bd6e;
+}
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #00bd6e;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #009e5c;
+}
+.btn-success:active:hover,
+.btn-success.active:hover,
+.open > .dropdown-toggle.btn-success:hover,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.open > .dropdown-toggle.btn-success:focus,
+.btn-success:active.focus,
+.btn-success.active.focus,
+.open > .dropdown-toggle.btn-success.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #00bd6e;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #009e5c;
+}
+.btn-success .badge {
+  color: #00bd6e;
+  background-color: #fff;
+}
+.btn-info {
+  color: #fff;
+  background: #388bff;
+  border-color: #388bff;
+}
+.btn-info:focus,
+.btn-info:active:focus,
+.btn-info.active:focus,
+.btn-info.focus,
+.btn-info:active.focus,
+.btn-info.active.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #388bff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#388bff), to(#1979ff));
+  background:      -o-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #1979ff;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #388bff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#388bff), to(#1979ff));
+  background:      -o-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #1979ff;
+}
+.btn-info:active,
+.btn-info.active {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #388bff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#388bff), to(#1979ff));
+  background:      -o-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #388bff;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info {
+  border-color: #388bff;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus,
+.btn-info[disabled].focus,
+fieldset[disabled] .btn-info.focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  border-color: #388bff;
+}
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #388bff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#388bff), to(#1979ff));
+  background:      -o-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #1979ff;
+}
+.btn-info:active:hover,
+.btn-info.active:hover,
+.open > .dropdown-toggle.btn-info:hover,
+.btn-info:active:focus,
+.btn-info.active:focus,
+.open > .dropdown-toggle.btn-info:focus,
+.btn-info:active.focus,
+.btn-info.active.focus,
+.open > .dropdown-toggle.btn-info.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #388bff;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#388bff), to(#1979ff));
+  background:      -o-linear-gradient(top, #388bff 0%, #1979ff 100%);
+  background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #1979ff;
+}
+.btn-info .badge {
+  color: #388bff;
+  background-color: #fff;
+}
+.btn-warning {
+  color: #fff;
+  background: #ffac38;
+  border-color: #ffac38;
+}
+.btn-warning:focus,
+.btn-warning:active:focus,
+.btn-warning.active:focus,
+.btn-warning.focus,
+.btn-warning:active.focus,
+.btn-warning.active.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ffac38;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffac38), to(#ff9705));
+  background:      -o-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #ff9705;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ffac38;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffac38), to(#ff9705));
+  background:      -o-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #ff9705;
+}
+.btn-warning:active,
+.btn-warning.active {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ffac38;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffac38), to(#ff9705));
+  background:      -o-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #ffac38;
+}
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning {
+  border-color: #ffac38;
+}
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning,
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled.focus,
+.btn-warning[disabled].focus,
+fieldset[disabled] .btn-warning.focus,
+.btn-warning.disabled:active,
+.btn-warning[disabled]:active,
+fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active,
+.btn-warning[disabled].active,
+fieldset[disabled] .btn-warning.active {
+  border-color: #ffac38;
+}
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ffac38;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffac38), to(#ff9705));
+  background:      -o-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #ff9705;
+}
+.btn-warning:active:hover,
+.btn-warning.active:hover,
+.open > .dropdown-toggle.btn-warning:hover,
+.btn-warning:active:focus,
+.btn-warning.active:focus,
+.open > .dropdown-toggle.btn-warning:focus,
+.btn-warning:active.focus,
+.btn-warning.active.focus,
+.open > .dropdown-toggle.btn-warning.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ffac38;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffac38), to(#ff9705));
+  background:      -o-linear-gradient(top, #ffac38 0%, #ff9705 100%);
+  background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #ff9705;
+}
+.btn-warning .badge {
+  color: #ffac38;
+  background-color: #fff;
+}
+.btn-danger {
+  color: #fff;
+  background: #ff4938;
+  border-color: #ff4938;
+}
+.btn-danger:focus,
+.btn-danger:active:focus,
+.btn-danger.active:focus,
+.btn-danger.focus,
+.btn-danger:active.focus,
+.btn-danger.active.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ff4938;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff4938), to(#eb1400));
+  background:      -o-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eb1400;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ff4938;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff4938), to(#eb1400));
+  background:      -o-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eb1400;
+}
+.btn-danger:active,
+.btn-danger.active {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ff4938;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff4938), to(#eb1400));
+  background:      -o-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #ff4938;
+}
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger {
+  border-color: #ff4938;
+}
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger,
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled.focus,
+.btn-danger[disabled].focus,
+fieldset[disabled] .btn-danger.focus,
+.btn-danger.disabled:active,
+.btn-danger[disabled]:active,
+fieldset[disabled] .btn-danger:active,
+.btn-danger.disabled.active,
+.btn-danger[disabled].active,
+fieldset[disabled] .btn-danger.active {
+  border-color: #ff4938;
+}
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ff4938;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff4938), to(#eb1400));
+  background:      -o-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eb1400;
+}
+.btn-danger:active:hover,
+.btn-danger.active:hover,
+.open > .dropdown-toggle.btn-danger:hover,
+.btn-danger:active:focus,
+.btn-danger.active:focus,
+.open > .dropdown-toggle.btn-danger:focus,
+.btn-danger:active.focus,
+.btn-danger.active.focus,
+.open > .dropdown-toggle.btn-danger.focus {
+  /* IE6-9 */
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: #ff4938;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff4938), to(#eb1400));
+  background:      -o-linear-gradient(top, #ff4938 0%, #eb1400 100%);
+  background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
+  border-color: #eb1400;
+}
+.btn-danger .badge {
+  color: #ff4938;
+  background-color: #fff;
+}
+.btn-link {
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  color: #000;
+  text-transform: none;
+}
+.btn-link:hover {
+  color: #bbb;
+}
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 12px 40px;
+  font-size: 1.125em;
+  line-height: 1.3333333;
+  border-radius: 0;
+}
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 6px 20px;
+  font-size: .75em;
+  line-height: 1.5;
+  border-radius: 0;
+}
+.btn-xs,
+.btn-group-xs > .btn {
+  padding: 3px 20px;
+  font-size: .75em;
+  line-height: 1.5;
+  border-radius: 0;
+}
+p .btn {
+  font-size: 1.16666667em;
+}
+p .btn.btn-lg {
+  font-size: 1.5em;
+}
+p .btn.btn-sm,
+p .btn.btn-xs {
+  font-size: 1em;
 }
 .fade {
   opacity: 0;
@@ -6928,8 +8224,8 @@ tbody.collapse.in {
   background-color: #fff;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
+  border: 1px solid #bbb;
   border: 1px solid #ccc;
-  border: 1px solid #eee;
   border-radius: 0;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
@@ -6942,7 +8238,7 @@ tbody.collapse.in {
   height: 1px;
   margin: -.5em 0;
   overflow: hidden;
-  background-color: #eee;
+  background-color: #ccc;
 }
 .dropdown-menu > li > a {
   display: block;
@@ -6970,7 +8266,7 @@ tbody.collapse.in {
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
-  color: #ccc;
+  color: #bbb;
 }
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
@@ -7039,7 +8335,7 @@ tbody.collapse.in {
 .dropdown-header {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 1em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
 }
 .dropdown-selection {
   position: relative;
@@ -7068,12 +8364,12 @@ tbody.collapse.in {
   width: 100%;
   height: auto;
   -webkit-appearance: none;
-  padding: 10px 10px;
+  padding: 12px 24px;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #eee;
+  border: 1px solid #ccc;
 
      -moz-appearance: none;
   /* TODO: Investigate this fix as it breaks in Chrome */
@@ -7383,9 +8679,9 @@ tbody.collapse.in {
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
   height: 1;
-  padding: 15px 15px;
+  padding: 12px 40px;
   font-size: 1.125em;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 0;
 }
 select.input-group-lg > .form-control,
@@ -7406,7 +8702,7 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
   height: 1;
-  padding: 5px 5px;
+  padding: 6px 20px;
   font-size: .75em;
   line-height: 1.5;
   border-radius: 0;
@@ -7442,23 +8738,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   vertical-align: middle;
 }
 .input-group-addon {
-  padding: 10px 10px;
+  padding: 12px 24px;
   font-size: 1em;
   font-weight: normal;
   line-height: 1;
-  color: #ccc;
+  color: #bbb;
   text-align: center;
-  background-color: #f6f6f6;
+  background-color: #eee;
   border: 1px solid #ccc;
   border-radius: 0;
 }
 .input-group-addon.input-sm {
-  padding: 5px 5px;
+  padding: 6px 20px;
   font-size: .75em;
   border-radius: 0;
 }
 .input-group-addon.input-lg {
-  padding: 15px 15px;
+  padding: 12px 40px;
   font-size: 1.125em;
   border-radius: 0;
 }
@@ -7533,14 +8829,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #f6f6f6;
+  background-color: #eee;
 }
 .nav > li.disabled > a {
-  color: #eee;
+  color: #ccc;
 }
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
-  color: #eee;
+  color: #ccc;
   text-decoration: none;
   cursor: not-allowed;
   background-color: transparent;
@@ -7548,8 +8844,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #f6f6f6;
-  border-color: #0097c9;
+  background-color: #eee;
+  border-color: #005e7d;
 }
 .nav .nav-divider {
   height: 1px;
@@ -7574,12 +8870,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-radius: 0 0 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #f6f6f6 #f6f6f6 #ddd;
+  border-color: #eee #eee #ddd;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #ccc;
+  color: #bbb;
   cursor: default;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -7707,6 +9003,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-top: -1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.nav > li {
+  font-size: 1.08333333em;
 }
 .navbar {
   position: relative;
@@ -8138,7 +9437,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #fff;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -8146,10 +9445,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #fff;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #fff;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -8196,7 +9495,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     background-color: #080808;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #fff;
+    color: #f2f2f2;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -8217,13 +9516,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 .navbar-inverse .navbar-link {
-  color: #fff;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-link:hover {
   color: #fff;
 }
 .navbar-inverse .btn-link {
-  color: #fff;
+  color: #f2f2f2;
 }
 .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link:focus {
@@ -8251,7 +9550,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   content: "/\00a0";
 }
 .breadcrumb > .active {
-  color: #eee;
+  color: #ccc;
 }
 .pagination {
   display: inline-block;
@@ -8266,10 +9565,10 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span {
   position: relative;
   float: left;
-  padding: 10px 10px;
+  padding: 12px 24px;
   margin-left: -1px;
   line-height: 1.42857143;
-  color: #0097c9;
+  color: #005e7d;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -8289,8 +9588,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  color: #005e7d;
-  background-color: #f6f6f6;
+  color: #002430;
+  background-color: #eee;
   border-color: #ddd;
 }
 .pagination > .active > a,
@@ -8311,14 +9610,14 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
-  color: #eee;
+  color: #ccc;
   cursor: not-allowed;
   background-color: #fff;
   border-color: #ddd;
 }
 .pagination-lg > li > a,
 .pagination-lg > li > span {
-  padding: 15px 15px;
+  padding: 12px 40px;
   font-size: 1.125em;
 }
 .pagination-lg > li:first-child > a,
@@ -8333,7 +9632,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .pagination-sm > li > a,
 .pagination-sm > li > span {
-  padding: 5px 5px;
+  padding: 6px 20px;
   font-size: .75em;
 }
 .pagination-sm > li:first-child > a,
@@ -8366,7 +9665,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #f6f6f6;
+  background-color: #eee;
 }
 .pager .next > a,
 .pager .next > span {
@@ -8380,7 +9679,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
 .pager .disabled > span {
-  color: #eee;
+  color: #ccc;
   cursor: not-allowed;
   background-color: #fff;
 }
@@ -8410,11 +9709,11 @@ a.label:focus {
   top: -1px;
 }
 .label-default {
-  background-color: #eee;
+  background-color: #ccc;
 }
 .label-default[href]:hover,
 .label-default[href]:focus {
-  background-color: #d5d5d5;
+  background-color: #b3b3b3;
 }
 .label-primary {
   background-color: #0097c9;
@@ -8462,7 +9761,7 @@ a.label:focus {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #eee;
+  background-color: #ccc;
   border-radius: 10px;
 }
 .badge:empty {
@@ -8485,7 +9784,7 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #0097c9;
+  color: #005e7d;
   background-color: #fff;
 }
 .list-group-item > .badge {
@@ -8501,7 +9800,7 @@ a.badge:focus {
   padding: 30px 15px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #f6f6f6;
+  background-color: #eee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -8513,7 +9812,7 @@ a.badge:focus {
   font-weight: 200;
 }
 .jumbotron > hr {
-  border-top-color: #ddd;
+  border-top-color: #d5d5d5;
 }
 .container .jumbotron,
 .container-fluid .jumbotron {
@@ -8556,7 +9855,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #0097c9;
+  border-color: #005e7d;
 }
 .thumbnail .caption {
   padding: 9px;
@@ -8785,8 +10084,8 @@ a.thumbnail.active {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: transparent;
+  border: 1px solid #bbb;
 }
 .list-group-item:first-child {
   border-top-left-radius: 0;
@@ -8807,14 +10106,14 @@ a.list-group-item:hover,
 a.list-group-item:focus {
   color: #555;
   text-decoration: none;
-  background-color: #f5f5f5;
+  background-color: #eee;
 }
 .list-group-item.disabled,
 .list-group-item.disabled:hover,
 .list-group-item.disabled:focus {
-  color: #eee;
+  color: #ccc;
   cursor: not-allowed;
-  background-color: #f6f6f6;
+  background-color: #eee;
 }
 .list-group-item.disabled .list-group-item-heading,
 .list-group-item.disabled:hover .list-group-item-heading,
@@ -8824,7 +10123,7 @@ a.list-group-item:focus {
 .list-group-item.disabled .list-group-item-text,
 .list-group-item.disabled:hover .list-group-item-text,
 .list-group-item.disabled:focus .list-group-item-text {
-  color: #eee;
+  color: #ccc;
 }
 .list-group-item.active,
 .list-group-item.active:hover,
@@ -8946,9 +10245,23 @@ a.list-group-item-danger.active:focus {
   margin-bottom: 0;
   line-height: 1.3;
 }
+.list-group {
+  font-size: .75em;
+  line-height: 20px;
+}
+.list-group-item {
+  font-size: 1em;
+}
+.list-group-item .list-group-item-heading {
+  font-size: 1.16666667em;
+}
+.list-group-item p,
+.list-group-item .list-group-item-text {
+  font-size: 1em;
+}
 .panel {
   margin-bottom: 1em;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
@@ -8982,7 +10295,7 @@ a.list-group-item-danger.active:focus {
 .panel-footer {
   padding: 10px 15px;
   background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ccc;
   border-bottom-right-radius: -1;
   border-bottom-left-radius: -1;
 }
@@ -9169,13 +10482,13 @@ a.list-group-item-danger.active:focus {
 }
 .panel-group .panel-heading + .panel-collapse > .panel-body,
 .panel-group .panel-heading + .panel-collapse > .list-group {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ccc;
 }
 .panel-group .panel-footer {
   border-top: 0;
 }
 .panel-group .panel-footer + .panel-collapse .panel-body {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
 }
 .panel-default {
   border-color: #ddd;
@@ -10023,13 +11336,16 @@ button.close {
   background: #888;
 }
 .bg-gray {
-  background: #ccc;
+  background: #bbb;
 }
 .bg-gray-light {
-  background: #eee;
+  background: #ccc;
 }
 .bg-gray-lighter {
-  background: #f6f6f6;
+  background: #eee;
+}
+.bg-gray-lightest {
+  background: #fafafa;
 }
 .bg-primary {
   color: #fff;

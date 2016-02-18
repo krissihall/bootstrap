@@ -10,9 +10,10 @@
 @gray-base:              #000;
 @gray-darker:            #444;
 @gray-dark:              #888;
-@gray:                   #ccc;
-@gray-light:             #eee;
-@gray-lighter:           #f6f6f6;
+@gray:                   #bbb;
+@gray-light:             #ccc;
+@gray-lighter:           #eee;
+@gray-lightest:          #fafafa;
 
 @brand-primary:         #0097c9;
 @brand-secondary:       #ffee00;
@@ -31,18 +32,32 @@
 @social-pinterest:      #c92228;
 @social-linkedin:       #007bb6;
 
+@btn-secondary-hover:  darken(@brand-secondary, 5%);
+@btn-primary-hover:    darken(@brand-primary, 6%);
+@btn-brand-hover:      darken(@brand-primary, 6%);
+@btn-success-hover:    darken(@brand-success, 6%);
+@btn-info-hover:       darken(@brand-info, 6%);
+@btn-warning-hover:    darken(@brand-warning, 10%);
+@btn-danger-hover:     darken(@brand-danger, 15%);
+
+//** Form Text
+
+@form-placeholder:       @gray-dark;
+@form-text:              @gray-base;
+@form-disabled:          @gray-light;
+
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               lighten(@brand-primary, 80%);
 //** Global text color on `<body>`.
 @text-color:            @gray-base;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:           darken( @brand-primary, 15%);
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
@@ -97,17 +112,8 @@
 @dft-font-10:             unit((36 / @font-base), em); // ~36px  : 2.25em
 @dft-font-11:             unit((42 / @font-base), em); // ~42px  : 2.625em
 
-@font-size-large:         @dft-font-8; // ~24px : 1.5em
+@font-size-large:         @dft-font-7; // ~18px  : 1.125em
 @font-size-small:         @dft-font-4; // ~12px : 0.75em
-@font-size-large:         unit((18 / @font-base), em); // ~18px
-@font-size-small:         unit((12 / @font-base), em); // ~12px
-
-@font-size-h1:            @dft-font-10; // ~36px  : 2.25em
-@font-size-h2:            @dft-font-8;  // ~24px  : 1.5em
-@font-size-h3:            @dft-font-7;  // ~18px  : 1.125em
-@font-size-h4:            @dft-font-6;  // ~14px  : 0.875em
-@font-size-h5:            @dft-font-6;  // ~14px  : 0.875em
-@font-size-h6:            @dft-font-4;  // ~12px  : 0.75em
 
 //** Unit-less `line-height` for use in components like buttons.
 @line-height-base:        1.428571429; // 20/14
@@ -161,6 +167,67 @@
 @screen-lg-max:              1366px;
 
 
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+@padding-base-vertical:     12px;
+@padding-base-horizontal:   24px;
+
+@padding-large-vertical:    12px;
+@padding-large-horizontal:  40px;
+
+@padding-small-vertical:    6px;
+@padding-small-horizontal:  20px;
+
+@padding-xs-vertical:       3px;
+@padding-xs-horizontal:     8px;
+
+@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-small:         1.5;
+
+@border-radius-base:        0;
+@border-radius-large:       0;
+@border-radius-small:       0;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+@btn-font-weight:                  normal;
+
+@btn-secondary-color:              @gray-base;
+@btn-secondary-bg:                 @brand-secondary;
+@btn-secondary-border:             @brand-secondary;
+
+@btn-primary-color:                #fff;
+@btn-primary-bg:                   @gray-base;
+@btn-primary-border:               @gray-base;
+
+@btn-brand-color:                  #fff;
+@btn-brand-bg:                     @brand-primary;
+@btn-brand-border:                 @brand-primary;
+
+@btn-success-color:                #fff;
+@btn-success-bg:                   @brand-success;
+@btn-success-border:               @brand-success;
+
+@btn-info-color:                   #fff;
+@btn-info-bg:                      @brand-info;
+@btn-info-border:                  @brand-info;
+
+@btn-warning-color:                #fff;
+@btn-warning-bg:                   @brand-warning;
+@btn-warning-border:               @brand-warning;
+
+@btn-danger-color:                 #fff;
+@btn-danger-bg:                    @brand-danger;
+@btn-danger-border:                @brand-danger;
+
+@btn-link-disabled-color:          @gray-light;
+
+
 //== Grid system
 //
 //## Define your custom responsive grid.
@@ -182,29 +249,6 @@
 @gutter-md-padding:          20px;
 @gutter-lg-padding:          20px;
 
-
-//== Components
-//
-//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
-
-@padding-base-vertical:     10px;
-@padding-base-horizontal:   10px;
-
-@padding-large-vertical:    15px;
-@padding-large-horizontal:  15px;
-
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  5px;
-
-@padding-xs-vertical:       3px;
-@padding-xs-horizontal:     3px;
-
-@line-height-large:         1.33;
-@line-height-small:         1.5;
-
-@border-radius-base:        0;
-@border-radius-large:       0;
-@border-radius-small:       0;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -434,3 +478,76 @@
 @label-color:                 @brand-primary;
 //** Default text color of a linked label
 @label-link-hover-color:      darken(@brand-primary, 10%);
+
+
+//== List group
+//
+//##
+
+//** Background color on `.list-group-item`
+@list-group-bg:                 transparent;
+//** `.list-group-item` border color
+@list-group-border:             @gray;
+//** List group border radius
+@list-group-border-radius:      @border-radius-base;
+
+//** Background color of single list items on hover
+@list-group-hover-bg:           @gray-lighter;
+//** Text color of active list items
+@list-group-active-color:       @component-active-color;
+//** Background color of active list items
+@list-group-active-bg:          @component-active-bg;
+//** Border color of active list elements
+@list-group-active-border:      @list-group-active-bg;
+//** Text color for content within active list items
+@list-group-active-text-color:  lighten(@list-group-active-bg, 40%);
+
+//** Text color of disabled list items
+@list-group-disabled-color:      @gray-light;
+//** Background color of disabled list items
+@list-group-disabled-bg:         @gray-lighter;
+//** Text color for content within disabled list items
+@list-group-disabled-text-color: @list-group-disabled-color;
+
+@list-group-link-color:         #555;
+@list-group-link-hover-color:   @list-group-link-color;
+@list-group-link-heading-color: #333;
+
+
+//== Panels
+//
+//##
+
+@panel-bg:                    transparent;
+@panel-body-padding:          15px;
+@panel-heading-padding:       10px 15px;
+@panel-footer-padding:        @panel-heading-padding;
+@panel-border-radius:         @border-radius-base;
+
+//** Border color for elements within panels
+@panel-inner-border:          @gray-light;
+@panel-footer-bg:             #f5f5f5;
+
+@panel-default-text:          @gray-dark;
+@panel-default-border:        #ddd;
+@panel-default-heading-bg:    #f5f5f5;
+
+@panel-primary-text:          #fff;
+@panel-primary-border:        @brand-primary;
+@panel-primary-heading-bg:    @brand-primary;
+
+@panel-success-text:          @state-success-text;
+@panel-success-border:        @state-success-border;
+@panel-success-heading-bg:    @state-success-bg;
+
+@panel-info-text:             @state-info-text;
+@panel-info-border:           @state-info-border;
+@panel-info-heading-bg:       @state-info-bg;
+
+@panel-warning-text:          @state-warning-text;
+@panel-warning-border:        @state-warning-border;
+@panel-warning-heading-bg:    @state-warning-bg;
+
+@panel-danger-text:           @state-danger-text;
+@panel-danger-border:         @state-danger-border;
+@panel-danger-heading-bg:     @state-danger-bg;

@@ -105,3 +105,20 @@ strong,
 .text-secondary {
   .text-emphasis-variant(darken(@brand-secondary, 25%));
 }
+
+li {
+  .dft-font-4;
+}
+
+li li {
+  .font-em-reset(@dft-font-4, @dft-font-4);
+}
+
+dl {
+  .dft-font-5;
+}
+
+dt {
+  font-weight: @font-weight-standard;
+  font-family: @font-family-regular;
+}

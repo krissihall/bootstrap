@@ -1,0 +1,108 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  font-weight: @font-weight-standard;
+  font-family: @font-family-regular;
+  text-transform: uppercase;
+  font-size: @dft-font-6;
+  padding: @padding-base-vertical @padding-base-horizontal;
+
+  &,
+  &:active,
+  &.active {
+    .box-shadow-reset();
+
+    &:focus,
+    &.focus {
+      outline: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .box-shadow-reset();
+    outline: none;
+    background: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    .opacity(1);
+    .box-shadow-reset();
+    .custom-button-variant(@gray, @gray-lighter, @gray-lighter, @gray-lighter);
+    font-family: @font-family-regular;
+    font-weight: @font-weight-standard;
+  }
+}
+
+.btn-primary,
+.btn-default {
+  .custom-button-variant(@btn-primary-color, @btn-primary-bg, @btn-primary-bg, @btn-primary-hover);
+}
+
+.btn-secondary {
+  .custom-button-variant(@btn-secondary-color, @btn-secondary-bg, @btn-secondary-bg, @btn-secondary-hover);
+}
+
+.btn-brand {
+  .custom-button-variant(@btn-brand-color, @btn-brand-bg, @btn-brand-bg, @btn-brand-hover);
+}
+
+.btn-success {
+  .custom-button-variant(@btn-success-color, @btn-success-bg, @btn-success-bg, @btn-success-hover);
+}
+
+.btn-info {
+  .custom-button-variant(@btn-info-color, @btn-info-bg, @btn-info-bg, @btn-info-hover);
+}
+
+.btn-warning {
+  .custom-button-variant(@btn-warning-color, @btn-warning-bg, @btn-warning-bg, @btn-warning-hover);
+}
+
+.btn-danger {
+  .custom-button-variant(@btn-danger-color, @btn-danger-bg, @btn-danger-bg, @btn-danger-hover);
+}
+
+.btn-link {
+  font-family: @font-family-sans-serif;
+  color: @gray-base;
+  text-transform: none;
+
+  &:hover {
+    color: @gray;
+  }
+}
+
+.btn-lg {
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+}
+.btn-sm {
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+.btn-xs {
+  .button-size(@padding-xs-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+
+p {
+  .btn {
+    .font-em-reset(@dft-font-4, @dft-font-6);
+
+    &.btn-lg {
+      .font-em-reset(@dft-font-4, @font-size-large);
+    }
+    &.btn-sm,
+    &.btn-xs {
+      .font-em-reset(@dft-font-4, @font-size-small);
+    }
+  }
+}

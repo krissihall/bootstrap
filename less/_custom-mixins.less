@@ -159,3 +159,42 @@
     background: transparent;
   }
 }
+
+//== Custom Mixins and Over-riding Existing Mixins
+//
+//## Define custom mixins and modify existing mixins.
+
+
+//== Form Mixins
+//
+//## Over-ride core form mixins.
+
+//** Form field focus styling
+.form-control-focus(@initial: @gray-light, @hover: @gray-base) {
+  .focus-box-shadow (@initial, 1px);
+  -webkit-backface-visibility: hidden;
+  outline: none;
+
+  &:focus {
+    .focus-box-shadow(@hover);
+    .transition('box-shadow' 300ms);
+  }
+}
+
+//** Additional focus state for radio, checkboxes and radio-toggles accesibility
+.form-tabbing-focus(@initial: @gray-dark) {
+  outline: @initial dotted 1px !important;
+}
+
+.focus-box-shadow (@color: @gray-base, @width: 2px){
+  .box-shadow(inset 0px 0px 0px @width @color);
+}
+
+.linear-gradient(@start: @gray-dark, @end: @gray-base) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@end+0,7db9e8+100 */
+  background: @start; /* Old browsers */
+  background: -moz-linear-gradient(top,  @start 0%, @end 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  @start 0%,@end 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  @start 0%,@end 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@end',GradientType=0 ); /* IE6-9 */
+}
