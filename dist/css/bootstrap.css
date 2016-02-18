@@ -1330,8 +1330,8 @@ pre,
 }
 strong,
 .strong {
-  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
+  font-weight: 600;
 }
 .text-medium {
   font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
