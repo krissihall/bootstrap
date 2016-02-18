@@ -268,28 +268,36 @@ th {
   }
 }
 @font-face {
-  font-family: 'Open Sans Bold';
+  font-family: 'Source Sans Pro Bold';
+  font-style: normal;
+  font-weight: 800;
+
+  src: url('../fonts/sourcesanspro-bold-webfont.eot');
+  src: url('../fonts/sourcesanspro-bold-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/sourcesanspro-bold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-bold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-bold-webfont.svg#source_sans_pro_bold') format('svg');
+}
+@font-face {
+  font-family: 'Source Sans Pro Medium';
   font-style: normal;
   font-weight: 600;
 
-  src: url('../fonts/OpenSans-Bold-webfont.eot');
-  src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/OpenSans-Bold-webfont.woff') format('woff'), url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Bold-webfont.svg#open_sans_bold') format('svg');
+  src: url('../fonts/sourcesanspro-semibold-webfont.eot');
+  src: url('../fonts/sourcesanspro-semibold-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/sourcesanspro-semibold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-semibold-webfont.svg#source_sans_pro_semibold') format('svg');
 }
 @font-face {
-  font-family: 'Open Sans Light';
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+
+  src: url('../fonts/sourcesanspro-regular-webfont.eot');
+  src: url('../fonts/sourcesanspro-regular-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'), url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-regular-webfont.svg#source_sans_pro_regular') format('svg');
+}
+@font-face {
+  font-family: 'Source Sans Pro Light';
   font-style: normal;
   font-weight: 300;
 
-  src: url('../fonts/OpenSans-Light-webfont.eot');
-  src: url('../fonts/OpenSans-Light-webfont.eot?#iefix8') format('embedded-opentype'), url('../fonts/OpenSans-Light-webfont.woff') format('woff'), url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Light-webfont.svg#open_sans_light') format('svg');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 500;
-
-  src: url('../fonts/OpenSans-Regular-webfont.eot');
-  src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix11') format('embedded-opentype'), url('../fonts/OpenSans-Regular-webfont.woff') format('woff'), url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Regular-webfont.svg#open_sans_regular') format('svg');
+  src: url('../fonts/sourcesanspro-light-webfont.eot');
+  src: url('../fonts/sourcesanspro-light-webfont.eot?#iefix3') format('embedded-opentype'), url('../fonts/sourcesanspro-light-webfont.woff') format('woff'), url('../fonts/sourcesanspro-light-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-light-webfont.svg#source_sans_pro_light') format('svg');
 }
 @font-face {
   font-family: 'Custom Icons';
@@ -817,7 +825,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.42857143;
   color: #000;
@@ -1267,27 +1275,27 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
 }
 h1,
 .h1 {
-  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 h2,
 .h2 {
-  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 h4,
 h5 .h4,
 .h5 {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 h6,
 .h6 {
-  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 p {
@@ -1299,29 +1307,29 @@ pre,
 }
 strong,
 .strong {
-  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 .text-bold {
-  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
-  font-weight: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
+  font-weight: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
 }
 .text-regular {
-  font-weight: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 .text-light {
-  font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
-  font-weight: "Open Sans Light", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif;
+  font-weight: "Source Sans Pro Light", Helvetica, Arial, sans-serif;
 }
 .text-muted {
   color: #ccc;
 }
 .text-secondary {
-  color: #a8b800;
+  color: #807700;
 }
 a.text-secondary:hover {
-  color: #798500;
+  color: #4d4700;
 }
 code,
 kbd,
@@ -5901,14 +5909,14 @@ table th[class*="col-"] {
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th {
-  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.33;
 }
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.42857143;
 }
@@ -7002,7 +7010,7 @@ tbody.collapse.in {
   }
 }
 .dropdown-header {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 1em;
   border-bottom: 1px solid #eee;
 }
@@ -7060,7 +7068,7 @@ tbody.collapse.in {
   color: #000;
 }
 .dropdown-selection .dropdown-toggle .dropdown-label {
-  font-family: "Open Sans Bold", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Bold", Helvetica, Arial, sans-serif;
 }
 .dropdown-selection .dropdown-menu {
   width: 100%;
@@ -7153,7 +7161,7 @@ tbody.collapse.in {
 .dropdown-selection.has-selection .dropdown-toggle .dropdown-text {
   display: block;
   overflow: hidden;
-  font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif;
   font-size: .75em;
   text-overflow: ellipsis;
   filter: alpha(opacity=100);
@@ -8355,7 +8363,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #0097c9;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -8363,7 +8371,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 a.label:hover,
 a.label:focus {
-  color: #fff;
+  color: #007196;
   text-decoration: none;
   cursor: pointer;
 }
@@ -9451,7 +9459,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: .75em;
   font-weight: normal;
   line-height: 1.4;
@@ -9558,7 +9566,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: normal;
   line-height: 1.42857143;
@@ -10001,7 +10009,7 @@ button.close {
   background: #0097c9;
 }
 .bg-secondary {
-  background: #eeff38;
+  background: #fe0;
 }
 .bg-success {
   color: #fff;

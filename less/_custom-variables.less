@@ -15,7 +15,7 @@
 @gray-lighter:           #f6f6f6;
 
 @brand-primary:         #0097c9;
-@brand-secondary:       #EEFF38;
+@brand-secondary:       #ffee00;
 
 @brand-success:         #00BD6E;
 @brand-info:            #388BFF;
@@ -50,13 +50,13 @@
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-@opensans-font-path:    '../fonts/';
+@sourcesans-font-path:    '../fonts/';
 
 @font-family-backups:     Helvetica, Arial, sans-serif;
-// @font-family-black:       "Source Sans Pro Black", @font-family-backups;
-@font-family-bold:        "Open Sans Bold", @font-family-backups;
-@font-family-regular:     "Open Sans", @font-family-backups;
-@font-family-light:       "Open Sans Light", @font-family-backups;
+@font-family-bold:        "Source Sans Pro Bold", @font-family-backups;
+@font-family-medium:      "Source Sans Pro Medium", @font-family-backups;
+@font-family-regular:     "Source Sans Pro", @font-family-backups;
+@font-family-light:       "Source Sans Pro Light", @font-family-backups;
 @font-family-sans-serif:  @font-family-light, @font-family-backups;
 
 @font-weight-bold:        600;
@@ -382,3 +382,26 @@
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
 @hr-border:                   @gray-light;
+
+
+//== Labels
+//
+//##
+
+//** Default label background color
+@label-default-bg:            @gray-light;
+//** Primary label background color
+@label-primary-bg:            @brand-primary;
+//** Success label background color
+@label-success-bg:            @brand-success;
+//** Info label background color
+@label-info-bg:               @brand-info;
+//** Warning label background color
+@label-warning-bg:            @brand-warning;
+//** Danger label background color
+@label-danger-bg:             @brand-danger;
+
+//** Default label text color
+@label-color:                 @brand-primary;
+//** Default text color of a linked label
+@label-link-hover-color:      darken(@brand-primary, 10%);
