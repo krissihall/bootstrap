@@ -59,7 +59,8 @@
 @font-family-light:       "Source Sans Pro Light", @font-family-backups;
 @font-family-sans-serif:  @font-family-light, @font-family-backups;
 
-@font-weight-bold:        600;
+@font-weight-bold:        800;
+@font-weight-medium:      600;
 @font-weight-light:       300;
 @font-weight-standard:    400;
 
@@ -70,15 +71,43 @@
 
 @font-base:               16;
 @font-size-base:          1em;
+
+@line-height-large:      1.33;
+@line-height-small:      1.5;
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:       1.428571429; // 20/14
+
+//** Default (dft) Font Size Variables //
+//== These are the only font-sizes that will be used project-wide
+//
+//== Note: Each of these font sizes has a default line-height that goes with it
+//   There are mixins that coorespond to these names that include the line-height
+//   (e.g. dft-font-1(), dft-font-2(), etc.)
+
+@dft-font-1:              unit((9 / @font-base), em);  // ~9px   : 0.5625em
+@dft-font-2:              unit((10 / @font-base), em); // ~10px  : 0.625em
+@dft-font-3:              unit((11 / @font-base), em); // ~11px  : 0.6875em
+@dft-font-4:              unit((12 / @font-base), em); // ~12px  : 0.75em
+@dft-font-5:              unit((13 / @font-base), em); // ~13px  : 0.8125em
+@dft-font-6:              unit((14 / @font-base), em); // ~14px  : 0.875em
+@dft-font-7:              unit((18 / @font-base), em); // ~18px  : 1.125em
+@dft-font-8:              unit((24 / @font-base), em); // ~24px  : 1.5em
+@dft-font-9:              unit((30 / @font-base), em); // ~30px  : 1.875em
+@dft-font-10:             unit((36 / @font-base), em); // ~36px  : 2.25em
+@dft-font-11:             unit((42 / @font-base), em); // ~42px  : 2.625em
+
+@font-size-large:         @dft-font-8; // ~24px : 1.5em
+@font-size-small:         @dft-font-4; // ~12px : 0.75em
 @font-size-large:         unit((18 / @font-base), em); // ~18px
 @font-size-small:         unit((12 / @font-base), em); // ~12px
 
-@font-size-h1:            unit((36 / @font-base), em); // ~36px
-@font-size-h2:            unit((30 / @font-base), em); // ~30px
-@font-size-h3:            unit((24 / @font-base), em); // ~24px
-@font-size-h4:            unit((18 / @font-base), em); // ~18px
-@font-size-h5:            @font-size-base;
-@font-size-h6:            unit((12 / @font-base), em); // ~12px
+@font-size-h1:            @dft-font-10; // ~36px  : 2.25em
+@font-size-h2:            @dft-font-8;  // ~24px  : 1.5em
+@font-size-h3:            @dft-font-7;  // ~18px  : 1.125em
+@font-size-h4:            @dft-font-6;  // ~14px  : 0.875em
+@font-size-h5:            @dft-font-6;  // ~14px  : 0.875em
+@font-size-h6:            @dft-font-4;  // ~12px  : 0.75em
 
 //** Unit-less `line-height` for use in components like buttons.
 @line-height-base:        1.428571429; // 20/14

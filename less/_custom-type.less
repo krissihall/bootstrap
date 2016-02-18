@@ -6,11 +6,6 @@
 // Headings
 // -------------------------
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: @font-family-bold;
-}
-
 h1,
 .h1 {
   font-family: @font-family-bold;
@@ -23,20 +18,37 @@ h2,
   font-weight: @font-weight-standard;
 }
 
-h4, h5
-.h4, .h5 {
+h3,
+.h3 {
+  font-family: @font-family-light;
+  font-weight: @font-weight-medium;
+}
+
+h4,
+.h4 {
+  font-family: @font-family-medium;
+  font-weight: @font-weight-medium;
+}
+
+h5,
+.h5 {
   font-family: @font-family-regular;
   font-weight: @font-weight-standard;
 }
 
 h6,
 .h6 {
-  font-family: @font-family-bold;
-  font-weight: @font-weight-bold;
+  font-family: @font-family-medium;
+  font-weight: @font-weight-medium;
 }
 
 p {
-  margin-bottom: 20px;
+  .dft-font-4();
+  margin-bottom: 30px;
+}
+
+.lead {
+  .dft-font-7();
 }
 
 pre,
@@ -50,14 +62,14 @@ pre,
 
 strong,
 .strong {
-  font-weight: normal;
+  font-weight: @font-weight-bold;
   font-family: @font-family-bold;
 }
 
-// .text-black {
-//   font-family: @font-family-black;
-//   font-weight: @font-weight-black;
-// }
+.text-medium {
+  font-family: @font-family-medium;
+  font-weight: @font-weight-medium;
+}
 
 .text-bold {
   font-family: @font-family-bold;

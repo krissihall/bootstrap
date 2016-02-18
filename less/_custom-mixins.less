@@ -1,3 +1,75 @@
+//== Default (dft) Font Size Mixins (with cooresponding line-heights)
+//
+//## These are the only font-sizes that will be used project-wide
+.dft-font-1() {
+  font-size: @dft-font-1;
+  line-height: 17px;
+}
+
+.dft-font-2() {
+  font-size: @dft-font-2;
+  line-height: 18px;
+}
+
+.dft-font-3() {
+  font-size: @dft-font-3;
+  line-height: 19px;
+}
+
+.dft-font-4() {
+  font-size: @dft-font-4;
+  line-height: 20px;
+}
+
+.dft-font-5() {
+  font-size: @dft-font-5;
+  line-height: 21px;
+}
+
+.dft-font-6() {
+  font-size: @dft-font-6;
+  line-height: 22px;
+}
+
+.dft-font-7() {
+  font-size: @dft-font-7;
+  line-height: 26px;
+}
+
+.dft-font-8() {
+  font-size: @dft-font-8;
+  line-height: 32px;
+}
+
+.dft-font-9() {
+  font-size: @dft-font-9;
+  line-height: 38px;
+}
+
+.dft-font-10() {
+  font-size: @dft-font-10;
+  line-height: 40px;
+}
+
+.dft-font-11() {
+  font-size: @dft-font-11;
+  line-height: 46px;
+}
+
+.font-pixel-converter(@size: 16, @unit: em) {
+  font-size: unit((@size / @font-base), @unit);
+}
+
+// Converts em or rem value of nested element based on parent base-font-size.
+// Added as of AEO-Bootstrap v0.1.4:
+//    refer to AEO-Bootstrap documentation for more informaiton.
+.font-em-reset(@parent, @target-size, @unit: em) {
+  @new-font-base: unit((@parent * @font-base));
+  @target-size-in-px: unit((@target-size * @font-base));
+
+  font-size: unit((@target-size-in-px / @new-font-base), @unit);
+}
+
 //== Custom Mixins and Over-riding Existing Mixins
 //
 //## Define custom mixins and modify existing mixins.
