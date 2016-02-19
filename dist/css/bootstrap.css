@@ -304,8 +304,8 @@ th {
   font-style: normal;
   font-weight: normal;
 
-  src: url('../fonts/custom-icons.eot?-fdegrh65');
-  src: url('../fonts/custom-icons.eot?#iefix-fdegrh65') format('embedded-opentype'), url('../fonts/custom-icons.woff?-fdegrh65') format('woff'), url('../fonts/custom-icons.ttf?-fdegrh65') format('truetype'), url('../fonts/custom-icons.svg?-fdegrh65#custom_icons') format('svg');
+  src: url('../fonts/custom-icons.eot');
+  src: url('../fonts/custom-icons.eot?#iefix3') format('embedded-opentype'), url('../fonts/custom-icons.woff') format('woff'), url('../fonts/custom-icons.ttf') format('truetype'), url('../fonts/custom-icons.svg#source_sans_pro_bold') format('svg');
 }
 .customicon {
   position: relative;
