@@ -319,6 +319,18 @@ th {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.customicon-logo-text:before {
+  content: "\e901";
+}
+.customicon-logo-simple:before {
+  content: "\e902";
+}
+.customicon-logo-silhouette:before {
+  content: "\e903";
+}
+.customicon-logo:before {
+  content: "\e904";
+}
 .customicon-home:before {
   content: "\e900";
 }
