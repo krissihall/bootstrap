@@ -15,7 +15,7 @@
     &.focus {
       .linear-gradient(@background, @hover);
       color: @color;
-      border-color: @hover;
+      border-color: @border;
     }
   }
 
@@ -24,7 +24,7 @@
   &.focus {
     .linear-gradient(@background, @hover);
     color: @color;
-    border-color: @hover;
+    border-color: @border;
   }
 
   &:active,
@@ -55,14 +55,14 @@
   .open > .dropdown-toggle& {
     .linear-gradient(@background, @hover);
     color: @color;
-    border-color: @hover;
+    border-color: @border;
 
     &:hover,
     &:focus,
     &.focus {
       .linear-gradient(@background, @hover);
       color: @color;
-      border-color: @hover;
+      border-color: @border;
     }
   }
   &:active,

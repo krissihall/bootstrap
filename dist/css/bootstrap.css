@@ -857,7 +857,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #005e7d;
+  color: #007ca5;
   text-decoration: underline;
 }
 a:focus {
@@ -6855,7 +6855,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #005e7d;
+  color: #007ca5;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -7183,14 +7183,14 @@ fieldset[disabled] .btn .badge {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-primary:hover,
 .btn-default:hover,
@@ -7204,14 +7204,14 @@ fieldset[disabled] .btn .badge {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-primary:active,
 .btn-default:active,
@@ -7223,11 +7223,11 @@ fieldset[disabled] .btn .badge {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
   border-color: #0097c9;
@@ -7290,14 +7290,14 @@ fieldset[disabled] .btn-default.active {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-primary:active:hover,
 .btn-default:active:hover,
@@ -7323,14 +7323,14 @@ fieldset[disabled] .btn-default.active {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-primary .badge,
 .btn-default .badge {
@@ -7354,14 +7354,14 @@ fieldset[disabled] .btn-default.active {
   background: #fe0;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background: -webkit-linear-gradient(top, #fe0 0%, #f0e000 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
-  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
-  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#f0e000));
+  background:      -o-linear-gradient(top, #fe0 0%, #f0e000 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #f0e000 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #e6d600;
+  border-color: #fe0;
 }
 .btn-secondary:hover,
 .btn-secondary:focus,
@@ -7372,14 +7372,14 @@ fieldset[disabled] .btn-default.active {
   background: #fe0;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background: -webkit-linear-gradient(top, #fe0 0%, #f0e000 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
-  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
-  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#f0e000));
+  background:      -o-linear-gradient(top, #fe0 0%, #f0e000 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #f0e000 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #e6d600;
+  border-color: #fe0;
 }
 .btn-secondary:active,
 .btn-secondary.active {
@@ -7389,11 +7389,11 @@ fieldset[disabled] .btn-default.active {
   background: #fe0;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background: -webkit-linear-gradient(top, #fe0 0%, #f0e000 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
-  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
-  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#f0e000));
+  background:      -o-linear-gradient(top, #fe0 0%, #f0e000 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #f0e000 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
   border-color: #fe0;
@@ -7432,14 +7432,14 @@ fieldset[disabled] .btn-secondary.active {
   background: #fe0;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background: -webkit-linear-gradient(top, #fe0 0%, #f0e000 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
-  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
-  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#f0e000));
+  background:      -o-linear-gradient(top, #fe0 0%, #f0e000 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #f0e000 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #e6d600;
+  border-color: #fe0;
 }
 .btn-secondary:active:hover,
 .btn-secondary.active:hover,
@@ -7456,14 +7456,14 @@ fieldset[disabled] .btn-secondary.active {
   background: #fe0;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #fe0 0%, #e6d600 100%);
+  background: -webkit-linear-gradient(top, #fe0 0%, #f0e000 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#e6d600));
-  background:      -o-linear-gradient(top, #fe0 0%, #e6d600 100%);
-  background:         linear-gradient(to bottom, #fe0 0%, #e6d600 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0), to(#f0e000));
+  background:      -o-linear-gradient(top, #fe0 0%, #f0e000 100%);
+  background:         linear-gradient(to bottom, #fe0 0%, #f0e000 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #e6d600;
+  border-color: #fe0;
 }
 .btn-secondary .badge {
   color: #fe0;
@@ -7486,14 +7486,14 @@ fieldset[disabled] .btn-secondary.active {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-brand:hover,
 .btn-brand:focus,
@@ -7504,14 +7504,14 @@ fieldset[disabled] .btn-secondary.active {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-brand:active,
 .btn-brand.active {
@@ -7521,11 +7521,11 @@ fieldset[disabled] .btn-secondary.active {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
   border-color: #0097c9;
@@ -7564,14 +7564,14 @@ fieldset[disabled] .btn-brand.active {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-brand:active:hover,
 .btn-brand.active:hover,
@@ -7588,14 +7588,14 @@ fieldset[disabled] .btn-brand.active {
   background: #0097c9;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0097c9 0%, #0080aa 100%);
+  background: -webkit-linear-gradient(top, #0097c9 0%, #0088b5 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0080aa));
-  background:      -o-linear-gradient(top, #0097c9 0%, #0080aa 100%);
-  background:         linear-gradient(to bottom, #0097c9 0%, #0080aa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0097c9), to(#0088b5));
+  background:      -o-linear-gradient(top, #0097c9 0%, #0088b5 100%);
+  background:         linear-gradient(to bottom, #0097c9 0%, #0088b5 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #0080aa;
+  border-color: #0097c9;
 }
 .btn-brand .badge {
   color: #0097c9;
@@ -7618,14 +7618,14 @@ fieldset[disabled] .btn-brand.active {
   background: #00bd6e;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #00a962 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
-  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
-  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#00a962));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #00a962 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #00a962 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #009e5c;
+  border-color: #00bd6e;
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -7636,14 +7636,14 @@ fieldset[disabled] .btn-brand.active {
   background: #00bd6e;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #00a962 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
-  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
-  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#00a962));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #00a962 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #00a962 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #009e5c;
+  border-color: #00bd6e;
 }
 .btn-success:active,
 .btn-success.active {
@@ -7653,11 +7653,11 @@ fieldset[disabled] .btn-brand.active {
   background: #00bd6e;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #00a962 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
-  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
-  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#00a962));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #00a962 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #00a962 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
   border-color: #00bd6e;
@@ -7696,14 +7696,14 @@ fieldset[disabled] .btn-success.active {
   background: #00bd6e;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #00a962 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
-  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
-  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#00a962));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #00a962 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #00a962 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #009e5c;
+  border-color: #00bd6e;
 }
 .btn-success:active:hover,
 .btn-success.active:hover,
@@ -7720,14 +7720,14 @@ fieldset[disabled] .btn-success.active {
   background: #00bd6e;
   /* Old browsers */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-linear-gradient(top, #00bd6e 0%, #00a962 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#009e5c));
-  background:      -o-linear-gradient(top, #00bd6e 0%, #009e5c 100%);
-  background:         linear-gradient(to bottom, #00bd6e 0%, #009e5c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bd6e), to(#00a962));
+  background:      -o-linear-gradient(top, #00bd6e 0%, #00a962 100%);
+  background:         linear-gradient(to bottom, #00bd6e 0%, #00a962 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #009e5c;
+  border-color: #00bd6e;
 }
 .btn-success .badge {
   color: #00bd6e;
@@ -7757,7 +7757,7 @@ fieldset[disabled] .btn-success.active {
   background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #1979ff;
+  border-color: #388bff;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -7775,7 +7775,7 @@ fieldset[disabled] .btn-success.active {
   background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #1979ff;
+  border-color: #388bff;
 }
 .btn-info:active,
 .btn-info.active {
@@ -7835,7 +7835,7 @@ fieldset[disabled] .btn-info.active {
   background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #1979ff;
+  border-color: #388bff;
 }
 .btn-info:active:hover,
 .btn-info.active:hover,
@@ -7859,7 +7859,7 @@ fieldset[disabled] .btn-info.active {
   background:         linear-gradient(to bottom, #388bff 0%, #1979ff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #1979ff;
+  border-color: #388bff;
 }
 .btn-info .badge {
   color: #388bff;
@@ -7889,7 +7889,7 @@ fieldset[disabled] .btn-info.active {
   background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #ff9705;
+  border-color: #ffac38;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -7907,7 +7907,7 @@ fieldset[disabled] .btn-info.active {
   background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #ff9705;
+  border-color: #ffac38;
 }
 .btn-warning:active,
 .btn-warning.active {
@@ -7967,7 +7967,7 @@ fieldset[disabled] .btn-warning.active {
   background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #ff9705;
+  border-color: #ffac38;
 }
 .btn-warning:active:hover,
 .btn-warning.active:hover,
@@ -7991,7 +7991,7 @@ fieldset[disabled] .btn-warning.active {
   background:         linear-gradient(to bottom, #ffac38 0%, #ff9705 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #ff9705;
+  border-color: #ffac38;
 }
 .btn-warning .badge {
   color: #ffac38;
@@ -8021,7 +8021,7 @@ fieldset[disabled] .btn-warning.active {
   background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #eb1400;
+  border-color: #ff4938;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -8039,7 +8039,7 @@ fieldset[disabled] .btn-warning.active {
   background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #eb1400;
+  border-color: #ff4938;
 }
 .btn-danger:active,
 .btn-danger.active {
@@ -8099,7 +8099,7 @@ fieldset[disabled] .btn-danger.active {
   background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #eb1400;
+  border-color: #ff4938;
 }
 .btn-danger:active:hover,
 .btn-danger.active:hover,
@@ -8123,7 +8123,7 @@ fieldset[disabled] .btn-danger.active {
   background:         linear-gradient(to bottom, #ff4938 0%, #eb1400 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@start', endColorstr='@end', GradientType=0);
-  border-color: #eb1400;
+  border-color: #ff4938;
 }
 .btn-danger .badge {
   color: #ff4938;
@@ -9600,7 +9600,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  color: #005e7d;
+  color: #007ca5;
   background-color: #eee;
   border-color: #ddd;
 }
