@@ -15,9 +15,11 @@
 @gray-lighter:           #eee;
 @gray-lightest:          #fafafa;
 
-@brand-primary-dark:    darken(@brand-primary, 70%);
 @brand-primary:         #0097c9;
+@brand-primary-dark:    darken(@brand-primary, 20%);
+@brand-primary-darker:  darken(@brand-primary, 60%);
 @brand-secondary:       #ffee00;
+@brand-secondary-dark:  darken(@brand-secondary, 20%);
 @brand-accent:          #db2828;
 
 @brand-success:         #00BD6E;
@@ -25,7 +27,7 @@
 @brand-warning:         #FFAC38;
 @brand-danger:          #FF4938;
 
-@tab-focus-color:       @brand-primary;
+@tab-focus-color:       @gray-light;
 
 
 //** Social Media Colors
@@ -44,9 +46,14 @@
 
 //** Form Text
 
-@form-placeholder:       @gray-dark;
+@form-placeholder:       @gray;
 @form-text:              @gray-base;
 @form-disabled:          @gray-light;
+
+@form-label-font-size:   @dft-font-5;
+@form-label-font-face:   @font-family-regular;
+@form-label-font-weight: @font-weight-standard;
+@form-label-color:       @brand-primary-dark;
 
 
 //== Scaffolding
@@ -62,7 +69,6 @@
 @link-color:           @brand-primary;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 7%);
-
 
 //== Typography
 //
@@ -230,6 +236,62 @@
 @btn-link-disabled-color:          @gray-light;
 
 
+//== Forms
+//
+//##
+
+//** `<input>` background color
+@input-bg:                       #fff;
+//** `<input disabled>` background color
+@input-bg-disabled:              @gray-lighter;
+//** `<input disabled>` font color
+@input-color-disabled:           @gray;
+//** `<input disabled>` border color
+@input-border-disabled:          @gray-light;
+
+//** Input font-sizes
+@input-lg-font-size:             @dft-font-6;
+@input-font-size:                unit((13 / @font-base), em);
+@input-sm-font-size:             @dft-font-2;
+
+//** Input padding
+@input-padding-vertical:         12px;
+@input-padding-horizontal:       16px;
+
+//** Input padding for devices
+@input-padding-vertical-device: (@input-padding-vertical - 2px);
+@input-font-size-device:        1em;
+
+@form-field-gutter:              14px;
+
+//** Text color for `<input>`s
+@input-color:                    @form-text;
+//** `<input>` border color
+@input-border:                   @brand-primary;
+//** `<input>` border radius
+@input-border-radius:            0;
+//** Border color for inputs on focus
+@input-border-focus:             @brand-primary-dark;
+
+//** Placeholder text color
+@input-color-placeholder:        @form-placeholder;
+
+//** Default `.form-control` height
+@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+@input-height-large:             (ceil( unit((@font-size-large * @font-base), px) * @line-height-large) + (@padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+@input-height-small:             (floor( unit((@font-size-small * @font-base), px) * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+@legend-color:                   @gray-dark;
+@legend-border-color:            #e5e5e5;
+
+//** Background color for textual input addons
+@input-group-addon-bg:           @gray-lighter;
+//** Border color for textual input addons
+@input-group-addon-border-color: @input-border;
+
+
 //== Grid system
 //
 //## Define your custom responsive grid.
@@ -258,9 +320,9 @@
 @component-active-bg:       @brand-primary;
 
 //** Width of the `border` for generating carets that indicator dropdowns.
-@caret-width-base:          4px;
+@caret-width-base:          6px;
 //** Carets increase slightly in size for larger components.
-@caret-width-large:         5px;
+@caret-width-large:         8px;
 
 
 //== Tables
@@ -566,6 +628,6 @@
 //** Breadcrumb text color
 @breadcrumb-color:              darken(@brand-secondary, 5%);
 //** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       darken(@brand-secondary, 20%);
+@breadcrumb-active-color:       @brand-secondary-dark;
 //** Textual separator for between breadcrumb elements
 @breadcrumb-separator:          "/";

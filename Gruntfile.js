@@ -228,7 +228,8 @@ module.exports = function (grunt) {
       options: {
         // TODO: disable `zeroUnits` optimization once clean-css 3.2 is released
         //    and then simplify the fix for https://github.com/twbs/bootstrap/issues/14837 accordingly
-        compatibility: 'ie8',
+        // compatibility: 'ie8',
+        compatibility: true,
         keepSpecialComments: '*',
         advanced: false
       },
@@ -248,6 +249,32 @@ module.exports = function (grunt) {
 
         ],
         dest: 'docs/assets/css/docs.min.css'
+      },
+      minifyDist: {
+        options: {
+          advanced: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'dist/css',
+            src: ['**/*.min.css'],
+            dest: 'dist/css',
+            ext: '.min.css'
+          }
+        ]
+      }
+    },
+
+    cssmetrics: {
+      options: {
+        maxSelectors: 4096
+      },
+      dist: {
+        src: [
+          'dist/css/<%= pkg.name %>.min.css',
+          'dist/css/<%= pkg.name %>-plugins.min.css'
+        ]
       }
     },
 
@@ -461,9 +488,15 @@ module.exports = function (grunt) {
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
 
+  // CSS selector count of distribution minified CSS file.
+  grunt.registerTask('css-count', ['cssmetrics:dist']);
+
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme', 'css-count', 're-dist-css']);
+
+  // Re-minify dist files to reduce filesize from duplicate selectors
+  grunt.registerTask('re-dist-css', ['cssmin:minifyDist', 'css-count']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'copy:images', 'dist-js']);

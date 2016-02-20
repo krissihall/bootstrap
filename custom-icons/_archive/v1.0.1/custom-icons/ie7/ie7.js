@@ -13,8 +13,6 @@
 		el.innerHTML = '<span style="font-family: \'custom-icons\'">' + entity + '</span>' + html;
 	}
 	var icons = {
-		'customdropdown': '&#x25bc;',
-		'customdropup': '&#x25b2;',
 		'customlogo-text': '&#xe901;',
 		'customlogo-simple': '&#xe902;',
 		'customlogo-silhouette': '&#xe903;',

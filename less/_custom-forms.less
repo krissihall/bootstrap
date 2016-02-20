@@ -1,0 +1,441 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Normalize non-controls
+//
+// Restyle and baseline non-control form elements.
+
+.form-group,
+.checkbox {
+  position: relative;
+  z-index: 1;
+}
+
+label {
+  font-family: @form-label-font-face;
+  font-weight: @form-label-font-weight;
+  font-size: @form-label-font-size;
+  color: @form-label-color;
+  text-transform: uppercase;
+}
+
+//** Custom Form Styles
+.form-control {
+  font-family: @font-family-sans-serif;
+  position: relative;
+  height: auto;
+  z-index: 1;
+  padding: @input-padding-vertical @input-padding-horizontal (@input-padding-vertical + 1px);
+  font-size: @input-font-size;
+  border: none;
+  color: @form-text;
+
+  @media screen and (max-device-width: @screen-sm-max) {
+    padding: @input-padding-vertical-device @input-padding-horizontal (@input-padding-vertical-device + 1px);
+    font-size: @input-font-size-device;
+  }
+
+  // Box Shadow
+  .box-shadow(inset 0 0 1px @brand-primary);
+
+  // Placeholder
+  .placeholder(@form-placeholder);
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    .box-shadow(inset 0 0 1px @input-border-disabled);
+    color: @input-color-disabled;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    .box-shadow(inset 0 0 1px @input-border-disabled);
+    color: @input-color-disabled;
+  }
+
+  // Focus
+  .form-control-focus(@brand-primary, @btn-primary-hover);
+}
+
+
+fieldset[disabled] .caret { color: @input-color-disabled !important; }
+
+//** Custom CSS-only Checkboxes
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) ~ label,
+[type="checkbox"]:checked ~ label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  line-height: inherit;
+  height: 20px;
+  vertical-align: middle;
+  display: table-cell;
+  font-size: @form-label-font-size;
+  font-weight: @form-label-font-weight;
+  font-family: @form-label-font-face;
+  color: @gray-base;
+  text-transform: none;
+}
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) ~ label:before,
+[type="checkbox"]:checked ~ label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background:#fff;
+  border: 1px solid @brand-primary;
+  font-size: @dft-font-5;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) ~ label:after,
+[type="checkbox"]:checked ~ label:after   {
+  content: '\ea10';
+  font-family: 'Custom Icons';
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: all .2s;
+  font-size: 12px;
+  line-height: 1.25;
+  display: block;
+  color: darken(@brand-secondary, 10%);
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) ~ label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked ~ label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) ~ label:before,
+[type="checkbox"]:disabled:checked ~ label:before {
+  box-shadow: none;
+  border-color: @input-border-disabled;
+  background-color: @input-bg-disabled;
+  cursor: not-allowed;
+}
+[type="checkbox"]:disabled:checked ~ label:after  {
+  color: @input-color-disabled;
+  cursor: not-allowed;
+}
+[type="checkbox"]:disabled ~ label {
+  color: @input-color-disabled;
+  cursor: not-allowed;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus ~ label,
+[type="checkbox"]:not(:checked):focus ~ label  {
+  .form-tabbing-focus();
+}
+
+//** Custom Checkbox Error Styling
+// Feedback states
+.checkbox {
+  &.has-success {
+    label:before {
+      border-color: @brand-success;
+    }
+  }
+
+  &.has-warning {
+    label:before {
+      border-color: @brand-warning;
+    }
+  }
+
+  &.has-error {
+    label:before {
+      border-color: @brand-danger;
+    }
+  }
+}
+
+
+//** Custom CSS-only Radio Buttons
+
+/* Base for label styling */
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  line-height: 20px;
+  height: 20px;
+  font-family: @form-label-font-face;
+  font-size: @form-label-font-size;
+  color: @gray-base;
+  font-weight: @form-label-font-weight;
+  text-transform: none;
+}
+
+/* checkbox aspect */
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid @brand-primary;
+  font-size: 12px;
+}
+/* checked mark aspect */
+[type="radio"]:not(:checked) + label:after,
+[type="radio"]:checked + label:after {
+  background: darken(@brand-secondary, 10%);
+  border-radius: 10px;
+  width: 8px;
+  height: 8px;
+  content: ' ';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="radio"]:disabled:not(:checked) + label:before,
+[type="radio"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: @input-border-disabled;
+  background-color: @input-bg-disabled;
+  cursor: not-allowed;
+}
+[type="radio"]:disabled:checked + label:after {
+  color: @input-color-disabled;
+  cursor: not-allowed;
+  background: @input-color-disabled;
+}
+[type="radio"]:disabled + label {
+  color: @input-color-disabled;
+  cursor: not-allowed;
+}
+/* accessibility */
+[type="radio"]:checked:focus + label,
+[type="radio"]:not(:checked):focus + label {
+  .form-tabbing-focus();
+}
+
+//** Inline Checkboxes and Inline Radio Button Over-rides
+.radio-inline,
+.checkbox-inline {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+[type="checkbox"]:not(:checked) ~ label.checkbox-inline,
+[type="checkbox"]:checked ~ label.checkbox-inline {
+  display: inline-block;
+}
+
+//** Custom CSS Select Boxes
+.select-control {
+  position: relative;
+
+  .form-control {
+    background: #fff;
+    border-radius: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    height: auto;
+    position: relative;
+    z-index: 1;
+    .form-control-focus(@brand-primary, @brand-primary);
+    /* TODO: Investigate this fix as it breaks in Chrome */
+    // color: inherit;
+    font-size: @input-font-size;
+    padding: @input-padding-vertical @input-padding-horizontal;
+
+    @media screen and (max-device-width: @screen-sm-max) {
+      font-size: @input-font-size-device;
+      padding: @input-padding-vertical-device @input-padding-horizontal;
+    }
+  }
+
+  .caret {
+    position: absolute;
+    z-index: 2;
+    right: 14px;
+    top: 21px;
+    font-size: 1em;
+    line-height: 8px;
+    border-top-color: @brand-primary;
+  }
+
+  .form-control-feedback {
+    right: 6%;
+    font-size: ((@font-size-base * .5) + @font-size-base);
+    line-height: (@line-height-base * 1.6);
+  }
+
+  &.has-success {
+    .caret { border-top-color: @brand-success; }
+
+    .form-control {
+      .form-control-focus(@brand-success, @brand-success);
+      .focus-box-shadow(@brand-success);
+    }
+  }
+  &.has-warning {
+    .caret { border-top-color: @brand-warning; }
+
+    .form-control {
+      .form-control-focus(@brand-warning, @brand-warning);
+      .focus-box-shadow(@brand-warning);
+    }
+  }
+  &.has-error {
+    .caret { border-top-color: @brand-danger; }
+
+    .form-control {
+      .form-control-focus(@brand-danger, @brand-danger);
+      .focus-box-shadow(@brand-danger);
+    }
+  }
+
+  &.is-disabled,
+  &.is-readonly {
+
+    label {
+      z-index: 3 !important;
+      color: @input-color-disabled;
+    }
+
+    .caret {
+      border-top-color: @input-color-disabled;
+      // increase zindex to make it visible if select is disabled
+      z-index: 2;
+    }
+
+    .form-control {
+      color: @input-color-disabled;
+      background: @input-bg-disabled;
+      border-color: @input-border-disabled;
+    }
+  }
+
+  &.is-disabled,
+  &.is-readonly {
+    color: @input-color-disabled;
+  }
+}
+
+//** Validation States
+.has-success {
+  .form-control {
+    .form-control-focus(@brand-success, @brand-success);
+    .focus-box-shadow(@brand-success);
+    font-family: @form-label-font-face;
+    color: @brand-success;
+  }
+  .input-group-addon { border-width: 2px; }
+  a { color: @brand-success; }
+}
+.has-warning {
+  .form-control {
+    .form-control-focus(@brand-warning, @brand-warning);
+    .focus-box-shadow(@brand-warning);
+    font-family: @form-label-font-face;
+    color: @brand-warning;
+  }
+  .input-group-addon { border-width: 2px; }
+  a { color: @brand-warning; }
+}
+.has-error {
+  .form-control {
+    .form-control-focus(@brand-danger, @brand-danger);
+    .focus-box-shadow(@brand-danger);
+    font-family: @form-label-font-face;
+    color: @brand-danger;
+  }
+  .input-group-addon { border-width: 2px; }
+  a { color: @brand-danger; }
+}
+
+//** Btn-group over-rides
+.btn-group {
+
+  &.open {
+    .dropdown-toggle {
+
+      &.btn-brand {
+        border-color: @btn-brand-hover;
+        background: @btn-brand-hover;
+        .focus-box-shadow(@btn-brand-hover);
+      }
+      &.btn-success {
+        border-color: @btn-success-hover;
+        background: @btn-success-hover;
+        .focus-box-shadow(@btn-success-hover);
+      }
+      &.btn-info {
+        border-color: @btn-info-hover;
+        background: @btn-info-hover;
+        .focus-box-shadow(@btn-info-hover);
+      }
+      &.btn-warning {
+        border-color: @btn-warning-hover;
+        background: @btn-warning-hover;
+        .focus-box-shadow(@btn-warning-hover);
+      }
+      &.btn-danger {
+        border-color: @btn-danger-hover;
+        background: @btn-danger-hover;
+        .focus-box-shadow(@btn-danger-hover);
+      }
+    }
+  }
+}
+
+
+// Horizontal forms
+//
+// Horizontal forms are built on grid classes and allow you to create forms with
+// labels on the left and inputs on the right.
+
+.form-horizontal {
+  .radio,
+  .checkbox {
+    min-height: 20px;
+  }
+}

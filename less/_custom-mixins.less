@@ -170,7 +170,7 @@
 //## Over-ride core form mixins.
 
 //** Form field focus styling
-.form-control-focus(@initial: @gray-light, @hover: @gray-base) {
+.form-control-focus(@initial: @brand-primary, @hover: @brand-primary-dark) {
   .focus-box-shadow (@initial, 1px);
   -webkit-backface-visibility: hidden;
   outline: none;
@@ -185,6 +185,12 @@
 .form-tabbing-focus(@initial: @gray-dark) {
   outline: @initial dotted 1px !important;
 }
+
+.tab-focus() {
+  outline: thin dotted;
+  outline-color: @tab-focus-color;
+}
+
 
 .focus-box-shadow (@color: @gray-base, @width: 2px){
   .box-shadow(inset 0px 0px 0px @width @color);

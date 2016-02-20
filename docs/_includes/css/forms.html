@@ -19,8 +19,9 @@
         <p class="help-block">Example block-level help text here.</p>
       </div>
       <div class="checkbox">
-        <label>
-          <input type="checkbox"> Check me out
+        <input id="checkbox01" type="checkbox">
+        <label for="checkbox01">
+          Check me out
         </label>
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
@@ -42,8 +43,9 @@
     <p class="help-block">Example block-level help text here.</p>
   </div>
   <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
+    <input id="checkbox02" type="checkbox">
+    <label for="checkbox02">
+      Check me out
     </label>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
@@ -104,8 +106,9 @@
         <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
       </div>
       <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
+        <input id="checkbox03" type="checkbox">
+        <label for="checkbox03">
+          Remember me
         </label>
       </div>
       <button type="submit" class="btn btn-default">Sign in</button>
@@ -122,8 +125,9 @@
     <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
   </div>
   <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
+    <input id="checkbox04" type="checkbox">
+    <label for="checkbox04">
+      Remember me
     </label>
   </div>
   <button type="submit" class="btn btn-default">Sign in</button>
@@ -176,8 +180,9 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <div class="checkbox">
-            <label>
-              <input type="checkbox"> Remember me
+            <input id="checkbox05" type="checkbox">
+            <label for="checkbox05">
+              Remember me
             </label>
           </div>
         </div>
@@ -206,8 +211,9 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
+        <input id="checkbox06" type="checkbox">
+        <label for="checkbox06">
+          Remember me
         </label>
       </div>
     </div>
@@ -261,33 +267,33 @@
   <div class="bs-example" data-example-id="block-checkboxes-radios">
     <form>
       <div class="checkbox">
-        <label>
-          <input type="checkbox" value="">
+        <input id="checkbox07" type="checkbox" value="">
+        <label for="checkbox07">
           Option one is this and that&mdash;be sure to include why it's great
         </label>
       </div>
       <div class="checkbox disabled">
-        <label>
-          <input type="checkbox" value="" disabled>
+        <input id="checkbox08" type="checkbox" value="" disabled>
+        <label for="checkbox08">
           Option two is disabled
         </label>
       </div>
       <br>
       <div class="radio">
-        <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        <label for="optionsRadios1">
           Option one is this and that&mdash;be sure to include why it's great
         </label>
       </div>
       <div class="radio">
-        <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        <label for="optionsRadios2">
           Option two can be something else and selecting it will deselect option one
         </label>
       </div>
       <div class="radio disabled">
-        <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+        <label for="optionsRadios3">
           Option three is disabled
         </label>
       </div>
@@ -295,33 +301,33 @@
   </div><!-- /.bs-example -->
 {% highlight html %}
 <div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
+  <input id="checkbox09" type="checkbox" value="">
+  <label for="checkbox09">
     Option one is this and that&mdash;be sure to include why it's great
   </label>
 </div>
 <div class="checkbox disabled">
-  <label>
-    <input type="checkbox" value="" disabled>
+  <input id="checkbox10" type="checkbox" value="" disabled>
+  <label for="checkbox10">
     Option two is disabled
   </label>
 </div>
 
 <div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+  <label for="optionsRadios1">
     Option one is this and that&mdash;be sure to include why it's great
   </label>
 </div>
 <div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+  <label for="optionsRadios2">
     Option two can be something else and selecting it will deselect option one
   </label>
 </div>
 <div class="radio disabled">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+  <label for="optionsRadios3">
     Option three is disabled
   </label>
 </div>
@@ -331,48 +337,60 @@
   <p>Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line.</p>
   <div class="bs-example" data-example-id="inline-checkboxes-radios">
     <form>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+      <input type="checkbox" id="inlineCheckbox1" value="option1">
+      <label for="inlineCheckbox1" class="checkbox-inline">
+        1
       </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+      <input type="checkbox" id="inlineCheckbox2" value="option2">
+      <label for="inlineCheckbox2" class="checkbox-inline">
+        2
       </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+      <input type="checkbox" id="inlineCheckbox3" value="option3">
+      <label for="inlineCheckbox3" class="checkbox-inline">
+        3
       </label>
     </form>
     <br>
     <form>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <label for="inlineRadio1" class="radio-inline">
+        1
       </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <label for="inlineRadio2" class="radio-inline">
+        2
       </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+      <label for="inlineRadio3" class="radio-inline">
+        3
       </label>
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+<input type="checkbox" id="inlineCheckbox1" value="option1">
+<label for="inlineCheckbox1" class="checkbox-inline">
+  1
 </label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+<input type="checkbox" id="inlineCheckbox2" value="option2">
+<label for="inlineCheckbox2" class="checkbox-inline">
+  2
 </label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+<input type="checkbox" id="inlineCheckbox3" value="option3">
+<label for="checkbox11"  class="checkbox-inline">
+  3
 </label>
 
-<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+<label for="inlineRadio1" class="checkbox-inline">
+  1
 </label>
-<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+<label for="inlineRadio2" class="radio-inline">
+  2
 </label>
-<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+<label for="inlineRadio3" class="radio-inline">
+  3
 </label>
 {% endhighlight %}
 
@@ -381,27 +399,23 @@
   <div class="bs-example" data-example-id="checkboxes-radios-without-labels">
     <form>
       <div class="checkbox">
-        <label>
-          <input type="checkbox" id="blankCheckbox" value="option1" aria-label="Checkbox without label text">
-        </label>
+        <input type="checkbox" id="blankCheckbox" value="option1" aria-label="Checkbox without label text">
+        <label for="blankCheckbox"></label>
       </div>
       <div class="radio">
-        <label>
-          <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="Radio button without label text">
-        </label>
+        <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="Radio button without label text">
+        <label for="blankRadio1"></label>
       </div>
     </form>
   </div>
 {% highlight html %}
 <div class="checkbox">
-  <label>
-    <input type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-  </label>
+  <input type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  <label for="blankCheckbox"></label>
 </div>
 <div class="radio">
-  <label>
-    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
-  </label>
+  <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+  <label for="blankRadio1"></label>
 </div>
 {% endhighlight %}
 
@@ -409,47 +423,61 @@
   <p>Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via <code>border-radius</code> properties.</p>
   <div class="bs-example" data-example-ids="select-form-control">
     <form>
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      <label>Select</label>
+      <div class="select-control">
+        <select class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <span class="caret"></span>
+      </div>
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<select class="form-control">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
+<label>Select</label>
+<div class="select-control">
+  <select class="form-control">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <span class="caret"></span>
+</div>
 {% endhighlight %}
 
   <p>For <code>&lt;select&gt;</code> controls with the <code>multiple</code> attribute, multiple options are shown by default.</p>
 
   <div class="bs-example" data-example-ids="select-multiple-form-control">
     <form>
-      <select multiple class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      <label>Multi-select</label>
+      <div class="select-control">
+        <select multiple class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
     </form>
   </div><!-- /.bs-example -->
 
 {% highlight html %}
-<select multiple class="form-control">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
+<label>Multi-select</label>
+<div class="select-control">
+  <select multiple class="form-control">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+</div>
 {% endhighlight %}
 
 
@@ -560,13 +588,16 @@
         </div>
         <div class="form-group">
           <label for="disabledSelect">Disabled select menu</label>
-          <select id="disabledSelect" class="form-control">
-            <option>Disabled select</option>
-          </select>
+          <div class="select-control">
+            <select id="disabledSelect" class="form-control">
+              <option>Disabled select</option>
+            </select>
+          </div>
         </div>
         <div class="checkbox">
-          <label>
-            <input type="checkbox"> Can't check this
+          <input id="checkbox20" type="checkbox">
+          <label for="checkbox20">
+            Can't check this
           </label>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -582,13 +613,17 @@
     </div>
     <div class="form-group">
       <label for="disabledSelect">Disabled select menu</label>
-      <select id="disabledSelect" class="form-control">
-        <option>Disabled select</option>
-      </select>
+      <div class="select-control">
+        <select id="disabledSelect" class="form-control">
+          <option>Disabled select</option>
+        </select>
+        <span class="caret"></span>
+      </div>
     </div>
     <div class="checkbox">
-      <label>
-        <input type="checkbox"> Can't check this
+      <input id="checkbox21" type="checkbox">
+      <label for="checkbox21">
+        Can't check this
       </label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -634,24 +669,24 @@
       </div>
       <div class="has-success">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="checkboxSuccess" value="option1">
+          <input type="checkbox" id="checkboxSuccess" value="option1">
+          <label for="checkboxSuccess">
             Checkbox with success
           </label>
         </div>
       </div>
       <div class="has-warning">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="checkboxWarning" value="option1">
+          <input type="checkbox" id="checkboxWarning" value="option1">
+          <label for="checkboxWarning">
             Checkbox with warning
           </label>
         </div>
       </div>
       <div class="has-error">
         <div class="checkbox">
-          <label>
-            <input type="checkbox" id="checkboxError" value="option1">
+          <input type="checkbox" id="checkboxError" value="option1">
+          <label for="checkboxError">
             Checkbox with error
           </label>
         </div>
@@ -673,24 +708,24 @@
 </div>
 <div class="has-success">
   <div class="checkbox">
-    <label>
-      <input type="checkbox" id="checkboxSuccess" value="option1">
+    <input id="checkbox25" type="checkbox" id="checkboxSuccess" value="option1">
+    <label for="checkbox25">
       Checkbox with success
     </label>
   </div>
 </div>
 <div class="has-warning">
   <div class="checkbox">
-    <label>
-      <input type="checkbox" id="checkboxWarning" value="option1">
+    <input id="checkbox26" type="checkbox" id="checkboxWarning" value="option1">
+    <label for="checkbox26">
       Checkbox with warning
     </label>
   </div>
 </div>
 <div class="has-error">
   <div class="checkbox">
-    <label>
-      <input type="checkbox" id="checkboxError" value="option1">
+    <input id="checkbox27" type="checkbox" id="checkboxError" value="option1">
+    <label for="checkbox27">
       Checkbox with error
     </label>
   </div>
@@ -912,15 +947,24 @@
         <input type="text" class="form-control" placeholder="Default input">
         <input class="form-control input-sm" type="text" placeholder=".input-sm">
 
-        <select class="form-control input-lg">
-          <option value="">.input-lg</option>
-        </select>
-        <select class="form-control">
-          <option value="">Default select</option>
-        </select>
-        <select class="form-control input-sm">
-          <option value="">.input-sm</option>
-        </select>
+        <div class="select-control">
+          <select class="form-control input-lg">
+            <option value="">.input-lg</option>
+          </select>
+          <span class="caret"></span>
+        </div>
+        <div class="select-control">
+          <select class="form-control">
+            <option value="">Default select</option>
+          </select>
+          <span class="caret"></span>
+        </div>
+        <div class="select-control">
+          <select class="form-control input-sm">
+            <option value="">.input-sm</option>
+          </select>
+          <span class="caret"></span>
+        </div>
       </div>
     </form>
   </div><!-- /.bs-example -->
@@ -929,9 +973,18 @@
 <input class="form-control" type="text" placeholder="Default input">
 <input class="form-control input-sm" type="text" placeholder=".input-sm">
 
-<select class="form-control input-lg">...</select>
-<select class="form-control">...</select>
-<select class="form-control input-sm">...</select>
+<div class="select-control">
+  <select class="form-control input-lg">...</select>
+  <span class="caret"></span>
+</div>
+<div class="select-control">
+  <select class="form-control">...</select>
+  <span class="caret"></span>
+</div>
+<div class="select-control">
+  <select class="form-control input-sm">...</select>
+  <span class="caret"></span>
+</div>
 {% endhighlight %}
 
   <h3>Horizontal form group sizes</h3>
