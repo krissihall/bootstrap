@@ -171,6 +171,17 @@
         .tooltip('show')
     })
 
+
+    $('#enableCloseOfModalWithShake').click(function (evt) {
+      evt.preventDefault()
+      $('#modalWithShake').modal('enableClose')
+    })
+
+    $('#disableCloseOfModalWithShake').click(function (evt) {
+      evt.preventDefault()
+      $('#modalWithShake').modal('disableClose')
+    })
+
   })
 
 }(jQuery)

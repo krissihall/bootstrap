@@ -8703,6 +8703,46 @@ tbody.collapse.in {
        -o-transition-property: height, visibility;
           transition-property: height, visibility;
 }
+/*
+ * Sidetray "shake" style used in GWPs when a user tries to close the
+ *     sidetray without first making a selection or selecting 'I don't want this
+ */
+.animated {
+  -webkit-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+
+  -webkit-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.shake {
+  -webkit-animation-name: shake;
+       -o-animation-name: shake;
+          animation-name: shake;
+}
+@-webkit-keyframes shake {
+  from,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+  }
+}
 .caret {
   display: inline-block;
   width: 0;
@@ -11227,8 +11267,7 @@ button.close {
   background-color: #fff;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid #fff;
   border-radius: 0;
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
@@ -11248,29 +11287,29 @@ button.close {
   opacity: 0;
 }
 .modal-backdrop.in {
-  filter: alpha(opacity=50);
-  opacity: .5;
+  filter: alpha(opacity=70);
+  opacity: .7;
 }
 .modal-header {
-  min-height: 16.42857143px;
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  min-height: 40px;
+  padding: 20px;
+  border-bottom: 1px solid transparent;
 }
 .modal-header .close {
   margin-top: -2px;
 }
 .modal-title {
   margin: 0;
-  line-height: 1.42857143;
+  line-height: 20px;
 }
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 20px;
 }
 .modal-footer {
-  padding: 15px;
+  padding: 20px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid transparent;
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;
@@ -11291,7 +11330,7 @@ button.close {
 }
 @media (min-width: 321px) {
   .modal-dialog {
-    width: 600px;
+    width: 553px;
     margin: 30px auto;
   }
   .modal-content {
@@ -11299,13 +11338,30 @@ button.close {
             box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   }
   .modal-sm {
-    width: 300px;
+    width: 340px;
   }
 }
 @media (min-width: 768px) {
   .modal-lg {
-    width: 900px;
+    width: 817px;
   }
+}
+.modal-title {
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 32px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #0097c9;
+}
+.modal-header {
+  padding-bottom: 0;
+}
+.modal-body {
+  padding-top: 0;
 }
 .tooltip {
   position: absolute;

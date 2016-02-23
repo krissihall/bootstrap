@@ -1,0 +1,31 @@
+/*
+ * Sidetray "shake" style used in GWPs when a user tries to close the
+ *     sidetray without first making a selection or selecting 'I don't want this
+ */
+
+.animated {
+  -webkit-animation-duration: @modal-sidetray-shake-duration;
+          animation-duration: @modal-sidetray-shake-duration;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.shake {
+  -webkit-animation-name: shake;
+          animation-name: shake;
+}
+
+@-webkit-keyframes shake {
+  from, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(@modal-sidetray-shake-left-offset, 0, 0);
+            transform: translate3d(@modal-sidetray-shake-left-offset, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(@modal-sidetray-shake-right-offset, 0, 0);
+            transform: translate3d(@modal-sidetray-shake-right-offset, 0, 0);
+  }
+}

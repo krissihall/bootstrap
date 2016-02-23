@@ -210,6 +210,43 @@ $('#myModal').on('shown.bs.modal', function () {
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
+  <h2 id="modals-with-shake">Disable modal close</h2>
+  <p>
+    Using the <code>shake</code> option with the Modals will invoke the <code>disableClose</code>
+    method when <mark>Modal</mark> is initialized. In order to allow the user to close the <mark>Modal</mark>,
+    the <code>enableClose</code> <a href="#modals-methods">method</a> will need to be called using
+    JavaScript.
+  </p>
+
+  <div class="bs-example">
+    <!-- <button id="modalWithShakeBtn" class="btn btn-primary"
+     data-target="#modalWithShake" data-toggle="modal" data-shake="true">Open Modal</button> -->
+    <button id="modalWithShakeBtn" class="btn btn-primary" data-toggle="modal" data-shake="true" data-target="#modalWithShake">Open Modal</button>
+    <div id="modalWithShake" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalWithShakeLabel">Small modal</h4>
+          </div>
+          <div class="modal-body">
+            <h3>I won't close</h3>
+            <p>I won't close until I'm told to <code>enableClose</code>.</p>
+            <p>
+              <button class="btn btn-primary" id="enableCloseOfModalWithShake">enableClose</button>
+            </p>
+            <p>
+              <button class="btn btn-primary" id="disableCloseOfModalWithShake">disableClose</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% highlight html %}
+  <button id="modalWithShakeBtn" class="btn btn-primary" data-toggle="modal" data-shake="true" data-target="#modalWithShake">Open Modal</button>
+  {% endhighlight %}
+
   <h2 id="modals-remove-animation">Remove animation</h2>
   <p>For modals that simply appear rather than fade in to view, remove the <code>.fade</code> class from your modal markup.</p>
 {% highlight html %}

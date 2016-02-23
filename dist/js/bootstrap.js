@@ -1273,11 +1273,13 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
+  Modal.SHAKE_TRANSITION_DURATION = 1000
 
   Modal.DEFAULTS = {
     backdrop: true,
     keyboard: true,
-    show: true
+    show: true,
+    shake: false
   }
 
   Modal.prototype.toggle = function (_relatedTarget) {
@@ -1287,6 +1289,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
   Modal.prototype.show = function (_relatedTarget) {
     var that = this
     var e    = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
+
+    if (this.options.shake) {
+      this.disableClose()
+    }
 
     this.$element.trigger(e)
 
@@ -1345,34 +1351,38 @@ var ResponsiveBootstrapToolkit = (function ($) {
   }
 
   Modal.prototype.hide = function (e) {
-    if (e) e.preventDefault()
+    if (this.options.shake) {
+      this.startShake()
+    } else {
+      if (e) e.preventDefault()
 
-    e = $.Event('hide.bs.modal')
+      e = $.Event('hide.bs.modal')
 
-    this.$element.trigger(e)
+      this.$element.trigger(e)
 
-    if (!this.isShown || e.isDefaultPrevented()) return
+      if (!this.isShown || e.isDefaultPrevented()) return
 
-    this.isShown = false
+      this.isShown = false
 
-    this.escape()
-    this.resize()
+      this.escape()
+      this.resize()
 
-    $(document).off('focusin.bs.modal')
+      $(document).off('focusin.bs.modal')
 
-    this.$element
-      .removeClass('in')
-      .attr('aria-hidden', true)
-      .off('click.dismiss.bs.modal')
-      .off('mouseup.dismiss.bs.modal')
-
-    this.$dialog.off('mousedown.dismiss.bs.modal')
-
-    $.support.transition && this.$element.hasClass('fade') ?
       this.$element
-        .one('bsTransitionEnd', $.proxy(this.hideModal, this))
-        .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
-      this.hideModal()
+        .removeClass('in')
+        .attr('aria-hidden', true)
+        .off('click.dismiss.bs.modal')
+        .off('mouseup.dismiss.bs.modal')
+
+      this.$dialog.off('mousedown.dismiss.bs.modal')
+
+      $.support.transition && this.$element.hasClass('fade') ?
+        this.$element
+          .one('bsTransitionEnd', $.proxy(this.hideModal, this))
+          .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+        this.hideModal()
+    }
   }
 
   Modal.prototype.enforceFocus = function () {
@@ -1411,6 +1421,8 @@ var ResponsiveBootstrapToolkit = (function ($) {
       that.resetAdjustments()
       that.resetScrollbar()
       that.$element.trigger('hidden.bs.modal')
+
+      that.shake = null
     })
   }
 
@@ -1467,6 +1479,43 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
     } else if (callback) {
       callback()
+    }
+  }
+
+  Modal.prototype.disableClose = function () {
+    this.options.shake = true
+    this.$element.trigger($.Event('close-disabled.bs.modal'))
+  }
+
+  Modal.prototype.enableClose = function () {
+    this.options.shake = false
+    this.$element.trigger($.Event('close-enabled.bs.modal'))
+  }
+
+  Modal.prototype.startShake = function (_relatedTarget) {
+    var that = this
+    var animate = $.support.transition && that.$element.hasClass('fade')
+    var e = $.Event('shake-started.bs.modal', { relatedTarget: _relatedTarget })
+
+    this.$element.trigger(e)
+
+    this.$element.addClass('animated shake')
+
+    var callback = function () {
+      that.removeShake()
+      that.$element.trigger($.Event('shake-finished.bs.modal'))
+    }
+
+    animate ?
+      this.$element
+        .one('bsTransitionEnd', callback)
+        .emulateTransitionEnd(Modal.SHAKE_TRANSITION_DURATION) :
+      callback()
+  }
+
+  Modal.prototype.removeShake = function () {
+    if (this.$element.hasClass('shake')) {
+      this.$element.removeClass('animated shake')
     }
   }
 
