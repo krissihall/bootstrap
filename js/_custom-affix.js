@@ -1,12 +1,13 @@
 /* ========================================================================
- * Bootstrap: _custom-affix.js v0.1.4
+ * Bootstrap: _custom-affix.js v1.4.0
  * ========================================================================
- * Copyright 2014-2015 American Eagle Outfitters
+ * Copyright 2015-2016 American Eagle Outfitters
  *
  * Requires ResponsiveBootstrapToolkit
  * ======================================================================== */
 +function ($, viewport) {
   'use strict';
+
   // AFFIX PLUGIN ADAPTER
   // ======================
   var originalAffix = $.fn.affix;
