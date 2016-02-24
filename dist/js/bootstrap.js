@@ -1540,6 +1540,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
         .addClass('modal-backdrop ' + animate)
         .insertAfter(this.$element)
 
+      if (this.isSidetray) {
+        this.$backdrop.addClass('sidetray-backdrop')
+      }
+
       this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
         if (this.ignoreBackdropClick) {
           this.ignoreBackdropClick = false
