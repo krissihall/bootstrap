@@ -7,21 +7,295 @@
 // .modal-dialog    - positioning shell for the actual modal
 // .modal-content   - actual modal w/ bg and corners and shit
 
-.modal-title {
-  .dft-font-8;
-  font-weight: @font-weight-medium;
-  font-family: @font-family-medium;
-  text-transform: uppercase;
-  border-bottom: 2px solid @brand-primary;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  margin-top: 0;
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+    position: relative;
+    -ms-overflow-style: none;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    // Disable scrolling on body, scrollTop jump is not an issue
+    // since the xs/sm modal is a full-screen takeover.
+    position: fixed;
+  }
 }
 
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @zindex-modal;
+  -webkit-overflow-scrolling: touch;
+  cursor: pointer;
+  // Hide scrollbars in IE
+  -ms-overflow-style: none;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+}
+.modal-open .modal {
+  overflow: hidden;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0;
+  .box-sizing;
+  padding: 0;
+  height: 100%;
+  min-height: initial;
+  width: auto;
+  cursor: default;
+  overflow: initial;
+
+  @media (min-width: @screen-md-min) {
+    padding: 60px 0;
+    margin: 0 auto !important;
+  }
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: @modal-content-bg;
+  border: none;
+  border-radius: @border-radius-large;
+  padding: @modal-inner-padding;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  // Remove focus outline from opened modal
+  outline: 0;
+  overflow: initial;
+  display: table;
+
+  @media (max-width: @screen-sm-max) {
+    padding-left: @gutter-sm-padding;
+    padding-right: @gutter-sm-padding;
+    padding-bottom: 0;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    padding-left: @gutter-xs-padding;
+    padding-right: @gutter-xs-padding;
+    padding-bottom: 0;
+  }
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @zindex-modal-background;
+  background-color: @modal-backdrop-bg;
+  .opacity(0);
+  visibility: hidden;
+
+  &.sidetray-backdrop {
+    visibility: visible;
+  }
+
+  &.animate-backdrop {
+    .opacity(0);
+    .transition(opacity @modal-animation-duration linear);
+
+    &.in {
+      .opacity(@modal-backdrop-opacity);
+      .transition(opacity @modal-animation-duration linear);
+    }
+  }
+  &.in { .opacity(@modal-backdrop-opacity); }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
 .modal-header {
-  padding-bottom: 0;
+  padding: 0 0 10px;
+  border-bottom: none;
+  height: 1%;
+  vertical-align: top;
+  display: table-row;
+  line-height: 19px;
+}
+// Close icon
+.modal-header .close {
+  color: @brand-primary;
+  font-size: 16px;
+  // Increase padding and add negative margin to make "hit" area bigger for mobile
+  margin-top: -5px;
+  margin-right: -10px;
+  padding: 10px;
 }
 
+// Title text within header
+.modal-title {
+  line-height: @modal-title-line-height;
+  .dft-font-8;
+  border-bottom: 2px solid @brand-primary;
+  margin: 0;
+  padding: 0;
+  font-family: @font-family-medium;
+  font-weight: @font-weight-medium;
+  text-transform: uppercase;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
-  padding-top: 0;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  display: table-row;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 !important;
+
+  @media (min-width: @screen-md-min) {
+    width: 100%;
+  }
+
+  .modal-scroll {
+    display: block;
+    // Change display to table-cell in IE9/IE10
+    //   - http://lesscss.org/features/#features-overview-feature-escaping
+    //     ~"..." is the LESS syntax for escaping CSS
+    display: ~"table-cell\9";
+    display: ~"table-cell\0";
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // Make modal scrollable in Firefox
+    width: 100%;
+
+    .modal-body-pos {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+// Footer (for actions)
+.modal-footer {
+  padding: 0 @gutter-xs-padding @modal-inner-padding;
+  text-align: right; // right align buttons
+  border-top: 1px solid @modal-footer-border-color;
+  &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
+  background: @modal-content-bg;
+  display: table-row;
+  height: 1%;
+  position: relative;
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    padding: 0 @gutter-sm-padding @modal-inner-padding;
+    position: relative;
+  }
+
+  @media (min-width: @screen-md-min) {
+    padding: 0 @modal-inner-padding @modal-inner-padding;
+  }
+
+  @media (min-width: @screen-lg-min) {
+    padding: 0 @modal-inner-padding @modal-inner-padding;
+  }
+}
+
+// Modal with Content shorter than the viewport window
+.modal {
+  &.modal-valign {
+
+    .modal-body-pos {
+      position: relative;
+    }
+
+    @media (min-width: @screen-md-min) {
+      .modal-dialog {
+        padding: 0;
+        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: auto;
+        .translates(-50%,-50%);
+
+        .modal-content,
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+          display: block;
+          height: auto;
+        }
+
+        .modal-header {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+// .modal-scrollbar-measure {
+//   position: absolute;
+//   top: -9999px;
+//   width: 50px;
+//   height: 50px;
+//   overflow: scroll;
+// }
+
+// Modal sizes
+.modal-sm { width: 100%; }
+.modal-lg { width: 100%; }
+
+// Constrain the modal for md and lg stereotypes
+@media (min-width: @screen-md-min) {
+  .modal-dialog {
+    max-width: @modal-md;
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  // Modal sizes
+  .modal-sm {
+    max-width: @modal-sm;
+    width: 90%;
+  }
+  .modal-lg {
+    max-width: @modal-lg;
+    width: 90%;
+  }
+
+  .modal-backdrop { visibility: visible; }
 }

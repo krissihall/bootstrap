@@ -31,7 +31,7 @@ $('#myModal').on('shown.bs.modal', function () {
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
             <h4 class="modal-title">Modal title</h4>
           </div>
           <div class="modal-body">
@@ -46,11 +46,11 @@ $('#myModal').on('shown.bs.modal', function () {
     </div><!-- /.modal -->
   </div><!-- /example -->
 {% highlight html %}
-<div class="modal fade" tabindex="-1" role="dialog">
+<div class="modal animate">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
         <h4 class="modal-title">Modal title</h4>
       </div>
       <div class="modal-body">
@@ -68,12 +68,12 @@ $('#myModal').on('shown.bs.modal', function () {
   <h3>Live demo</h3>
   <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
   <!-- sample modal content -->
-  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div id="myModal" class="modal animate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
           <h4 class="modal-title" id="myModalLabel">Modal title</h4>
         </div>
         <div class="modal-body">
@@ -120,11 +120,11 @@ $('#myModal').on('shown.bs.modal', function () {
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal animate" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
@@ -160,7 +160,7 @@ $('#myModal').on('shown.bs.modal', function () {
 <!-- Large modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal animate bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       ...
@@ -171,7 +171,7 @@ $('#myModal').on('shown.bs.modal', function () {
 <!-- Small modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
 
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal animate bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       ...
@@ -181,12 +181,12 @@ $('#myModal').on('shown.bs.modal', function () {
 {% endhighlight %}
 
   <!--  Modal content for the above example -->
-  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal animate bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
           <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
         </div>
         <div class="modal-body">
@@ -195,12 +195,12 @@ $('#myModal').on('shown.bs.modal', function () {
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal animate bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
           <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
         </div>
         <div class="modal-body">
@@ -222,11 +222,11 @@ $('#myModal').on('shown.bs.modal', function () {
     <!-- <button id="modalWithShakeBtn" class="btn btn-primary"
      data-target="#modalWithShake" data-toggle="modal" data-shake="true">Open Modal</button> -->
     <button id="modalWithShakeBtn" class="btn btn-primary" data-toggle="modal" data-shake="true" data-target="#modalWithShake">Open Modal</button>
-    <div id="modalWithShake" class="modal fade">
+    <div id="modalWithShake" class="modal animate">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
             <h4 class="modal-title" id="modalWithShakeLabel">Small modal</h4>
           </div>
           <div class="modal-body">
@@ -258,11 +258,11 @@ $('#myModal').on('shown.bs.modal', function () {
   <h2 id="modals-grid-system">Using the grid system</h2>
   <p>To take advantage of the Bootstrap grid system within a modal, just nest <code>.row</code>s within the <code>.modal-body</code> and then use the normal grid system classes.</p>
 <!-- sample modal content -->
-  <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
+  <div id="gridSystemModal" class="modal animate" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
           <h4 class="modal-title" id="gridModalLabel">Modal title</h4>
         </div>
         <div class="modal-body">
@@ -304,7 +304,7 @@ $('#myModal').on('shown.bs.modal', function () {
   </button>
 </div><!-- /example -->
 {% highlight html %}
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+<div class="modal animate" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -355,11 +355,11 @@ $('#myModal').on('shown.bs.modal', function () {
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
     ...more buttons...
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal animate" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
             <h4 class="modal-title" id="exampleModalLabel">New message</h4>
           </div>
           <div class="modal-body">
@@ -388,11 +388,11 @@ $('#myModal').on('shown.bs.modal', function () {
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 ...more buttons...
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div class="modal animate" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="customicon customicon-cross"></span></button>
         <h4 class="modal-title" id="exampleModalLabel">New message</h4>
       </div>
       <div class="modal-body">

@@ -2,6 +2,48 @@
  * Sidetray "shake" style used in GWPs when a user tries to close the
  *     sidetray without first making a selection or selecting 'I don't want this
  */
+ // This handles the 'fade' animation in large stereotypes for modal
+ .animate {
+   @media (max-width: @screen-sm-max) {
+     .slide-up;
+   }
+
+   @media (min-width: @screen-md-min) {
+     .modal-lg-stereotype;
+   }
+ }
+
+ .fade {
+   opacity: 0;
+   .transition(opacity @modal-animation-duration linear);
+   &.in {
+     opacity: 1;
+     .transition(opacity @modal-animation-duration linear);
+   }
+ }
+
+ .slide-up {
+   opacity: 1;
+   .translates(0,100%);
+   .transition(transform @modal-animation-duration ease-in);
+   &.in {
+     opacity: 1;
+     .translates(0,0);
+     .transition(transform @modal-animation-duration cubic-bezier(.1,.19,0,.98));
+   }
+ }
+
+ .modal-lg-stereotype {
+   opacity: 0;
+   .translates(0, 10%);
+   .transition(all @modal-animation-duration ease-in);
+
+   &.in {
+     opacity: 1;
+     .translates(0, 0);
+     .transition(all @modal-animation-duration cubic-bezier(.1,.19,0,.98));
+   }
+ }
 
 .animated {
   -webkit-animation-duration: @modal-sidetray-shake-duration;

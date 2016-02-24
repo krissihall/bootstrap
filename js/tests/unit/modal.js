@@ -83,12 +83,12 @@ $(function () {
 
     $('<div id="modal-test"/>')
       .on('shown.bs.modal', function () {
-        assert.ok($('#modal-test').is(':visible'), 'modal visible')
+        assert.ok($('#modal-test').is('.in'), 'modal visible')
         assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $(this).bootstrapModal('hide')
       })
       .on('hidden.bs.modal', function () {
-        assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+        assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
         done()
       })
       .bootstrapModal('show')
@@ -100,12 +100,12 @@ $(function () {
 
     $('<div id="modal-test"/>')
       .on('shown.bs.modal', function () {
-        assert.ok($('#modal-test').is(':visible'), 'modal visible')
+        assert.ok($('#modal-test').is('.in'), 'modal visible')
         assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $(this).bootstrapModal('toggle')
       })
       .on('hidden.bs.modal', function () {
-        assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+        assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
         done()
       })
       .bootstrapModal('toggle')
@@ -117,12 +117,12 @@ $(function () {
 
     $('<div id="modal-test"><span class="close" data-dismiss="modal"/></div>')
       .on('shown.bs.modal', function () {
-        assert.ok($('#modal-test').is(':visible'), 'modal visible')
+        assert.ok($('#modal-test').is('.in'), 'modal visible')
         assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $(this).find('.close').trigger('click')
       })
       .on('hidden.bs.modal', function () {
-        assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+        assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
         done()
       })
       .bootstrapModal('toggle')
@@ -134,11 +134,11 @@ $(function () {
 
     $('<div id="modal-test" data-backdrop="false"/>')
       .on('shown.bs.modal', function () {
-        assert.ok($('#modal-test').is(':visible'), 'modal visible')
+        assert.ok($('#modal-test').is('.in'), 'modal visible')
         $(this).bootstrapModal('hide')
       })
       .on('hidden.bs.modal', function () {
-        assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+        assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
         done()
       })
       .bootstrapModal('show')
@@ -152,11 +152,11 @@ $(function () {
       .on('shown.bs.modal', function () {
         assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $('.contents').trigger('click')
-        assert.ok($('#modal-test').is(':visible'), 'modal visible')
+        assert.ok($('#modal-test').is('.in'), 'modal visible')
         $('#modal-test').trigger('click')
       })
       .on('hidden.bs.modal', function () {
-        assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+        assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
         done()
       })
       .bootstrapModal('show')
@@ -170,11 +170,11 @@ $(function () {
     $div
       .on('shown.bs.modal', function () {
         assert.ok($('#modal-test').length, 'modal insterted into dom')
-        assert.ok($('#modal-test').is(':visible'), 'modal visible')
+        assert.ok($('#modal-test').is('.in'), 'modal visible')
         $div.trigger($.Event('keydown', { which: 27 }))
 
         setTimeout(function () {
-          assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+          assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
           $div.remove()
           done()
         }, 0)
@@ -190,11 +190,11 @@ $(function () {
     $div
       .on('shown.bs.modal', function () {
         assert.ok($('#modal-test').length, 'modal inserted into dom')
-        assert.ok($('#modal-test').is(':visible'), 'modal visible')
+        assert.ok($('#modal-test').is('.in'), 'modal visible')
         $div.trigger($.Event('keyup', { which: 27 }))
 
         setTimeout(function () {
-          assert.ok($div.is(':visible'), 'modal still visible')
+          assert.ok($div.is('.in'), 'modal still visible')
           $div.remove()
           done()
         }, 0)
@@ -231,13 +231,13 @@ $(function () {
       })
       .one('hidden.bs.modal', function () {
         // after one open-close cycle
-        assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+        assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
         $(this)
           .one('shown.bs.modal', function () {
             $('#close').trigger('click')
           })
           .one('hidden.bs.modal', function () {
-            assert.ok(!$('#modal-test').is(':visible'), 'modal hidden')
+            assert.ok(!$('#modal-test').is('.in'), 'modal hidden')
             done()
           })
           .bootstrapModal('show')
