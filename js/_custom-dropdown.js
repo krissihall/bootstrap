@@ -46,7 +46,7 @@
     $parent.addClass('has-selection')
   }
 
-  function createDropdownLabel () {
+  function createDropdownLabel() {
     /*jshint validthis: true */
     var $this = $(this)
     var $parent  = getParent($this)

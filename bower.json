@@ -1,8 +1,6 @@
 {
   "name": "klh-bootstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "0.0.1",
-  "bootstrap_version": "3.3.4",
   "keywords": [
     "css",
     "js",
@@ -14,23 +12,15 @@
     "web"
   ],
   "homepage": "http://getbootstrap.com",
+  "license": "MIT",
+  "moduleType": "globals",
   "main": [
-    "less/bootstrap.less",
     "dist/css/bootstrap.css",
     "dist/js/bootstrap.js",
-    "dist/fonts/glyphicons-halflings-regular.eot",
-    "dist/fonts/glyphicons-halflings-regular.svg",
-    "dist/fonts/glyphicons-halflings-regular.ttf",
-    "dist/fonts/glyphicons-halflings-regular.woff",
-    "dist/fonts/glyphicons-halflings-regular.woff2",
     "dist/fonts/custom-icons.eot",
     "dist/fonts/custom-icons.svg",
     "dist/fonts/custom-icons.ttf",
     "dist/fonts/custom-icons.woff",
-    "dist/fonts/sourcesanspro-black-webfont.eot",
-    "dist/fonts/sourcesanspro-black-webfont.svg",
-    "dist/fonts/sourcesanspro-black-webfont.ttf",
-    "dist/fonts/sourcesanspro-black-webfont.woff",
     "dist/fonts/sourcesanspro-bold-webfont.eot",
     "dist/fonts/sourcesanspro-bold-webfont.svg",
     "dist/fonts/sourcesanspro-bold-webfont.ttf",
@@ -59,6 +49,6 @@
     "test-infra"
   ],
   "dependencies": {
-    "jquery": ">= 1.9.1"
+    "jquery": "1.9.1 - 2"
   }
 }
