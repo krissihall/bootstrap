@@ -196,7 +196,7 @@
 
 // Footer (for actions)
 .modal-footer {
-  padding: 0 @gutter-xs-padding @modal-inner-padding;
+  padding: 0;
   text-align: right; // right align buttons
   border-top: 1px solid @modal-footer-border-color;
   &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
@@ -268,13 +268,13 @@
 }
 
 // Measure scrollbar width for padding body during modal show/hide
-// .modal-scrollbar-measure {
-//   position: absolute;
-//   top: -9999px;
-//   width: 50px;
-//   height: 50px;
-//   overflow: scroll;
-// }
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
 
 // Modal sizes
 .modal-sm { width: 100%; }

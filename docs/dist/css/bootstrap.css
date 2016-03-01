@@ -839,7 +839,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.42857143;
   color: #000;
@@ -1327,9 +1327,9 @@ h4,
 }
 h5,
 .h5 {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Medium", Helvetica, Arial, sans-serif;
   font-size: .875em;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 22px;
 }
 h6,
@@ -6548,7 +6548,7 @@ label {
   z-index: 1;
   height: auto;
   padding: 12px 16px 13px;
-  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: 1em;
   color: #000;
   border: none;
@@ -8722,7 +8722,7 @@ fieldset[disabled] .btn-danger.active {
   background-color: #fff;
 }
 .btn-link {
-  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   color: #000;
   text-transform: none;
 }
@@ -8795,10 +8795,6 @@ tbody.collapse.in {
        -o-transition-property: height, visibility;
           transition-property: height, visibility;
 }
-/*
- * Sidetray "shake" style used in GWPs when a user tries to close the
- *     sidetray without first making a selection or selecting 'I don't want this
- */
 @media (max-width: 767px) {
   .animate {
     opacity: 1;
@@ -8895,6 +8891,22 @@ tbody.collapse.in {
        -o-transform: translate(0, 0);
           transform: translate(0, 0);
 }
+.animate-loader {
+  opacity: 0;
+  -webkit-transition: opacity .25s ease-in;
+       -o-transition: opacity .25s ease-in;
+          transition: opacity .25s ease-in;
+}
+.animate-loader.in {
+  opacity: 1;
+  -webkit-transition: opacity .25s cubic-bezier(.1, .19, 0, .98);
+       -o-transition: opacity .25s cubic-bezier(.1, .19, 0, .98);
+          transition: opacity .25s cubic-bezier(.1, .19, 0, .98);
+}
+/*
+ * Sidetray "shake" style used in GWPs when a user tries to close the
+ *     sidetray without first making a selection or selecting 'I don't want this
+ */
 .animated {
   -webkit-animation-duration: 1s;
        -o-animation-duration: 1s;
@@ -11764,7 +11776,7 @@ button.close {
   position: relative;
   display: table-row;
   height: 1%;
-  padding: 0 10px 20px;
+  padding: 0;
   text-align: right;
   background: #fff;
   border-top: 1px solid transparent;
@@ -11822,6 +11834,13 @@ button.close {
     padding-bottom: 0;
   }
 }
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
 .modal-sm {
   width: 100%;
 }
@@ -11850,7 +11869,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: .75em;
   font-style: normal;
   font-weight: normal;
@@ -11969,7 +11988,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-style: normal;
   font-weight: normal;
