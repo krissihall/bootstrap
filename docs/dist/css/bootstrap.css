@@ -1346,7 +1346,9 @@ p {
   line-height: 21px;
 }
 .lead {
+  font-family: "Source Sans Pro Light", Helvetica, Arial, sans-serif;
   font-size: 1.125em;
+  font-weight: 300;
   line-height: 26px;
 }
 pre,
