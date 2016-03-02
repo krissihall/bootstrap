@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'custom-icons';
-    src:    url('fonts/custom-icons.eot?cupjjc');
-    src:    url('fonts/custom-icons.eot?cupjjc#iefix') format('embedded-opentype'),
-        url('fonts/custom-icons.ttf?cupjjc') format('truetype'),
-        url('fonts/custom-icons.woff?cupjjc') format('woff'),
-        url('fonts/custom-icons.svg?cupjjc#custom-icons') format('svg');
+    src:    url('fonts/custom-icons.eot?l6mjqv');
+    src:    url('fonts/custom-icons.eot?l6mjqv#iefix') format('embedded-opentype'),
+        url('fonts/custom-icons.ttf?l6mjqv') format('truetype'),
+        url('fonts/custom-icons.woff?l6mjqv') format('woff'),
+        url('fonts/custom-icons.svg?l6mjqv#custom-icons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,17 +24,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.customprevious:before {
-    content: "\25c0";
-}
 .customdropdown:before {
     content: "\25bc";
 }
 .customdropup:before {
     content: "\25b2";
-}
-.customnext:before {
-    content: "\25b6";
 }
 .customlogo-text:before {
     content: "\e901";

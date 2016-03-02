@@ -1,8 +1,10 @@
 # This file is generated via Grunt task. **Do not edit directly.**
 # See the 'build-customicons-data' task in Gruntfile.js.
 
+- customicon-previous
 - customicon-dropdown
 - customicon-dropup
+- customicon-next
 - customicon-logo-text
 - customicon-logo-simple
 - customicon-logo-silhouette

@@ -1,14 +1,8 @@
-.customprevious {
-    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x25c0;');
-}
 .customdropdown {
     *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x25bc;');
 }
 .customdropup {
     *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x25b2;');
-}
-.customnext {
-    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x25b6;');
 }
 .customlogo-text {
     *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe901;');
