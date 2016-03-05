@@ -300,3 +300,54 @@
 
   .modal-backdrop { visibility: visible; }
 }
+
+//
+// Modals as Sidetray
+// --------------------------------------------------
+.modal.sidetray {
+  transform: translateY(0);
+  .opacity(0);
+  overflow-y: auto;
+
+  .modal-title {
+    margin-bottom: 0;
+    .modal-title { margin-bottom: 0; }
+  }
+
+  .modal-dialog {
+    margin: 0 0 0 auto !important;
+    padding-top: 0;
+    width: @modal-sidetray-width;
+    .translates((@modal-sidetray-width + 20px),0);
+    height: 100%;
+    padding-bottom: 0;
+    .opacity(1);
+  }
+
+  &.animate {
+    width: 100%;
+    .opacity(1);
+
+    .modal-dialog {
+      .transition(transform @modal-animation-duration ease-in);
+      .opacity(1);
+    }
+
+    &.in {
+      .modal-dialog {
+        .translates(0,0);
+        .transition(transform @modal-animation-duration cubic-bezier(.1,.19,0,.98));
+      }
+    }
+  }
+
+  .modal-content {
+    min-height: 100%;
+    padding: @modal-inner-padding 8px 0;
+  }
+
+  .modal-header {
+    background: #fff;
+    padding-top: 20px;
+  }
+}
