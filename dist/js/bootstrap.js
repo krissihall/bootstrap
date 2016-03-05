@@ -1519,6 +1519,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
         $(that.$body).scrollTop(that.scrollTop)
       }
 
+      if (that.$element.hasClass('modal-valign')) {
+        that.$element.removeClass('modal-valign')
+      }
+
       that.shake = null
       that.scrollTop = null
     })
@@ -1579,7 +1583,6 @@ var ResponsiveBootstrapToolkit = (function ($) {
         that.removeBackdrop()
         callback && callback()
       }
-
       $.support.transition && this.$element.hasClass('animate') ?
         this.$backdrop
           .one('bsTransitionEnd', callbackRemove)
