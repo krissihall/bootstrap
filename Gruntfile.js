@@ -120,6 +120,7 @@ module.exports = function (grunt) {
           'js/dropdown.js',
           'js/_custom-dropdown.js',
           'js/modal.js',
+          'js/_custom-sidetray.js',
           'js/tooltip.js',
           'js/popover.js',
           'js/scrollspy.js',
