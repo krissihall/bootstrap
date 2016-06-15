@@ -24,6 +24,18 @@ $(function () {
     assert.strictEqual($.fn.collapse, undefined, 'collapse was set back to undefined (org value)')
   })
 
+  QUnit.test('should throw explicit error on undefined method', function (assert) {
+    assert.expect(1)
+    var $el = $('<div/>')
+    $el.bootstrapCollapse()
+    try {
+      $el.bootstrapCollapse('noMethod')
+    }
+    catch (err) {
+      assert.strictEqual(err.message, 'No method named "noMethod"')
+    }
+  })
+
   QUnit.test('should return jquery collection containing the element', function (assert) {
     assert.expect(2)
     var $el = $('<div/>')
@@ -82,7 +94,7 @@ $(function () {
     assert.expect(1)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1"/>')
       .appendTo('#qunit-fixture')
@@ -98,7 +110,7 @@ $(function () {
     assert.expect(1)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1" class="in"/>')
       .appendTo('#qunit-fixture')
@@ -114,8 +126,8 @@ $(function () {
     assert.expect(2)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
-    var $alt = $('<a data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
+    var $alt = $('<a role="button" data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1"/>')
       .appendTo('#qunit-fixture')
@@ -132,8 +144,8 @@ $(function () {
     assert.expect(2)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
-    var $alt = $('<a data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
+    var $alt = $('<a role="button" data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1" class="in"/>')
       .appendTo('#qunit-fixture')
@@ -215,15 +227,15 @@ $(function () {
         + '</div>'
     var $groups = $(accordionHTML).appendTo('#qunit-fixture').find('.panel')
 
-    var $target1 = $('<a data-toggle="collapse" href="#body1" data-parent="#accordion"/>').appendTo($groups.eq(0))
+    var $target1 = $('<a role="button" data-toggle="collapse" href="#body1" data-parent="#accordion"/>').appendTo($groups.eq(0))
 
     $('<div id="body1" class="in"/>').appendTo($groups.eq(0))
 
-    var $target2 = $('<a class="collapsed" data-toggle="collapse" href="#body2" data-parent="#accordion"/>').appendTo($groups.eq(1))
+    var $target2 = $('<a class="collapsed" data-toggle="collapse" role="button" href="#body2" data-parent="#accordion"/>').appendTo($groups.eq(1))
 
     $('<div id="body2"/>').appendTo($groups.eq(1))
 
-    var $target3 = $('<a class="collapsed" data-toggle="collapse" href="#body3" data-parent="#accordion"/>').appendTo($groups.eq(2))
+    var $target3 = $('<a class="collapsed" data-toggle="collapse" role="button" href="#body3" data-parent="#accordion"/>').appendTo($groups.eq(2))
 
     $('<div id="body3"/>')
       .appendTo($groups.eq(2))
@@ -249,15 +261,15 @@ $(function () {
         + '</div>'
     var $groups = $(accordionHTML).appendTo('#qunit-fixture').find('.panel')
 
-    var $target1 = $('<a data-toggle="collapse" href="#body1" data-parent=".accordion"/>').appendTo($groups.eq(0))
+    var $target1 = $('<a role="button" data-toggle="collapse" href="#body1" data-parent=".accordion"/>').appendTo($groups.eq(0))
 
     $('<div id="body1" class="in"/>').appendTo($groups.eq(0))
 
-    var $target2 = $('<a class="collapsed" data-toggle="collapse" href="#body2" data-parent=".accordion"/>').appendTo($groups.eq(1))
+    var $target2 = $('<a class="collapsed" data-toggle="collapse" role="button" href="#body2" data-parent=".accordion"/>').appendTo($groups.eq(1))
 
     $('<div id="body2"/>').appendTo($groups.eq(1))
 
-    var $target3 = $('<a class="collapsed" data-toggle="collapse" href="#body3" data-parent=".accordion"/>').appendTo($groups.eq(2))
+    var $target3 = $('<a class="collapsed" data-toggle="collapse" role="button" href="#body3" data-parent=".accordion"/>').appendTo($groups.eq(2))
 
     $('<div id="body3"/>')
       .appendTo($groups.eq(2))
@@ -276,7 +288,7 @@ $(function () {
     assert.expect(1)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" class="collapsed" href="#test1" aria-expanded="false"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" class="collapsed" href="#test1" aria-expanded="false"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1"/>')
       .appendTo('#qunit-fixture')
@@ -292,7 +304,7 @@ $(function () {
     assert.expect(1)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" href="#test1" aria-expanded="true"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" href="#test1" aria-expanded="true"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1" class="in"/>')
       .appendTo('#qunit-fixture')
@@ -308,8 +320,8 @@ $(function () {
     assert.expect(2)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" class="collapsed" href="#test1" aria-expanded="false"/>').appendTo('#qunit-fixture')
-    var $alt = $('<a data-toggle="collapse" class="collapsed" href="#test1" aria-expanded="false"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" class="collapsed" href="#test1" aria-expanded="false"/>').appendTo('#qunit-fixture')
+    var $alt = $('<a role="button" data-toggle="collapse" class="collapsed" href="#test1" aria-expanded="false"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1"/>')
       .appendTo('#qunit-fixture')
@@ -326,8 +338,8 @@ $(function () {
     assert.expect(2)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" href="#test1" aria-expanded="true"/>').appendTo('#qunit-fixture')
-    var $alt = $('<a data-toggle="collapse" href="#test1" aria-expanded="true"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" href="#test1" aria-expanded="true"/>').appendTo('#qunit-fixture')
+    var $alt = $('<a role="button" data-toggle="collapse" href="#test1" aria-expanded="true"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1" class="in"/>')
       .appendTo('#qunit-fixture')
@@ -351,15 +363,15 @@ $(function () {
         + '</div>'
     var $groups = $(accordionHTML).appendTo('#qunit-fixture').find('.panel')
 
-    var $target1 = $('<a data-toggle="collapse" href="#body1" data-parent="#accordion"/>').appendTo($groups.eq(0))
+    var $target1 = $('<a role="button" data-toggle="collapse" href="#body1" data-parent="#accordion"/>').appendTo($groups.eq(0))
 
     $('<div id="body1" aria-expanded="true" class="in"/>').appendTo($groups.eq(0))
 
-    var $target2 = $('<a class="collapsed" data-toggle="collapse" href="#body2" data-parent="#accordion"/>').appendTo($groups.eq(1))
+    var $target2 = $('<a role="button" data-toggle="collapse" href="#body2" data-parent="#accordion" class="collapsed" />').appendTo($groups.eq(1))
 
     $('<div id="body2" aria-expanded="false"/>').appendTo($groups.eq(1))
 
-    var $target3 = $('<a class="collapsed" data-toggle="collapse" href="#body3" data-parent="#accordion"/>').appendTo($groups.eq(2))
+    var $target3 = $('<a class="collapsed" data-toggle="collapse" role="button" href="#body3" data-parent="#accordion"/>').appendTo($groups.eq(2))
 
     $('<div id="body3" aria-expanded="false"/>')
       .appendTo($groups.eq(2))
@@ -385,7 +397,7 @@ $(function () {
     var showFired = false
     var $groups   = $(accordionHTML).appendTo('#qunit-fixture').find('.panel')
 
-    var $target1 = $('<a data-toggle="collapse" href="#body1" data-parent="#accordion"/>').appendTo($groups.eq(0))
+    var $target1 = $('<a role="button" data-toggle="collapse" href="#body1" data-parent="#accordion"/>').appendTo($groups.eq(0))
 
     $('<div id="body1" class="collapse"/>')
       .appendTo($groups.eq(0))
@@ -393,14 +405,14 @@ $(function () {
         showFired = true
       })
 
-    var $target2 = $('<a data-toggle="collapse" href="#body2" data-parent="#accordion"/>').appendTo($groups.eq(1))
+    var $target2 = $('<a role="button" data-toggle="collapse" href="#body2" data-parent="#accordion"/>').appendTo($groups.eq(1))
     var $body2   = $('<div id="body2" class="collapse"/>').appendTo($groups.eq(1))
 
     $target2.trigger('click')
 
     $body2
       .toggleClass('in collapsing')
-      .data('bs.collapse').transitioning = 1
+      .data('bs.collapse')._isTransitioning = 1
 
     $target1.trigger('click')
 
@@ -414,7 +426,7 @@ $(function () {
     assert.expect(1)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" href="#test1"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1" class="in"/>')
       .appendTo('#qunit-fixture')
@@ -429,7 +441,7 @@ $(function () {
     assert.expect(1)
     var done = assert.async()
 
-    var $target = $('<a data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
+    var $target = $('<a role="button" data-toggle="collapse" class="collapsed" href="#test1"/>').appendTo('#qunit-fixture')
 
     $('<div id="test1"/>')
       .appendTo('#qunit-fixture')
