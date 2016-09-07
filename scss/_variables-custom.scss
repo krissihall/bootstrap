@@ -1,0 +1,21 @@
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-base:                 #000;
+$gray-dark:                 #888;
+$gray:                      #bbb;
+$gray-light:                #ccc;
+$gray-lighter:              #eee;
+$gray-lightest:             #fafafa;
+
+$gray-disabled:             #d0d0d0;
+
+$brand-primary:             #001c41;
+$brand-success:             #59ab50;
+$brand-info:                #9daae2;
+$brand-warning:             $gray-base;
+$brand-danger:              #ed1c24;
+$brand-inverse:             $gray-dark;
+
+$tab-focus-color:           $gray-lighter;

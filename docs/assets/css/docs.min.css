@@ -14,18 +14,18 @@
   color: #fff;
   text-align: center;
   cursor: default;
-  background-color: #563d7c;
+  background-color: #334f74;
   border-radius: 15%;
 }
 
 .bd-booticon.inverse {
-  color: #563d7c;
+  color: #334f74;
   background-color: #fff;
 }
 
 .bd-booticon.outline {
   background-color: transparent;
-  border: 1px solid #cdbfe3;
+  border: 1px solid #afcbf0;
 }
 
 .bd-navbar {
@@ -34,7 +34,7 @@
 }
 
 .bd-navbar .navbar-nav .nav-link {
-  color: #8e869d;
+  color: #548edb;
 }
 
 .bd-navbar .navbar-nav .nav-link.active, .bd-navbar .navbar-nav .nav-link:hover, .bd-navbar .navbar-nav .nav-link:focus {
@@ -63,17 +63,17 @@
 .bd-masthead {
   position: relative;
   padding: 3rem 15px 2rem;
-  color: #cdbfe3;
+  color: #afcbf0;
   text-align: center;
-  background-image: -webkit-linear-gradient(315deg, #271b38, #563d7c, #7952b3);
-  background-image: -o-linear-gradient(315deg, #271b38, #563d7c, #7952b3);
-  background-image: linear-gradient(135deg, #271b38, #563d7c, #7952b3);
+  background-image: -webkit-linear-gradient(315deg, #141f2d, #334f74, #4472af);
+  background-image: -o-linear-gradient(315deg, #141f2d, #334f74, #4472af);
+  background-image: linear-gradient(135deg, #141f2d, #334f74, #4472af);
 }
 
 .bd-masthead .bd-booticon {
   margin: 0 auto 2rem;
-  color: #cdbfe3;
-  border-color: #cdbfe3;
+  color: #afcbf0;
+  border-color: #afcbf0;
 }
 
 .bd-masthead h1 {
@@ -104,7 +104,7 @@
 }
 
 .bd-masthead .btn:hover {
-  color: #2a2730;
+  color: #112d52;
   background-color: #ffe484;
   border-color: #ffe484;
 }
@@ -289,7 +289,7 @@
   font-size: 13px;
   line-height: 1.5;
   text-align: left;
-  border: solid #866ab3;
+  border: solid #627ea3;
   border-width: 1px 0 0;
 }
 
@@ -397,9 +397,9 @@
 .bd-pageheader {
   padding: 2rem 15px;
   margin-bottom: 1.5rem;
-  color: #cdbfe3;
+  color: #afcbf0;
   text-align: center;
-  background-color: #563d7c;
+  background-color: #334f74;
 }
 
 .bd-pageheader .container {
@@ -456,7 +456,7 @@
   display: block;
   padding: 1em;
   color: #fff;
-  background-color: #563d7c;
+  background-color: #334f74;
   outline: 0;
 }
 
@@ -668,7 +668,7 @@
 .bd-example-container-body {
   height: 8rem;
   margin-right: 4.5rem;
-  background-color: #957bbe;
+  background-color: #698dbd;
   border-radius: .25rem;
 }
 
@@ -1029,14 +1029,14 @@
 
 .btn-bs {
   font-weight: 500;
-  color: #7952b3;
-  border-color: #7952b3;
+  color: #4472af;
+  border-color: #4472af;
 }
 
 .btn-bs:hover, .btn-bs:focus, .btn-bs:active {
   color: #fff;
-  background-color: #7952b3;
-  border-color: #7952b3;
+  background-color: #4472af;
+  border-color: #4472af;
 }
 
 .bd-callout {
@@ -1154,7 +1154,7 @@
   width: 100%;
   margin-bottom: 1rem;
   overflow: hidden;
-  color: #563d7c;
+  color: #334f74;
   background-color: #f9f9f9;
   border-radius: .25rem;
 }
@@ -1170,7 +1170,7 @@
 
 .bd-brand-logos .inverse {
   color: #fff;
-  background-color: #563d7c;
+  background-color: #334f74;
 }
 
 .bd-brand-item h1,
@@ -1220,11 +1220,11 @@
 }
 
 .color-swatches .bd-purple {
-  background-color: #563d7c;
+  background-color: #334f74;
 }
 
 .color-swatches .bd-purple-light {
-  background-color: #cdbfe3;
+  background-color: #afcbf0;
 }
 
 .color-swatches .bd-purple-lighter {

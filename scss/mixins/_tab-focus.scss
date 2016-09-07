@@ -6,5 +6,5 @@
   // but that seems to erroneously remove the outline in Firefox altogether.)
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  outline-color: @tab-focus-color;
+  outline-color: $tab-focus-color;
 }
