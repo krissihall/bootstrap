@@ -6545,6 +6545,9 @@ select[multiple].input-lg {
   position: relative;
   z-index: 1;
 }
+.form-group {
+  margin-bottom: 14px;
+}
 label {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: .8125em;
