@@ -1,0 +1,50 @@
+//
+ // iconfont
+ //
+ // Special styles for displaying the icons and their classes in the docs.
+ //
+
+.bs-iconfont {
+  margin: 0 -10px 20px;
+  overflow: hidden;
+}
+.bs-iconfont-list {
+  padding-left: 0;
+  list-style: none;
+}
+.bs-iconfont li {
+  float: left;
+  width: 25%;
+  height: 85px;
+  padding: 10px;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #fff;
+}
+.bs-iconfont .iconfont {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.bs-iconfont .iconfont-class {
+  display: block;
+  text-align: center;
+  word-wrap: break-word; // Help out IE10+ with class names
+}
+.bs-iconfont li:hover {
+  color: #fff;
+  background-color: $bd-primary;
+}
+
+@media (min-width: 768px) {
+  .bs-iconfont {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .bs-iconfont li {
+    width: 24.5%;
+    font-size: 12px;
+  }
+}

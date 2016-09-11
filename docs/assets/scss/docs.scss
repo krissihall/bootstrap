@@ -28,11 +28,12 @@
 @import "../../../scss/mixins";
 
 // Local docs variables
-$bd-purple:         #563d7c;
+$bd-primary:        #ff3a8d;
+$bd-purple:         #ff3a8d;
 $bd-purple-bright:  lighten(saturate($bd-purple, 5%), 15%);
-$bd-purple-light:   #cdbfe3;
-$bd-graphite:       #2a2730;
-$bd-graphite-light: lighten($bd-graphite, 40%);
+$bd-purple-light:   lighten($bd-primary, 30%);
+$bd-graphite:       darken(desaturate($bd-primary, 70%), 30%);
+$bd-graphite-light: lighten(desaturate($bd-graphite, 10%), 50%);
 $bd-yellow:         #ffe484;
 $bd-danger:         #d9534f;
 $bd-warning:        #f0ad4e;
@@ -44,6 +45,7 @@ $bd-info:           #5bc0de;
 @import "masthead";
 @import "featurettes";
 @import "featured-sites";
+@import "fonts";
 @import "ads";
 @import "content";
 @import "page-header";

@@ -22,6 +22,8 @@ module.exports = function (grunt) {
 
   var configBridge = grunt.file.readJSON('./grunt/configBridge.json', { encoding: 'utf8' });
 
+  var generateIconfontData = require('./grunt/bs-icons-data-generator.js');
+
   Object.keys(configBridge.paths).forEach(function (key) {
     configBridge.paths[key].forEach(function (val, i, arr) {
       arr[i] = path.join('./docs', val);
@@ -97,6 +99,189 @@ module.exports = function (grunt) {
       }
     },
 
+    webfont: {
+      icon: {
+        src: 'svg/iconfonts/*.svg',
+        dest: 'fonts/',
+        destCss: 'scss/',
+        options: {
+          codepoints: {
+            'address-book': 0xf101,
+            airplane: 0xf102,
+            android: 0xf103,
+            apple: 0xf104,
+            bin: 0xf105,
+            bin2: 0x106,
+            blocked: 0xf107,
+            books: 0xf108,
+            bubble: 0xf109,
+            bubble2: 0xf10a,
+            bubbles2: 0xf10b,
+            bubbles4: 0xf10c,
+            bullhorn: 0xf10d,
+            camera: 0xf10e,
+            'cancel-circle': 0xf10f,
+            cart: 0xf110,
+            'checkbox-checked': 0xf111,
+            'checkbox-unchecked': 0xf112,
+            checkmark: 0xf113,
+            chrome: 0xf114,
+            'circle-down': 0xf115,
+            'circle-left': 0xf116,
+            'circle-right': 0xf117,
+            'circle-up': 0xf118,
+            clock: 0xf119,
+            clock2: 0xf11a,
+            'cloud-check': 0xf11b,
+            'cloud-download': 0xf11c,
+            'cloud-upload': 0xf11d,
+            cloud: 0xf11e,
+            cog: 0xf11f,
+            cogs: 0xf120,
+            compass: 0xf121,
+            connection: 0xf122,
+            cross: 0xf123,
+            deviantart: 0xf124,
+            deviantart2: 0xf125,
+            display: 0xf126,
+            dribbble: 0xf127,
+            dribbble2: 0xf128,
+            dropbox: 0xf129,
+            droplet: 0xe90b,
+            enlarge: 0xf12a,
+            enlarge2: 0xf12b,
+            'eye-blocked': 0xf12c,
+            eye: 0xf12d,
+            eyedropper: 0xf12e,
+            facebook: 0xf12f,
+            facebook2: 0xf130,
+            feed2: 0xf131,
+            feed3: 0xf132,
+            'file-pdf': 0xf133,
+            'file-picture': 0xf134,
+            'file-play': 0xf135,
+            'file-text': 0xf136,
+            'file-word': 0xf137,
+            'files-empty': 0xf138,
+            film: 0xf139,
+            firefox: 0xf13a,
+            flag: 0xf13b,
+            flickr2: 0xf13c,
+            flickr3: 0xf13d,
+            'folder-open': 0xf13e,
+            forward: 0xf13f,
+            foursquare: 0xf140,
+            gift: 0xf141,
+            github: 0xf142,
+            github5: 0xf143,
+            'google-drive': 0xf144,
+            'google-plus': 0xf145,
+            'google-plus2': 0xf146,
+            headphones: 0xf147,
+            heart: 0xf148,
+            home: 0xe900,
+            html5: 0xf149,
+            html52: 0xf14a,
+            IE: 0xf14b,
+            images: 0xf14c,
+            info: 0xf14d,
+            instagram: 0xf14e,
+            keyboard: 0xf14f,
+            link: 0xf150,
+            linkedin: 0xf151,
+            linkedin2: 0xf152,
+            list: 0xf153,
+            location: 0xf154,
+            lock: 0xf155,
+            menu: 0xf156,
+            mic: 0xf157,
+            minus: 0xf158,
+            mobile: 0xf159,
+            notification: 0xf15a,
+            opera: 0xf15b,
+            packman: 0xf15c,
+            pause: 0xf15d,
+            pause2: 0xf15e,
+            paypal: 0xf15f,
+            pencil: 0xf905,
+            phone: 0xf160,
+            picassa: 0xf161,
+            picassa2: 0xf162,
+            pinterest: 0xf163,
+            pinterest2: 0xf164,
+            play: 0xf165,
+            play2: 0xf166,
+            play3: 0xf167,
+            plus: 0xf168,
+            'price-tag': 0xf169,
+            printer: 0xf16a,
+            pushpin: 0xf16b,
+            question: 0xf16c,
+            'quotes-left': 0xf16d,
+            'quotes-right': 0xf16e,
+            'radio-checked': 0xf16f,
+            'radio-checked2': 0xf170,
+            'radio-unchecked': 0xf171,
+            redo2: 0xf172,
+            reply: 0xf173,
+            search: 0xf174,
+            share2: 0xf175,
+            shrink: 0xf176,
+            shrink2: 0xf177,
+            skype: 0xf178,
+            spinner: 0xf179,
+            spinner2: 0xf17a,
+            spinner8: 0xf17b,
+            stack: 0xf17c,
+            'star-empty': 0xf17d,
+            'star-full': 0x17e,
+            'star-half': 0x17f,
+            stop: 0xf180,
+            stop2: 0xf181,
+            switch: 0xf182,
+            tablet: 0xf183,
+            target: 0xf184,
+            truck: 0xf185,
+            tumblr: 0xf186,
+            tumblr2: 0xf187,
+            twitter: 0xf188,
+            twitter2: 0xf189,
+            undo2: 0xf18a,
+            unlocked: 0xf18b,
+            'user-check': 0xf18c,
+            'user-minus': 0xf18d,
+            'user-plus': 0xf18e,
+            user: 0xf18f,
+            vimeo: 0xf190,
+            vimeo2: 0xf191,
+            'volume-high': 0xf192,
+            'volume-low': 0xf193,
+            'volume-medium': 0xf194,
+            'volume-mute': 0xf195,
+            'volume-mute2': 0xf196,
+            warning: 0xf197,
+            windows: 0xf198,
+            windows8: 0xf199,
+            wrench: 0xf19a,
+            youtube: 0xf19b,
+            youtube2: 0xf19c,
+            youtube3: 0xf19d,
+            youtube4: 0xf19e,
+            'zoom-in': 0xf19f,
+            'zoom-out': 0xf1a0
+          },
+          destHtml: 'fonts/',
+          font: 'iconfont',
+          stylesheet: 'scss',
+          templateOptions: {
+            baseClass: 'iconfont',
+            classPrefix: 'iconfont-'
+          },
+          types: 'eot,woff,ttf,svg'
+        }
+      }
+    },
+
     concat: {
       options: {
         // Custom function to remove all export and import statements
@@ -156,7 +341,7 @@ module.exports = function (grunt) {
         reporterOutput: null
       },
       core: {
-        src: ['scss/*.scss', '!scss/_normalize.scss']
+        src: ['scss/*.scss', '!scss/_normalize.scss', '!scss/_iconfont.scss']
       },
       docs: {
         src: ['docs/assets/scss/*.scss', '!docs/assets/scss/docs.scss']
@@ -204,6 +389,14 @@ module.exports = function (grunt) {
           '**/*'
         ],
         dest: 'docs/dist/'
+      },
+      fonts: {
+        expand: true,
+        cwd: 'fonts/',
+        src: [
+          '**/*'
+        ],
+        dest: 'dist/fonts/'
       }
     },
 
@@ -379,6 +572,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test-scss', ['scsslint:core']);
 
+  // Webfont data file builder
+  grunt.registerTask('build-iconfont-data', function () { generateIconfontData.call(this, grunt); });
+
   // CSS distribution task.
   // Supported Compilers: sass (Ruby) and libsass.
   (function (sassCompilerName) {
@@ -393,13 +589,13 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js']);
 
   // Default task.
-  grunt.registerTask('default', ['clean:dist', 'test']);
+  grunt.registerTask('default', ['clean:dist', 'webfont', 'copy:fonts', 'test']);
 
   // Docs task.
   grunt.registerTask('docs-css', ['cssmin:docs', 'exec:postcss-docs']);
   grunt.registerTask('lint-docs-css', ['scsslint:docs']);
   grunt.registerTask('docs-js', ['uglify:docsJs']);
-  grunt.registerTask('docs', ['lint-docs-css', 'docs-css', 'docs-js', 'clean:docs', 'copy:docs']);
+  grunt.registerTask('docs', ['lint-docs-css', 'docs-css', 'docs-js', 'clean:docs', 'copy:docs', 'build-iconfont-data']);
   grunt.registerTask('docs-github', ['jekyll:github']);
 
   grunt.registerTask('prep-release', ['dist', 'docs', 'docs-github', 'compress']);
