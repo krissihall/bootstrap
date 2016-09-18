@@ -1,8 +1,5 @@
 /*!
- * Bootstrap Grunt task for Customicons data generation
- * http://getbootstrap.com
- * Copyright 2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * AEO Grunt task for customicons data generation.
  */
 'use strict';
 
@@ -11,11 +8,11 @@ var fs = require('fs');
 module.exports = function generateCustomiconsData(grunt) {
   // Pass encoding, utf8, so `readFileSync` will return a string instead of a
   // buffer
-  var customiconsFile = fs.readFileSync('less/_customicons.less', 'utf8');
+  var customiconsFile = fs.readFileSync('less/custom-icons.less', 'utf8');
   var customiconsLines = customiconsFile.split('\n');
 
   // Use any line that starts with ".customicon-" and capture the class name
-  var iconClassName = /^\.(customicon-[a-zA-Z0-9-]+)/;
+  var iconClassName = /^\.(customicon-[a-zA-Z0-9-_]+)/;
   var customiconsData = '# This file is generated via Grunt task. **Do not edit directly.**\n' +
                        '# See the \'build-customicons-data\' task in Gruntfile.js.\n\n';
   var customiconsYml = 'docs/_data/customicons.yml';

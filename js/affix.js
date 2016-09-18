@@ -7,7 +7,7 @@
  * ======================================================================== */
 
 
-+function ($) {
++function ($, viewport) {
   'use strict';
 
   // AFFIX CLASS DEFINITION
@@ -16,16 +16,16 @@
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
-    this.$target = $(this.options.target)
-      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
-      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
-
     this.$element     = $(element)
     this.affixed      = null
     this.unpin        = null
     this.pinnedOffset = null
 
-    this.checkPosition()
+    this.checkAndUpdateState()
+
+    if (this.options.checkOnResize) {
+      $(window).on('resize.affix.check-on-resize', $.proxy(this.checkAndUpdateState, this));
+    }
   }
 
   Affix.VERSION  = '3.3.7'
@@ -34,7 +34,8 @@
 
   Affix.DEFAULTS = {
     offset: 0,
-    target: window
+    target: window,
+    enabled: []
   }
 
   Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
@@ -112,6 +113,54 @@
     }
   }
 
+  Affix.prototype.checkAndUpdateState = function () {
+    if (this.getEnabledState()) {
+      this.enable()
+      this.checkPosition()
+    } else {
+      this.disable()
+    }
+  }
+
+  Affix.prototype.enable = function () {
+    this.$element.removeClass('affix-disabled')
+
+    return (this.$target = $(this.options.target)
+      .on('scroll.bs.affix', $.proxy(this.checkPosition, this))
+      .on('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this)))
+  }
+
+  /**
+   * Turn off the listener to affix the element.
+   */
+  Affix.prototype.disable = function () {
+    if (this.$target) {
+      this.$target
+        .off('scroll.bs.affix', $.proxy(this.checkPosition, this))
+        .off('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this))
+    }
+
+    this.$element.removeClass(Affix.RESET).addClass('affix-disabled')
+    this.$element.css('width', '')
+  }
+
+  Affix.prototype.getEnabledState = function () {
+    var enabledViewports = this.options.enabled || [];
+    var enabled = false;
+
+    // If no enabled array is passed, then all viewports are enabled
+    if (enabledViewports.length === 0) {
+      enabled = true;
+    } else {
+      for (var i = 0, len = enabledViewports.length; i < len; i++) {
+        if (viewport.is(enabledViewports[i])) {
+          enabled = true;
+        }
+      }
+    }
+
+    return enabled;
+  }
 
   // AFFIX PLUGIN DEFINITION
   // =======================
@@ -145,7 +194,7 @@
   // AFFIX DATA-API
   // ==============
 
-  $(window).on('load', function () {
+  $(window).on('load.bs.affix.data-api', function () {
     $('[data-spy="affix"]').each(function () {
       var $spy = $(this)
       var data = $spy.data()
@@ -159,4 +208,4 @@
     })
   })
 
-}(jQuery);
+}(jQuery, ResponsiveBootstrapToolkit);

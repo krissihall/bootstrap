@@ -104,4 +104,12 @@ $(function () {
       }, 250)
     }, 250)
   })
+
+  QUnit.test('should add disabled class when enabled state returns false', function (assert) {
+    assert.expect(1)
+    var $affix = $('<div style="display: none"/>').bootstrapAffix({
+      enabled: ['bogus']
+    })
+    assert.ok($affix.hasClass('affix-disabled'), 'affix-disabled class was added')
+  })
 })

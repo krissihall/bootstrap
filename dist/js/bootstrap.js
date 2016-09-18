@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under the MIT license
  */
@@ -11,8 +11,8 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 2)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
   }
 }(jQuery);
 
@@ -250,10 +250,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 })(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.3.6
+ * Bootstrap: transition.js v3.3.7
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -310,10 +310,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: alert.js v3.3.6
+ * Bootstrap: alert.js v3.3.7
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -329,7 +329,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.3.6'
+  Alert.VERSION = '3.3.7'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -342,7 +342,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    var $parent = $(selector)
+    var $parent = $(selector === '#' ? [] : selector)
 
     if (e) e.preventDefault()
 
@@ -405,10 +405,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.3.6
+ * Bootstrap: button.js v3.3.7
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -425,7 +425,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.3.6'
+  Button.VERSION  = '3.3.7'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -447,10 +447,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
       if (state == 'loadingText') {
         this.isLoading = true
-        $el.addClass(d).attr(d, d)
+        $el.addClass(d).attr(d, d).prop(d, true)
       } else if (this.isLoading) {
         this.isLoading = false
-        $el.removeClass(d).removeAttr(d)
+        $el.removeClass(d).removeAttr(d).prop(d, false)
       }
     }, this), 0)
   }
@@ -514,10 +514,15 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
   $(document)
     .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-      var $btn = $(e.target)
-      if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
+      var $btn = $(e.target).closest('.btn')
       Plugin.call($btn, 'toggle')
-      if (!($(e.target).is('input[type="radio"]') || $(e.target).is('input[type="checkbox"]'))) e.preventDefault()
+      if (!($(e.target).is('input[type="radio"], input[type="checkbox"]'))) {
+        // Prevent double click on radios, and the double selections (so cancellation) on checkboxes
+        e.preventDefault()
+        // The target component still receive the focus
+        if ($btn.is('input,button')) $btn.trigger('focus')
+        else $btn.find('input:visible,button:visible').first().trigger('focus')
+      }
     })
     .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
       $(e.target).closest('.btn').toggleClass('focus', /^focus(in)?$/.test(e.type))
@@ -526,10 +531,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.3.6
+ * Bootstrap: carousel.js v3.3.7
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -557,7 +562,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.3.6'
+  Carousel.VERSION  = '3.3.7'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -764,13 +769,14 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.3.6
+ * Bootstrap: collapse.js v3.3.7
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
+/* jshint latedef: false */
 
 +function ($) {
   'use strict';
@@ -794,7 +800,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.3.6'
+  Collapse.VERSION  = '3.3.7'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -976,10 +982,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.3.6
+ * Bootstrap: dropdown.js v3.3.7
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -996,7 +1002,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.3.6'
+  Dropdown.VERSION = '3.3.7'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -1142,9 +1148,8 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: _custom-dropdown.js v0.2.0
+ * Bootstrap: selectable-dropdown.js v0.0.1
  * ========================================================================
- * Copyright 2014-2015 American Eagle Outfitters
  *
  *
  * ======================================================================== */
@@ -1153,12 +1158,50 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
   // DROPDOWN CLASS DEFINITION
   // ======================
-  var dropdownSelection = '.dropdown-selection .dropdown-toggle'
+  var dropdownSelection = '[class*="dropdown-selection"]'
 
-  // DROPDOWN PLUGIN ADAPTER
-  // ======================
-  var originalDropdown = $.fn.dropdown;
-  var Dropdown = originalDropdown.Constructor;
+  var SelectableDropdown = function (element, options) {
+    this.$element      = $(element).find('.dropdown-toggle')
+    this.$dropdown     = $(element)
+    this.$selected     = null
+    this.value         = options.value
+    this.dropdownLabel = options.dropdownLabel
+    this.hasHtml       = options.hashtml
+
+    this.init()
+  }
+
+  if (!$.fn.dropdown) throw new Error('Selectable Dropdown requires dropdown.js')
+
+  SelectableDropdown.VERSION = '2.0.0'
+
+  var DEFAULTS = {
+    value: '',
+    dropdownLabel: '',
+    selected: null,
+    hashtml: false
+  }
+
+  // NOTE: SELECTABLE DROPDOWN EXTENDS dropdown.js
+  // ================================
+  SelectableDropdown.prototype = $.extend({}, $.fn.dropdown.Constructor.prototype);
+
+  SelectableDropdown.prototype.constructor = SelectableDropdown
+
+  SelectableDropdown.prototype.init = function () {
+    var $dropdownMenu = this.$dropdown.find('.dropdown-menu')
+    var e             = $.Event('created.bs.selectableDropdown')
+
+    this.createDropdownLabel()
+
+    this.$element
+      .on('click.bs.selectableDropdown.data-api', $.proxy(this.select, this))
+
+    $dropdownMenu.find('li')
+      .on('click.bs.selectableDropdown', $.proxy(this.chooseOption, this))
+
+    this.$element.trigger(e)
+  }
 
   //
   // Additional Methods
@@ -1166,52 +1209,110 @@ var ResponsiveBootstrapToolkit = (function ($) {
   /**
    * Opens the options panel.
    */
-  Dropdown.prototype.select = function () {
-    var $this = $(this)
-    var $parent = getParent($this)
+  SelectableDropdown.prototype.select = function (_relatedTarget) {
+    var dropdown = this.$dropdown
+    var type
 
-    $parent.find('.dropdown-menu li').click(function () {
-      Dropdown.prototype.chooseOption.call($(this))
-    })
+    if (dropdown.hasClass('open')) {
+      type = 'close'
+    } else {
+      type = 'open'
+    }
+
+    dropdown.trigger($.Event(type + '.bs.selectableDropdown', { relatedTarget: _relatedTarget }))
   }
 
   /**
    * Selects an option from the panel and close the panel.
    */
-  Dropdown.prototype.chooseOption = function () {
-    var $active = $(this)
-    var $parent = $active.parent().parent()
-    var $dropdownText = $parent.find('.dropdown-text')
+  SelectableDropdown.prototype.chooseOption = function (evt) {
+    var $active         = $(evt.target).closest('li')
+    var $dropdownText   = this.$element.find('.dropdown-text')
+    var e               = $.Event('change.bs.selectableDropdown')
+    var selectedValue   = this.$element.data('value') || ''
+    var hasOptionValue  = $active.data().hasOwnProperty('value')
 
-    $active.siblings().removeClass('active')
-    $active.addClass('active')
-    $dropdownText.empty().text($active.text())
-    $parent.addClass('has-selection')
-  }
+    if (!$active.hasClass('active')) {
+      if (hasOptionValue
+            && selectedValue.toString() !== $active.data('value').toString()) {
+        this.value = $active.data('value').toString().trim()
+      } else {
+        if (this.hasHtml) {
+          this.value = $active.html()
+        } else {
+          this.value = $active.text().trim()
+        }
+      }
 
-  function createDropdownLabel() {
-    /*jshint validthis: true */
-    var $this = $(this)
-    var $parent  = getParent($this)
-    var $dropdownToggle = $this.find('.dropdown-toggle')
-    var labelText = $dropdownToggle.data('dropdown-label')
+      $active.siblings().removeClass('active')
+      $active.addClass('active')
 
-    $dropdownToggle.prepend('<div class="dropdown-label" />')
-    $parent.find('.dropdown-label').text(labelText)
-  }
+      if (this.hasHtml) {
+        $dropdownText.empty().html($active.html())
+        this.$element.find('.dropdown-label').empty().html(this.dropdownLabel)
+      } else {
+        $dropdownText.empty().text($active.text())
+        this.$element.find('.dropdown-label').empty().text(this.dropdownLabel)
+      }
+      this.$dropdown.addClass('has-selection')
 
-  // Cloned from dropdown.js
-  function getParent($this) {
-    var selector = $this.attr('data-target')
+      this.$element.data('value', this.value)
+      this.$element.attr('data-value', this.value)
 
-    if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+      this.$selected = $active
+      this.$element.trigger(e)
     }
 
-    var $parent = selector && $(selector)
+    if (this.$dropdown.hasClass('open')) {
+      this.$dropdown.trigger($.Event('close.bs.selectableDropdown'))
+    }
+  }
 
-    return $parent && $parent.length ? $parent : $this.parent()
+  /**
+   * Method used to clear selection option
+   */
+  SelectableDropdown.prototype.clear = function (_relatedTarget) {
+    var e = $.Event('clear.bs.selectableDropdown', { relatedTarget: _relatedTarget })
+
+    if (this.$dropdown.hasClass('has-selection')
+        || this.value !== null) {
+      this.$dropdown.removeClass('has-selection')
+      this.$element.siblings('.dropdown-menu').find('li').removeClass('active')
+
+      this.$element.removeData('value')
+      this.$element.removeAttr('data-value')
+      this.$element.find('.dropdown-text').empty().text(this.dropdownLabel)
+
+      this.value     = null
+      this.$selected = null
+      this.$dropdown.trigger(e)
+    }
+  }
+
+  /**
+   * Creates the label
+   */
+  SelectableDropdown.prototype.createDropdownLabel = function () {
+    var labelText    = this.dropdownLabel
+    var trimmedValue = $.trim(this.value) || ''
+
+    if (this.$element.find('.dropdown-text').length <= 0) {
+      this.$element.prepend('<div class="dropdown-text" />')
+    }
+
+    if (this.$element.find('.dropdown-label').length <= 0) {
+      this.$element.prepend('<div class="dropdown-label" />')
+    }
+
+    if (trimmedValue !== '') {
+      this.value = trimmedValue
+      this.$selected  = this.$dropdown.find('.dropdown-menu .active')
+
+      this.$element.find('.dropdown-label').empty().text(labelText)
+      this.$element.find('.dropdown-text').empty().text(this.$selected.text())
+    } else {
+      this.$element.find('.dropdown-text').empty().text(labelText)
+    }
   }
 
   // Adapter for Dropdown Plugin
@@ -1219,38 +1320,59 @@ var ResponsiveBootstrapToolkit = (function ($) {
   /**
    * Adds additional functionality for selectable dropdown
    */
-  function Plugin(option) {
+  function Plugin(option, _relatedTarget) {
     return this.each(function () {
       var $this      = $(this)
-      var data       = $this.data('bs.dropdown')
+      var data       = $this.data('bs.selectableDropdown')
+      var options    = $.extend({}, DEFAULTS, $this.data(), typeof option == 'object' && option)
 
-      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
-      if (typeof option == 'string') data[option].call($this)
+      if (!data) $this.data('bs.selectableDropdown', (data = new SelectableDropdown(this, options)))
+      if (typeof option == 'string') data[option](_relatedTarget)
     })
   }
 
-  $.fn.dropdown               = Plugin;
-  $.fn.dropdown.Constructor   = originalDropdown.Constructor;
+  var old = $.fn.selectableDropdown
 
-  $(document)
-    .ready(function () {
-      $('[class*="dropdown-selection"]').each(function () {
-        createDropdownLabel.call(this)
+  $.fn.selectableDropdown               = Plugin;
+  $.fn.selectableDropdown.Constructor   = SelectableDropdown;
+
+  // SELECTABLE DROPDOWN NO CONFLICT
+  // =================
+
+  $.fn.selectableDropdown.noConflict = function () {
+    $.fn.selectableDropdown = old
+    return this
+  }
+
+  $(window).on('load', function () {
+    $(dropdownSelection).each(function () {
+        var $this    = $(this)
+        var $element = $this.find('.dropdown-toggle')
+        var data     = $element.data('bs.selectableDropdown') ? 'select' : $element.data()
+
+        Plugin.call($this, data, this)
       })
-    })
-    .on('click.bs.dropdown.data-api', dropdownSelection, Dropdown.prototype.select)
+  })
+
+  $(document).on('click.bs.selectableDropdown.data-api', '.dropdown-selection .dropdown-toggle', function () {
+    var $this    = $(this)
+    var $parent  = $this.parent('.dropdown-selection')
+    var data     = $parent.data('bs.selectableDropdown') ? 'select' : $this.data()
+
+    Plugin.call($parent, data, this)
+  })
 
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.3.6
+ * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
-+function ($, viewport) {
++function ($) {
   'use strict';
 
   // MODAL CLASS DEFINITION
@@ -1262,6 +1384,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     this.$html               = $('html')
     this.$element            = $(element)
     this.$dialog             = this.$element.find('.modal-dialog')
+    this.$content            = this.$element.find('.modal-content')
     this.$backdrop           = null
     this.isShown             = null
     this.originalBodyPad     = null
@@ -1270,6 +1393,9 @@ var ResponsiveBootstrapToolkit = (function ($) {
     this.isSidetray          = false
     this.scrollTop           = null
     this.scrollToTop         = this.options.scrollToTop
+
+    // Note, the below option is currently only used for the 'Mobile Alert Sign Up' Modal
+    this.checkOnResize       = this.options.checkOnResize
 
     if (this.options.remote) {
       this.$element
@@ -1280,7 +1406,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     }
   }
 
-  Modal.VERSION  = '3.3.6'
+  Modal.VERSION  = '3.3.7'
 
   // Durations below are used to sync modal-window and modal-background animations.
   Modal.TRANSITION_DURATION = 500
@@ -1294,6 +1420,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     keyboard: true,
     show: true,
     scrollToTop: false,
+    checkOnResize: true,
     shake: false
   }
 
@@ -1315,10 +1442,6 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
     this.isShown = true
 
-    this.scrollTop = this.$body.scrollTop()
-
-    this.checkScrollbar()
-    this.setScrollbar()
     this.$html.addClass('modal-open')
 
     var $modalOpenBody = $('.modal-open body')
@@ -1327,7 +1450,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
       evt.preventDefault()
     })
 
-    $modalOpenBody.on('touchstart.bs.modal-body', '.modal-scroll', function (evt) {
+    $modalOpenBody.on('touchstart.bs.modal-body', '.modal-body', function (evt) {
       if (evt.currentTarget.scrollTop === 0) {
         evt.currentTarget.scrollTop = 1
       } else if (evt.currentTarget.scrollHeight ===
@@ -1337,7 +1460,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
       }
     })
 
-    $modalOpenBody.on('touchmove.bs.modal-body', '.modal-scroll', function (evt) {
+    $modalOpenBody.on('touchmove.bs.modal-body', '.modal-body', function (evt) {
       if ($(this)[0].scrollHeight > $(this).innerHeight()) {
         evt.stopPropagation()
       }
@@ -1346,6 +1469,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
     if (this.$element.hasClass('sidetray')) {
       this.$body.addClass('sidetray')
       this.isSidetray = true
+    }
+
+    if (!this.checkOnResize) {
+      this.$element.addClass('modal-full-height')
     }
 
     this.escape()
@@ -1368,7 +1495,9 @@ var ResponsiveBootstrapToolkit = (function ($) {
       }
 
       that.$element
-        .show()
+        .addClass('flex')
+        // Remove 'show()' since it sets display to 'block'
+        // .show()
         .scrollTop(0)
 
       // The 'adjustDialog' function is no longer needed.
@@ -1379,21 +1508,8 @@ var ResponsiveBootstrapToolkit = (function ($) {
         that.$element[0].offsetWidth // force reflow
       }
 
-      that.addScrollWrappers()
-
-      var $modalBody = that.$element.find('.modal-body')
-      var modalBodyHeight = $modalBody.outerHeight()
-
       if (!isSidetray) {
-        var heightThresholdCalculation = that.calculateHeightThreshold()
-
         that.$element.addClass('in')
-
-        if (modalBodyHeight <= heightThresholdCalculation &&
-            that.$element.find('.modal-body-pos').prop('scrollHeight') === modalBodyHeight &&
-            viewport.is('>=md')) {
-          that.$element.addClass('modal-valign')
-        }
       }
 
       that.enforceFocus()
@@ -1408,22 +1524,6 @@ var ResponsiveBootstrapToolkit = (function ($) {
           .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
         that.$element.trigger('focus').trigger(e)
     })
-  }
-
-  Modal.prototype.addScrollWrappers = function () {
-    if (!this.$element.find('.modal-scroll').length) {
-      // Dynamically create containers to allow modal-body to be scrollable
-      //   - Cross-browser compatibility requires multiple containers for proper positioning
-      var $modalBodyContainer = $(document.createElement('div'))
-          .addClass('modal-scroll')
-      var $abs = $(document.createElement('div'))
-          .addClass('modal-body-pos')
-
-      $modalBodyContainer.append($abs)
-      this.$element.find('.modal-body').wrapInner($modalBodyContainer)
-    } else {
-      return
-    }
   }
 
   Modal.prototype.hide = function (e) {
@@ -1464,7 +1564,9 @@ var ResponsiveBootstrapToolkit = (function ($) {
     $(document)
       .off('focusin.bs.modal') // guard against infinite focus loop
       .on('focusin.bs.modal', $.proxy(function (e) {
-        if (this.$element[0] !== e.target && !this.$element.has(e.target).length) {
+        if (document !== e.target &&
+            this.$element[0] !== e.target &&
+            !this.$element.has(e.target).length) {
           this.$element.trigger('focus')
         }
       }, this))
@@ -1496,9 +1598,11 @@ var ResponsiveBootstrapToolkit = (function ($) {
     var extraDelayForSlowProcessors = 500
     var $modalBodyOpen = $('.modal-open body')
 
-    setTimeout(function () {
-      that.$element.hide();
-    }, delay + extraDelayForSlowProcessors)
+    if (that.$element.length) {
+      setTimeout(function () {
+        that.$element.removeClass('flex')
+      }, delay + extraDelayForSlowProcessors)
+    }
 
     // this.$element.hide()
     this.backdrop(function () {
@@ -1515,12 +1619,12 @@ var ResponsiveBootstrapToolkit = (function ($) {
       that.resetScrollbar()
       that.$element.trigger('hidden.bs.modal')
 
-      if (viewport.is('<=sm') || that.scrollToTop) {
+      if (that.scrollToTop) {
         $(that.$body).scrollTop(that.scrollTop)
       }
 
-      if (that.$element.hasClass('modal-valign')) {
-        that.$element.removeClass('modal-valign')
+      if (that.checkOnResize) {
+        that.$element.removeClass('modal-full-height')
       }
 
       that.shake = null
@@ -1553,7 +1657,9 @@ var ResponsiveBootstrapToolkit = (function ($) {
           this.ignoreBackdropClick = false
           return
         }
-        if (e.target !== e.currentTarget) return
+
+        // Check if target is the main 'modal' element or 'modal-dialog' and hide if backdrop isn't static
+        if (e.target !== e.currentTarget && !$(e.target).hasClass('modal-dialog')) return
         this.options.backdrop == 'static'
           ? this.$element[0].focus()
           : this.hide()
@@ -1608,9 +1714,9 @@ var ResponsiveBootstrapToolkit = (function ($) {
     var animate = $.support.transition && that.$element.hasClass('animate')
     var e = $.Event('shake-started.bs.modal', { relatedTarget: _relatedTarget })
 
-    this.$element.trigger(e)
-
     this.$element.addClass('animated shake')
+
+    this.$element.trigger(e)
 
     var callback = function () {
       that.removeShake()
@@ -1632,56 +1738,9 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
   // these following methods are used to handle overflowing modals
   Modal.prototype.handleUpdate = function () {
-    this.checkForScrollReset()
-
-    if (this.$element.is(':visible')) {
-      this.checkHeight()
-    }
     // The 'adjustDialog' function is no longer needed.
     //   I want to keep the positioning intact in case Bootstrap makes changes in future versions
     // this.adjustDialog()
-  }
-
-  Modal.prototype.checkForScrollReset = function () {
-    if (viewport.is('>sm') && !this.scrollToTop) {
-      this.$body.scrollTop(this.scrollTop)
-    }
-  }
-
-  Modal.prototype.checkHeight = function () {
-    var modalEvent;
-    var heightThresholdCalculation = this.calculateHeightThreshold()
-
-    // If the height of the $(window) has changed, check to see if scroll
-    // wrappers need to be added or removed
-    if (this.$element.outerHeight() > heightThresholdCalculation) {
-      this.$element.removeClass('modal-valign')
-      modalEvent = 'scroll-enabled'
-    }
-
-    if (this.$element.find('.modal-body-pos').prop('scrollHeight')
-        <= this.$element.find('.modal-body').outerHeight()
-        && viewport.is('>=md')
-        && !this.isSidetray) {
-
-      this.$element.addClass('modal-valign')
-      modalEvent = 'scroll-disabled'
-    } else {
-      this.$element.removeClass('modal-valign')
-    }
-
-    if (modalEvent) {
-      var e = $.Event(modalEvent + '.bs.modal')
-      this.$element.trigger(e)
-    }
-  }
-
-  Modal.prototype.calculateHeightThreshold = function () {
-    var $element = this.$element.find('.modal-content')
-    var modalHeaderHeight = this.$element.find('.modal-header').outerHeight()
-    var heightThresholdCalculation = $element.height() - modalHeaderHeight
-
-    return heightThresholdCalculation;
   }
 
   Modal.prototype.adjustDialog = function () {
@@ -1780,10 +1839,12 @@ var ResponsiveBootstrapToolkit = (function ($) {
     Plugin.call($target, option, this)
   })
 
-}(jQuery, ResponsiveBootstrapToolkit);
+}(jQuery);
 
 /* ========================================================================
- * Bootstrap: _custom-sidetray.js
+ * Bootstrap: _custom-sidetray.js v2.0.0
+ * ========================================================================
+ * Copyright 2015-2016 American Eagle Outfitters
  * ======================================================================== */
 +function ($) {
   'use strict';
@@ -1802,6 +1863,8 @@ var ResponsiveBootstrapToolkit = (function ($) {
     this.ignoreBackdropClick = false
   }
 
+  if (!$.fn.modal) throw new Error('Sidetray requires modal.js')
+
   //
   // Additional Defaults
   //
@@ -1809,7 +1872,13 @@ var ResponsiveBootstrapToolkit = (function ($) {
     animate: true
   }
 
-  Sidetray.VERSION = '0.3.0'
+  Sidetray.VERSION = '2.0.0'
+
+  // NOTE: SIDETRAY EXTENDS modal.js
+  // ================================
+  Sidetray.prototype = $.extend({}, $.fn.modal.Constructor.prototype);
+
+  Sidetray.prototype.constructor = Sidetray
 
   // Durations below are used to sync modal-window and modal-background animations.
   Sidetray.TRANSITION_DURATION = Modal.TRANSITION_DURATION
@@ -1948,8 +2017,18 @@ var ResponsiveBootstrapToolkit = (function ($) {
     })
   }
 
+  var old = $.fn.sidetray
+
   $.fn.sidetray             = Plugin
-  $.fn.sidetray.Constructor = originalModal.Constructor
+  $.fn.sidetray.Constructor = Sidetray
+
+  // SIDETRAY NO CONFLICT
+  // =================
+
+  $.fn.sidetray.noConflict = function () {
+    $.fn.sidetray = old
+    return this
+  }
 
   // SIDETRAY DATA-API
   // ==============
@@ -1968,11 +2047,11 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery)
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.3.6
+ * Bootstrap: tooltip.js v3.3.7
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -1995,7 +2074,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.3.6'
+  Tooltip.VERSION  = '3.3.7'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -2286,9 +2365,11 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
     function complete() {
       if (that.hoverState != 'in') $tip.detach()
-      that.$element
-        .removeAttr('aria-describedby')
-        .trigger('hidden.bs.' + that.type)
+      if (that.$element) { // TODO: Check whether guarding this code with this `if` is really necessary.
+        that.$element
+          .removeAttr('aria-describedby')
+          .trigger('hidden.bs.' + that.type)
+      }
       callback && callback()
     }
 
@@ -2331,7 +2412,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
       // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
       elRect = $.extend({}, elRect, { width: elRect.right - elRect.left, height: elRect.bottom - elRect.top })
     }
-    var elOffset  = isBody ? { top: 0, left: 0 } : $element.offset()
+    var isSvg = window.SVGElement && el instanceof window.SVGElement
+    // Avoid using $.offset() on SVGs since it gives incorrect results in jQuery 3.
+    // See https://github.com/twbs/bootstrap/issues/20280
+    var elOffset  = isBody ? { top: 0, left: 0 } : (isSvg ? null : $element.offset())
     var scroll    = { scroll: isBody ? document.documentElement.scrollTop || document.body.scrollTop : $element.scrollTop() }
     var outerDims = isBody ? { width: $(window).width(), height: $(window).height() } : null
 
@@ -2447,6 +2531,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
       that.$tip = null
       that.$arrow = null
       that.$viewport = null
+      that.$element = null
     })
   }
 
@@ -2483,10 +2568,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: popover.js v3.3.6
+ * Bootstrap: popover.js v3.3.7
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2503,7 +2588,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.3.6'
+  Popover.VERSION  = '3.3.7'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -2592,10 +2677,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.3.6
+ * Bootstrap: scrollspy.js v3.3.7
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2621,7 +2706,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.3.6'
+  ScrollSpy.VERSION  = '3.3.7'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -2765,10 +2850,10 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tab.js v3.3.6
+ * Bootstrap: tab.js v3.3.7
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2785,7 +2870,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.3.6'
+  Tab.VERSION = '3.3.7'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -2921,15 +3006,15 @@ var ResponsiveBootstrapToolkit = (function ($) {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.3.6
+ * Bootstrap: affix.js v3.3.7
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
 
-+function ($) {
++function ($, viewport) {
   'use strict';
 
   // AFFIX CLASS DEFINITION
@@ -2938,25 +3023,26 @@ var ResponsiveBootstrapToolkit = (function ($) {
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
-    this.$target = $(this.options.target)
-      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
-      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
-
     this.$element     = $(element)
     this.affixed      = null
     this.unpin        = null
     this.pinnedOffset = null
 
-    this.checkPosition()
+    this.checkAndUpdateState()
+
+    if (this.options.checkOnResize) {
+      $(window).on('resize.affix.check-on-resize', $.proxy(this.checkAndUpdateState, this));
+    }
   }
 
-  Affix.VERSION  = '3.3.6'
+  Affix.VERSION  = '3.3.7'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
   Affix.DEFAULTS = {
     offset: 0,
-    target: window
+    target: window,
+    enabled: []
   }
 
   Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
@@ -3034,6 +3120,54 @@ var ResponsiveBootstrapToolkit = (function ($) {
     }
   }
 
+  Affix.prototype.checkAndUpdateState = function () {
+    if (this.getEnabledState()) {
+      this.enable()
+      this.checkPosition()
+    } else {
+      this.disable()
+    }
+  }
+
+  Affix.prototype.enable = function () {
+    this.$element.removeClass('affix-disabled')
+
+    return (this.$target = $(this.options.target)
+      .on('scroll.bs.affix', $.proxy(this.checkPosition, this))
+      .on('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this)))
+  }
+
+  /**
+   * Turn off the listener to affix the element.
+   */
+  Affix.prototype.disable = function () {
+    if (this.$target) {
+      this.$target
+        .off('scroll.bs.affix', $.proxy(this.checkPosition, this))
+        .off('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this))
+    }
+
+    this.$element.removeClass(Affix.RESET).addClass('affix-disabled')
+    this.$element.css('width', '')
+  }
+
+  Affix.prototype.getEnabledState = function () {
+    var enabledViewports = this.options.enabled || [];
+    var enabled = false;
+
+    // If no enabled array is passed, then all viewports are enabled
+    if (enabledViewports.length === 0) {
+      enabled = true;
+    } else {
+      for (var i = 0, len = enabledViewports.length; i < len; i++) {
+        if (viewport.is(enabledViewports[i])) {
+          enabled = true;
+        }
+      }
+    }
+
+    return enabled;
+  }
 
   // AFFIX PLUGIN DEFINITION
   // =======================
@@ -3067,7 +3201,7 @@ var ResponsiveBootstrapToolkit = (function ($) {
   // AFFIX DATA-API
   // ==============
 
-  $(window).on('load', function () {
+  $(window).on('load.bs.affix.data-api', function () {
     $('[data-spy="affix"]').each(function () {
       var $spy = $(this)
       var data = $spy.data()
@@ -3081,103 +3215,4 @@ var ResponsiveBootstrapToolkit = (function ($) {
     })
   })
 
-}(jQuery);
-
-/* ========================================================================
- * Bootstrap: _custom-affix.js v1.4.0
- * ========================================================================
- * Copyright 2015-2016 American Eagle Outfitters
- *
- * Requires ResponsiveBootstrapToolkit
- * ======================================================================== */
-+function ($, viewport) {
-  'use strict';
-
-  // AFFIX PLUGIN ADAPTER
-  // ======================
-  var originalAffix = $.fn.affix;
-  var Affix = originalAffix.Constructor;
-  //
-  // Additional Defaults
-  //
-  var EXTRA_DEFAULTS = {
-    // Define in between which breakpoints the plugin should run
-    enabled: ['xs','sm','md','lg']
-  };
-  //
-  // Additional Methods
-  //
-  /**
-   * Turn on the listener to affix the element,
-   * only if it should be enabled for the current viewport.
-   */
-  Affix.prototype.enable = function () {
-    var arr;
-    var i;
-    var len;
-    try {
-      arr = $(this)[0].options.enabled;
-    } catch (e) {
-      return;
-    }
-    for (i = 0, len = arr.length; i < len; i++) {
-      if (viewport.is(arr[i])) {
-        this.$element && this.$element.removeClass('affix-disabled');
-        return (this.$target = $(this.options.target)
-          .on('scroll.bs.affix', $.proxy(this.checkPosition, this))
-          .on('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this)))
-      }
-    }
-  }
-  /**
-   * Turn off the listener to affix the element.
-   */
-  Affix.prototype.disable = function () {
-    this.$target
-      .off('scroll.bs.affix', $.proxy(this.checkPosition, this))
-      .off('click.bs.affix',  $.proxy(this.checkPositionWithEventLoop, this))
-    this.$element.removeClass($.fn.affix.Constructor.RESET).addClass('affix-disabled')
-    this.$element.css('width', '')
-  }
-  /**
-   * @method determineEnabledState
-   * @private
-   * @description Decide whether the plugin should be active or not based on the `enabled` option array.
-   */
-  function determineEnabledState() {
-    /*jshint validthis: true */
-    var plugin = $(this).data('bs.affix');
-    if (!plugin) { /* The affix plugin hasn't been instantiated, ignore it. */ return; }
-    var arr = plugin && plugin.options && plugin.options.enabled || [];
-    for (var i = 0, len = arr.length; i < len; i++) {
-      if (viewport.is(arr[i])) {
-        return $(this).data('bs.affix').enable()
-      }
-    }
-    return $(this).data('bs.affix').disable()
-  }
-  /**
-   * Adapter for Affix Plugin
-   *
-   * Adds defaults and points to the local Affix pointer which is extended
-   */
-  function Plugin(option) {
-    return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.affix')
-      var options = typeof option == 'object' && option
-      // New Defaults
-      options = $.extend({}, EXTRA_DEFAULTS, options);
-      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
-      determineEnabledState.call(this);
-      if (typeof option == 'string') data[option]()
-    })
-  }
-  $.fn.affix             = Plugin;
-  $.fn.affix.Constructor = originalAffix.Constructor;
-  $(window).on('resize, load', function () {
-    $('[class*="affix"]').each(function () {
-      determineEnabledState.call(this);
-    })
-  })
 }(jQuery, ResponsiveBootstrapToolkit);

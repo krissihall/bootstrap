@@ -1,5 +1,7 @@
 /* ========================================================================
- * Bootstrap: _custom-sidetray.js
+ * Bootstrap: _custom-sidetray.js v2.0.0
+ * ========================================================================
+ * Copyright 2015-2016 American Eagle Outfitters
  * ======================================================================== */
 +function ($) {
   'use strict';
@@ -18,6 +20,8 @@
     this.ignoreBackdropClick = false
   }
 
+  if (!$.fn.modal) throw new Error('Sidetray requires modal.js')
+
   //
   // Additional Defaults
   //
@@ -25,7 +29,13 @@
     animate: true
   }
 
-  Sidetray.VERSION = '0.3.0'
+  Sidetray.VERSION = '2.0.0'
+
+  // NOTE: SIDETRAY EXTENDS modal.js
+  // ================================
+  Sidetray.prototype = $.extend({}, $.fn.modal.Constructor.prototype);
+
+  Sidetray.prototype.constructor = Sidetray
 
   // Durations below are used to sync modal-window and modal-background animations.
   Sidetray.TRANSITION_DURATION = Modal.TRANSITION_DURATION
@@ -164,8 +174,18 @@
     })
   }
 
+  var old = $.fn.sidetray
+
   $.fn.sidetray             = Plugin
-  $.fn.sidetray.Constructor = originalModal.Constructor
+  $.fn.sidetray.Constructor = Sidetray
+
+  // SIDETRAY NO CONFLICT
+  // =================
+
+  $.fn.sidetray.noConflict = function () {
+    $.fn.sidetray = old
+    return this
+  }
 
   // SIDETRAY DATA-API
   // ==============

@@ -6,7 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
-+function ($, viewport) {
++function ($) {
   'use strict';
 
   // MODAL CLASS DEFINITION
@@ -18,6 +18,7 @@
     this.$html               = $('html')
     this.$element            = $(element)
     this.$dialog             = this.$element.find('.modal-dialog')
+    this.$content            = this.$element.find('.modal-content')
     this.$backdrop           = null
     this.isShown             = null
     this.originalBodyPad     = null
@@ -26,6 +27,9 @@
     this.isSidetray          = false
     this.scrollTop           = null
     this.scrollToTop         = this.options.scrollToTop
+
+    // Note, the below option is currently only used for the 'Mobile Alert Sign Up' Modal
+    this.checkOnResize       = this.options.checkOnResize
 
     if (this.options.remote) {
       this.$element
@@ -50,6 +54,7 @@
     keyboard: true,
     show: true,
     scrollToTop: false,
+    checkOnResize: true,
     shake: false
   }
 
@@ -71,10 +76,6 @@
 
     this.isShown = true
 
-    this.scrollTop = this.$body.scrollTop()
-
-    this.checkScrollbar()
-    this.setScrollbar()
     this.$html.addClass('modal-open')
 
     var $modalOpenBody = $('.modal-open body')
@@ -83,7 +84,7 @@
       evt.preventDefault()
     })
 
-    $modalOpenBody.on('touchstart.bs.modal-body', '.modal-scroll', function (evt) {
+    $modalOpenBody.on('touchstart.bs.modal-body', '.modal-body', function (evt) {
       if (evt.currentTarget.scrollTop === 0) {
         evt.currentTarget.scrollTop = 1
       } else if (evt.currentTarget.scrollHeight ===
@@ -93,7 +94,7 @@
       }
     })
 
-    $modalOpenBody.on('touchmove.bs.modal-body', '.modal-scroll', function (evt) {
+    $modalOpenBody.on('touchmove.bs.modal-body', '.modal-body', function (evt) {
       if ($(this)[0].scrollHeight > $(this).innerHeight()) {
         evt.stopPropagation()
       }
@@ -102,6 +103,10 @@
     if (this.$element.hasClass('sidetray')) {
       this.$body.addClass('sidetray')
       this.isSidetray = true
+    }
+
+    if (!this.checkOnResize) {
+      this.$element.addClass('modal-full-height')
     }
 
     this.escape()
@@ -124,7 +129,9 @@
       }
 
       that.$element
-        .show()
+        .addClass('flex')
+        // Remove 'show()' since it sets display to 'block'
+        // .show()
         .scrollTop(0)
 
       // The 'adjustDialog' function is no longer needed.
@@ -135,21 +142,8 @@
         that.$element[0].offsetWidth // force reflow
       }
 
-      that.addScrollWrappers()
-
-      var $modalBody = that.$element.find('.modal-body')
-      var modalBodyHeight = $modalBody.outerHeight()
-
       if (!isSidetray) {
-        var heightThresholdCalculation = that.calculateHeightThreshold()
-
         that.$element.addClass('in')
-
-        if (modalBodyHeight <= heightThresholdCalculation &&
-            that.$element.find('.modal-body-pos').prop('scrollHeight') === modalBodyHeight &&
-            viewport.is('>=md')) {
-          that.$element.addClass('modal-valign')
-        }
       }
 
       that.enforceFocus()
@@ -164,22 +158,6 @@
           .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
         that.$element.trigger('focus').trigger(e)
     })
-  }
-
-  Modal.prototype.addScrollWrappers = function () {
-    if (!this.$element.find('.modal-scroll').length) {
-      // Dynamically create containers to allow modal-body to be scrollable
-      //   - Cross-browser compatibility requires multiple containers for proper positioning
-      var $modalBodyContainer = $(document.createElement('div'))
-          .addClass('modal-scroll')
-      var $abs = $(document.createElement('div'))
-          .addClass('modal-body-pos')
-
-      $modalBodyContainer.append($abs)
-      this.$element.find('.modal-body').wrapInner($modalBodyContainer)
-    } else {
-      return
-    }
   }
 
   Modal.prototype.hide = function (e) {
@@ -254,9 +232,11 @@
     var extraDelayForSlowProcessors = 500
     var $modalBodyOpen = $('.modal-open body')
 
-    setTimeout(function () {
-      that.$element.hide();
-    }, delay + extraDelayForSlowProcessors)
+    if (that.$element.length) {
+      setTimeout(function () {
+        that.$element.removeClass('flex')
+      }, delay + extraDelayForSlowProcessors)
+    }
 
     // this.$element.hide()
     this.backdrop(function () {
@@ -273,12 +253,12 @@
       that.resetScrollbar()
       that.$element.trigger('hidden.bs.modal')
 
-      if (viewport.is('<=sm') || that.scrollToTop) {
+      if (that.scrollToTop) {
         $(that.$body).scrollTop(that.scrollTop)
       }
 
-      if (that.$element.hasClass('modal-valign')) {
-        that.$element.removeClass('modal-valign')
+      if (that.checkOnResize) {
+        that.$element.removeClass('modal-full-height')
       }
 
       that.shake = null
@@ -311,7 +291,9 @@
           this.ignoreBackdropClick = false
           return
         }
-        if (e.target !== e.currentTarget) return
+
+        // Check if target is the main 'modal' element or 'modal-dialog' and hide if backdrop isn't static
+        if (e.target !== e.currentTarget && !$(e.target).hasClass('modal-dialog')) return
         this.options.backdrop == 'static'
           ? this.$element[0].focus()
           : this.hide()
@@ -366,9 +348,9 @@
     var animate = $.support.transition && that.$element.hasClass('animate')
     var e = $.Event('shake-started.bs.modal', { relatedTarget: _relatedTarget })
 
-    this.$element.trigger(e)
-
     this.$element.addClass('animated shake')
+
+    this.$element.trigger(e)
 
     var callback = function () {
       that.removeShake()
@@ -390,56 +372,9 @@
 
   // these following methods are used to handle overflowing modals
   Modal.prototype.handleUpdate = function () {
-    this.checkForScrollReset()
-
-    if (this.$element.is(':visible')) {
-      this.checkHeight()
-    }
     // The 'adjustDialog' function is no longer needed.
     //   I want to keep the positioning intact in case Bootstrap makes changes in future versions
     // this.adjustDialog()
-  }
-
-  Modal.prototype.checkForScrollReset = function () {
-    if (viewport.is('>sm') && !this.scrollToTop) {
-      this.$body.scrollTop(this.scrollTop)
-    }
-  }
-
-  Modal.prototype.checkHeight = function () {
-    var modalEvent;
-    var heightThresholdCalculation = this.calculateHeightThreshold()
-
-    // If the height of the $(window) has changed, check to see if scroll
-    // wrappers need to be added or removed
-    if (this.$element.outerHeight() > heightThresholdCalculation) {
-      this.$element.removeClass('modal-valign')
-      modalEvent = 'scroll-enabled'
-    }
-
-    if (this.$element.find('.modal-body-pos').prop('scrollHeight')
-        <= this.$element.find('.modal-body').outerHeight()
-        && viewport.is('>=md')
-        && !this.isSidetray) {
-
-      this.$element.addClass('modal-valign')
-      modalEvent = 'scroll-disabled'
-    } else {
-      this.$element.removeClass('modal-valign')
-    }
-
-    if (modalEvent) {
-      var e = $.Event(modalEvent + '.bs.modal')
-      this.$element.trigger(e)
-    }
-  }
-
-  Modal.prototype.calculateHeightThreshold = function () {
-    var $element = this.$element.find('.modal-content')
-    var modalHeaderHeight = this.$element.find('.modal-header').outerHeight()
-    var heightThresholdCalculation = $element.height() - modalHeaderHeight
-
-    return heightThresholdCalculation;
   }
 
   Modal.prototype.adjustDialog = function () {
@@ -538,4 +473,4 @@
     Plugin.call($target, option, this)
   })
 
-}(jQuery, ResponsiveBootstrapToolkit);
+}(jQuery);
