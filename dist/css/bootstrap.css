@@ -11782,6 +11782,7 @@ button.close {
 .modal-body {
   position: relative;
   max-height: 100%;
+  padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -11874,17 +11875,6 @@ button.close {
 @media (max-width: 767px) {
   .modal-footer {
     position: relative;
-    padding: 0 10px 20px;
-  }
-}
-@media (min-width: 768px) {
-  .modal-footer {
-    padding: 0 20px 20px;
-  }
-}
-@media (min-width: 1024px) {
-  .modal-footer {
-    padding: 0 20px 20px;
   }
 }
 .modal.modal-valign .modal-body-pos {
