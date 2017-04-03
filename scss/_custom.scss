@@ -2,3 +2,89 @@
 //
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-base:                 #000 !default;
+$gray-dark:                 lighten($gray-base, 20%) !default;
+$gray:                      lighten($gray-base, 40%) !default;
+$gray-light:                lighten($gray-base, 60%) !default;
+$gray-lighter:              lighten($gray-base, 80%) !default;
+$gray-lightest:             lighten($gray-base, 90%) !default;
+
+$brand-primary:             #ff007e !default;
+$brand-success:             #019901 !default;
+$brand-info:                #017b9f !default;
+$brand-warning:             #f0ad4e !default;
+$brand-danger:              #ff150e !default;
+$brand-inverse:             $gray-dark !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:    #fff !default;
+$body-color: $gray-dark !default;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:            $brand-primary !default;
+$link-decoration:       none !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: "Glacial Indifference Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-size-root: 16px !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg:   1.25rem !default;
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;
+
+$line-height-base: 1.5 !default;
+
+$font-size-h1: 2.5rem !default;
+$font-size-h2: 2rem !default;
+$font-size-h3: 1.75rem !default;
+$font-size-h4: 1.5rem !default;
+$font-size-h5: 1.25rem !default;
+$font-size-h6: 1rem !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
+
+$headings-margin-bottom: .25rem !default;
+$headings-font-family:   "BonvenoCF Light" !default;
+$headings-font-weight:   500 !default;
+$headings-line-height:   1.1 !default;
+$headings-color:         darken($brand-primary, 20%) !default;
+
+$lead-font-size:   1rem !default;
+$lead-font-weight: 300 !default;
+
+$text-muted: $gray-light !default;
+
+$abbr-border-color: $gray-light !default;
+
+$blockquote-small-color:  darken($brand-primary, 10%) !default;
+$blockquote-font-size:    ($font-size-base * 1.25) !default;
+$blockquote-border-color: $brand-primary !default;
+$blockquote-border-width: .25rem !default;

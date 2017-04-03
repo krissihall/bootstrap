@@ -127,6 +127,14 @@ module.exports = function (grunt) {
           '**/*'
         ],
         dest: 'docs/dist/'
+      },
+      fonts: {
+        expand: true,
+        cwd: 'fonts/',
+        src: [
+          '**/*'
+        ],
+        dest: 'dist/fonts/'
       }
     },
 
@@ -302,7 +310,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-css', ['sass-compile', 'exec:postcss', 'exec:clean-css', 'exec:clean-css-docs'])
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js'])
+  grunt.registerTask('dist', ['clean:dist', 'copy:fonts', 'dist-css', 'dist-js'])
 
   // Default task.
   grunt.registerTask('default', ['clean:dist', 'test'])
@@ -311,7 +319,7 @@ module.exports = function (grunt) {
   grunt.registerTask('docs-css', ['exec:clean-css-docs', 'exec:postcss-docs'])
   grunt.registerTask('lint-docs-css', ['exec:scss-lint-docs'])
   grunt.registerTask('docs-js', ['exec:uglify-docs'])
-  grunt.registerTask('docs', ['lint-docs-css', 'docs-css', 'docs-js', 'clean:docs', 'copy:docs'])
+  grunt.registerTask('docs', ['lint-docs-css', 'docs-css', 'docs-js', 'clean:docs', 'copy:fonts', 'copy:docs'])
   grunt.registerTask('docs-github', ['exec:jekyll-github'])
 
   grunt.registerTask('prep-release', ['dist', 'docs', 'docs-github', 'compress'])
