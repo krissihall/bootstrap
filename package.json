@@ -88,7 +88,7 @@
     "@babel/cli": "7.0.0-beta.36",
     "@babel/core": "7.0.0-beta.36",
     "@babel/preset-env": "7.0.0-beta.36",
-    "autoprefixer": "^6.7.7",
+    "autoprefixer": "^7.2.3",
     "babel-eslint": "^8.1.2",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
     "bundlesize": "^0.15.3",
