@@ -1135,7 +1135,7 @@ var Collapse = function ($$$1) {
       var activesData;
 
       if (this._parent) {
-        actives = $$$1.makeArray($$$1(this._parent).children().children(Selector.ACTIVES));
+        actives = $$$1.makeArray($$$1(this._parent).find(Selector.ACTIVES).filter("[data-parent=\"" + this._config.parent + "\"]"));
 
         if (!actives.length) {
           actives = null;
