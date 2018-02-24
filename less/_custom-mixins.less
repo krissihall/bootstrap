@@ -56,18 +56,8 @@
   line-height: 46px;
 }
 
-.font-pixel-converter(@size: 16, @unit: em) {
+.font-pixel-converter(@size: 16, @unit: rem) {
   font-size: unit((@size / @font-base), @unit);
-}
-
-// Converts em or rem value of nested element based on parent base-font-size.
-// Added as of AEO-Bootstrap v0.1.4:
-//    refer to AEO-Bootstrap documentation for more informaiton.
-.font-em-reset(@parent, @target-size, @unit: em) {
-  @new-font-base: unit((@parent * @font-base));
-  @target-size-in-px: unit((@target-size * @font-base));
-
-  font-size: unit((@target-size-in-px / @new-font-base), @unit);
 }
 
 //== Custom Mixins and Over-riding Existing Mixins
@@ -81,8 +71,8 @@
   transform: translate(@xAxis, @yAxis);
 }
 
-.font-size-to-em(@size: 16){
-  font-size: unit((@size / @font-base), em);
+.font-size-to-rem(@size: 16){
+  font-size: unit((@size / @font-base), rem);
 }
 
 .box-shadow-reset() {
@@ -93,13 +83,6 @@
   -moz-box-sizing: @type;
   -webkit-box-sizing: @type;
   box-sizing: @type;
-}
-
-.font-em-reset(@parent, @target-size) {
-  @new-font-base: unit((@parent * @font-base));
-  @target-size-in-px: unit((@target-size * @font-base));
-
-  font-size: unit((@target-size-in-px / @new-font-base), em);
 }
 
 /** Custom Scrollbars mixin can be applied to any element
