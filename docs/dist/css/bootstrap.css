@@ -6630,11 +6630,11 @@ fieldset[disabled] .caret {
   top: 3px;
   left: 4px;
   display: block;
-  font-family: 'Custom Icons';
+  font-family: 'custom-icons';
   font-size: 12px;
   line-height: 1.25;
   color: #ccbe00;
-  content: '\ea10';
+  content: '\f113';
   -webkit-transition: all .2s;
        -o-transition: all .2s;
           transition: all .2s;
