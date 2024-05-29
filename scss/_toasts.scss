@@ -49,6 +49,22 @@
   > :not(:last-child) {
     margin-bottom: var(--#{$prefix}toast-spacing);
   }
+
+  &.success .toast-body {
+    border-left: rem-calc($toast-side-border) solid $success;
+  }
+
+  &.warning .toast-body {
+    border-left: rem-calc($toast-side-border) solid $warning;
+  }
+
+  &.danger .toast-body {
+    border-left: rem-calc($toast-side-border) solid $danger-light;
+  }
+
+  &.info .toast-body {
+    border-left: rem-calc($toast-side-border) solid $info;
+  }
 }
 
 .toast-header {
