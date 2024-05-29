@@ -533,6 +533,7 @@ $container-max-widths: (
 ) !default;
 // scss-docs-end container-max-widths
 
+$max-container-width: 1600px;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 

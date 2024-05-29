@@ -192,7 +192,7 @@ There are several built in color schemes available including: `info`, `success`,
   <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        Hello, world! This is a toast message.
+        Hello, world! This is a toast info message.
       </div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
@@ -203,7 +203,7 @@ There are several built in color schemes available including: `info`, `success`,
   <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        Hello, world! This is a toast message.
+        Hello, world! This is a toast success message.
       </div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
@@ -214,7 +214,7 @@ There are several built in color schemes available including: `info`, `success`,
   <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        Hello, world! This is a toast message.
+        Hello, world! This is a toast warning message.
       </div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
@@ -225,7 +225,7 @@ There are several built in color schemes available including: `info`, `success`,
   <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        Hello, world! This is a toast message.
+        Hello, world! This is a toast danger message.
       </div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
